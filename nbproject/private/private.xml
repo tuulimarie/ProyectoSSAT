@@ -7,5 +7,6 @@
             <file>file:/Users/alejandro/Documents/ProyectoSSAT/src/conf/MANIFEST.MF</file>
             <file>file:/Users/alejandro/Documents/ProyectoSSAT/web/META-INF/context.xml</file>
         </group>
+        <group name="ProyectoSSAT"/>
     </open-files>
 </project-private>

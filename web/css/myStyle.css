@@ -1,0 +1,37 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12.3.2015, 17:31:44
+    Author     : tuuli-marietiilikainen
+*/
+
+#inputInfo {
+    padding-left: 30px;
+    padding-top: 10px;
+}
+
+h1 {
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+.navbar-default {
+    background-color: #3D1C00;
+    //border-color: #434D53;
+    background-image: none;
+    background-repeat: no-repeat;
+}
+
+.btn-default {
+    background-color: #FA2A00;
+    background-image: none;
+    background-repeat: no-repeat;
+}
+
+body {
+    background-color: #F2D694;
+}
+

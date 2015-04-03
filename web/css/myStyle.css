@@ -18,20 +18,51 @@ h1 {
     padding-top: 30px;
 }
 
+//MYCOLORS
 .navbar-default {
-    background-color: #3D1C00;
-    //border-color: #434D53;
+    background-color: #434D53;
+    border-color: #434D53;
     background-image: none;
     background-repeat: no-repeat;
 }
 
 .btn-default {
-    background-color: #FA2A00;
+    background-color: #0E8D94;
+    border-color: #0E8D94;
+    background-image: none;
+    background-repeat: no-repeat;
+    padding: 10px;
+}
+
+body {
+    background-color: #E9D558;
+}
+
+.jumbotron {
+
+    background: rgba(233, 213, 88, 0.5);
     background-image: none;
     background-repeat: no-repeat;
 }
 
-body {
-    background-color: #F2D694;
+//INDEX
+.jumbotron h1 {
+    width: 300px;
+}
+
+.lead {
+    float: left;
+    width: 370px;
+    margin: 10px;
+}
+
+.form-signin {
+    float: left;
+    width: 370px; 
+    margin: 10px;
+}
+
+.col-sm-10 {
+    width: 300px;
 }
 

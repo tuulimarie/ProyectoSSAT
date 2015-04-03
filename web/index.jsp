@@ -42,5 +42,52 @@
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
+        
+         <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">About</a></li>
+            <li role="presentation"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Project name</h3>
+      </div>
+        
+        <div class="jumbotron">
+        <h1>Welcome newbies!</h1>
+        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+         </p>
+       
+        <form class="form-horizontal form-signin" role="form" id="" action="" method="">
+                    <legend>Sign in:</legend>
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="firstname">First name:</label>
+                      <div class="col-sm-10">
+                          <input type="text" name="firstname" class="form-control" id="firstname">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="lastname">Last name:</label>
+                      <div class="col-sm-10">
+                        <input type="text" name="lastname" class="form-control" id="lastname" >
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="telefono">Phonenumber:</label>
+                      <div class="col-sm-10">
+                        <input type="text" name="telefono" class="form-control" id="telefono" >
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default" name="action" id="Guardar" value="Guardar">Guardar</button>
+                        <button type="submit" class="btn btn-default" name="action" id="Mostrar" value="Mostrar">Mostrar</button>
+                      </div>
+                    </div>
+                </form>
+      </div>
+        
     </body>
 </html>

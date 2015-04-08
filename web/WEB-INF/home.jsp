@@ -8,8 +8,16 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <% String context = request.getContextPath();%>
+        <script src="<%=context%>/css/myStyle.css"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+          <!-- Bootstrap core CSS -->
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap theme -->
+        <link href="bootstrap-theme.min.css" rel="stylesheet">
+        <link href="myStyle.css" rel="stylesheet">
+        <title>SSAT</title>
     </head>
     <body>
         <h1>Hello World!</h1>

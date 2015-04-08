@@ -8,6 +8,10 @@ and open the template in the editor.
     Author     : tuuli-marietiilikainen
 */
 
+body {
+    background-color: #E9D558;
+}
+
 #inputInfo {
     padding-left: 30px;
     padding-top: 10px;
@@ -18,7 +22,14 @@ h1 {
     padding-top: 30px;
 }
 
-//MYCOLORS
+.navbar {
+    height: 100px;
+}
+
+.navbar-brand {
+    font-size: 30px;
+}
+
 .navbar-default {
     background-color: #434D53;
     border-color: #434D53;
@@ -34,15 +45,12 @@ h1 {
     padding: 10px;
 }
 
-body {
-    background-color: #E9D558;
-}
-
 .jumbotron {
 
     background: rgba(233, 213, 88, 0.5);
     background-image: none;
     background-repeat: no-repeat;
+    width: 100%;
 }
 
 //INDEX
@@ -52,13 +60,13 @@ body {
 
 .lead {
     float: left;
-    width: 370px;
+    width: 350px;
     margin: 10px;
 }
 
 .form-signin {
     float: left;
-    width: 370px; 
+    width: 600px; 
     margin: 10px;
 }
 

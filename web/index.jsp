@@ -80,7 +80,7 @@
                     </div>
                     <div class="form-group">
                         <div>
-                            <p>Not registered? <a href="/WEB-INF/mypage.jsp">Sign up!</a></p>
+                            <p>Not registered? <a href="registration.jsp">Sign up!</a></p>
                         </div>
                     </div>
                 </form>

@@ -27,7 +27,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">SSAT<br> or something</a>
+                        <a class="navbar-brand" href="index.jsp">SSAT<br> or something</a>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav pull-right">
@@ -49,7 +49,7 @@
                 </div>
             </div>
         </nav>
-        <div class="container>">
+        <div class="container">
             <div class="pagecontent">
                 <h1>Welcome!</h1>
 
@@ -57,18 +57,23 @@
                     <!-- Example row of columns -->
                     <div class="row">
                         <div class="col-md-4">
-                            <h2>Heading</h2>
-                            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                            <h2>Students button here</h2>
                             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
                         </div>
                         <div class="col-md-4">
-                            <h2>Heading</h2>
-                            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                             <p class="lead">Here you will find...
+                            </p>
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-md-4">
+                            <h2>Forums button here</h2>
                             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
                         </div>
+                            </div>
+                    <div class="row">
                         <div class="col-md-4">
-                            <h2>Heading</h2>
-                            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                            <h2>Top points button here</h2>
                             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
                         </div>
                     </div>

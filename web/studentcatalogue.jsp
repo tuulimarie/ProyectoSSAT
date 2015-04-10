@@ -17,43 +17,40 @@
         <title>Students</title>
     </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top navbar-default">
+        <nav class="navbar navbar-inverse navbar-default">
             <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">SSAT</a>
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+                            <!--<span class="sr-only">Toggle navigation</span>-->
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.jsp">SSAT<br> or something</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav pull-right">
+                            <li><a href="home.jsp">Home</a></li>
+                            <li class="active"><a href="students.jsp">Students</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="">Forums
+                                    <span class="caret"></span></a>
+                                <!--<ul class="dropdown-menu">
+                                    <li><a href="#">Page 1-1</a></li>
+                                    <li><a href="#">Page 1-2</a></li>
+                                    <li><a href="#">Page 1-3</a></li>
+                                </ul>-->
+                            </li>
+                            <li><a href="points.jsp">Points</a></li>
+                            <li><a href="#">MyInfo</a></li>
+                        </ul>
+                    </div>
                 </div>
-               <!-- <div id="navbar" class="navbar-collapse collapse">
-                    <form class="navbar-form navbar-right">
-                        <div class="form-group">
-                            <input type="text" placeholder="Email" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" placeholder="Password" class="form-control">
-                        </div>
-                        <button type="submit" class="btn btn-success btn-default">Sign in</button>
-                    </form>
-                </div><!--/.navbar-collapse -->
             </div>
         </nav>
 
         <div class="container">
-            <div class="header clearfix">
-                <nav>
-                    <ul class="nav nav-pills pull-right">
-                        <li role="presentation" class="active"><a href="#">Home</a></li>
-                        <li role="presentation"><a href="#">About</a></li>
-                        <li role="presentation"><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
-                <h3 class="text-muted">Project name</h3>
-            </div>
-
             <div class="pagecontent">
                 <h1>Exchange Students Search</h1>
             </div>

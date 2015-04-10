@@ -60,7 +60,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="formcontent">
-                            <form class="form-horizontal form-signin" role="form" id="" action="" method="">
+                            <form class="form-horizontal form-login" role="form" id="" action="" method="">
                                 <legend>Your information:</legend>
                                 <div class="form-group">
                                     <label class="control-label col-sm-2" for="firstname">Firstname:</label><br>

@@ -9,7 +9,7 @@ and open the template in the editor.
 */
 
 body {
-    background-color: #FFED90;
+    background-color: #E0E4CC;
 }
 
 #inputInfo {
@@ -25,10 +25,10 @@ body {
 
 .pagecontent {
   padding: 50px;
-  width: 100%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgba(50,50,50,0.5);
+  /*background-color: rgba(50,50,50,0.5);*/
 }
 /*NAVIGATION*/
 .navbar {
@@ -41,15 +41,19 @@ body {
 }
 
 .navbar-default {
-    background-color: #3C3251;
-    border-color: #3C3251;
+    background-color: #0B486B;
+    border-color: #0B486B;
     background-image: none;
     background-repeat: no-repeat;
 }
+
+#myNavbar {
+    padding: 30px;
+}
 /*BUTTONS*/
 .btn-default {
-    background-color: #359668;
-    border-color: #359668;
+    background-color: #F38630;
+    border-color: #F38630;
     background-image: none;
     background-repeat: no-repeat;
     padding: 10px;
@@ -93,8 +97,12 @@ body {
     width: 150px;
 }
 
-.form-signin {
+.form-login {
     float: left;
     //width: 600px; 
     margin: 10px;
+}
+
+.myimage {
+    padding: 10px;
 }

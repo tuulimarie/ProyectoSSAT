@@ -26,19 +26,19 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">SSAT</a>
+                    <a class="navbar-brand" href="#">SSAT<br> or something</a>
                 </div>
-               <!-- <div id="navbar" class="navbar-collapse collapse">
-                    <form class="navbar-form navbar-right">
-                        <div class="form-group">
-                            <input type="text" placeholder="Email" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" placeholder="Password" class="form-control">
-                        </div>
-                        <button type="submit" class="btn btn-success btn-default">Sign in</button>
-                    </form>
-                </div><!--/.navbar-collapse -->
+                <!-- <div id="navbar" class="navbar-collapse collapse">
+                     <form class="navbar-form navbar-right">
+                         <div class="form-group">
+                             <input type="text" placeholder="Email" class="form-control">
+                         </div>
+                         <div class="form-group">
+                             <input type="password" placeholder="Password" class="form-control">
+                         </div>
+                         <button type="submit" class="btn btn-success btn-default">Sign in</button>
+                     </form>
+                 </div><!--/.navbar-collapse -->
             </div>
         </nav>
 
@@ -56,40 +56,42 @@
 
             <div class="pagecontent">
                 <h1>Welcome newbies!</h1>
-                <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-                </p>
-
-                <form class="form-horizontal form-signin" role="form" id="" action="" method="">
-                    <legend>Log in:</legend>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="username">Username:</label>
-                        <div class="col-sm-10">
-                            <input type="email" name="username" class="form-control" id="username">
+                <div class="textcontent">
+                    <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                    </p>
+                </div>
+                <div class="formcontent">
+                    <form class="form-horizontal form-signin" role="form" id="" action="" method="">
+                        <legend>Log in:</legend>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="username">Username:</label>
+                            <div class="col-sm-10">
+                                <input type="email" name="username" class="form-control" id="username">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="password">Password:</label>
-                        <div class="col-sm-10">
-                            <input type="password" name="password" class="form-control" id="lastname" >
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="password">Password:</label>
+                            <div class="col-sm-10">
+                                <input type="password" name="password" class="form-control" id="lastname" >
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-default" name="action" id="Login" value="Login">Login</button>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default" name="action" id="Login" value="Login">Login</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div>
-                            <p>Not registered? <a href="/WEB-INF/mypage.jsp">Sign up!</a></p>
+                        <div class="form-group">
+                            <div>
+                                <p>Not registered? <a href="mypage.jsp">Sign up!</a></p>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
-            
-     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <script src="js/bootstrap.min.js"></script>
+
     </body>
 </html>

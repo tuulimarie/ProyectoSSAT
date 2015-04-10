@@ -17,14 +17,20 @@ body {
     padding-top: 10px;
 }
 
-h1 {
+/*h1 {
     padding-left: 30px;
     padding-top: 30px;
 }
+*/
 
 .pagecontent {
-    width: 100%;
+  padding: 50px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(50,50,50,0.5);
 }
+/*NAVIGATION*/
 .navbar {
     height: 100px;
 }
@@ -40,7 +46,7 @@ h1 {
     background-image: none;
     background-repeat: no-repeat;
 }
-
+/*BUTTONS*/
 .btn-default {
     background-color: #359668;
     border-color: #359668;
@@ -68,22 +74,27 @@ h1 {
     margin: 10px;
 }
 
-.form-signin {
-    float: left;
-    //width: 600px; 
-    margin: 10px;
-}
-
-.col-sm-10 {
-    width: 300px;
-}
-
 .textcontent {
     width: 300px;
     max-width: 100%;
 }
 
+/*FORMS*/
 .formcontent {
     width: 450px;
     float: left;
+}
+
+.col-sm-10 {
+    width: 200px;
+}
+
+.col-sm-2 {
+    width: 150px;
+}
+
+.form-signin {
+    float: left;
+    //width: 600px; 
+    margin: 10px;
 }

@@ -26,22 +26,23 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">SSAT<br> or what ever</a>
+                    <a class="navbar-brand" href="#">SSAT<br> or something</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav pull-right">
-                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="home.jsp">Home</a></li>
+                        <li><a href="students.jsp">Students</a></li>
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="">Forums
                                 <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
+                            <!--<ul class="dropdown-menu">
                                 <li><a href="#">Page 1-1</a></li>
                                 <li><a href="#">Page 1-2</a></li>
                                 <li><a href="#">Page 1-3</a></li>
-                            </ul>
+                            </ul>-->
                         </li>
-                        <li><a href="#">Page 2</a></li>
-                        <li><a href="#">Page 3</a></li>
+                        <li><a href="points.jsp">Points</a></li>
+                        <li class="active"><a href="#">MyInfo</a></li>
                     </ul>
                 </div>
             </div>
@@ -59,27 +60,28 @@
                  </nav>
                  <h3 class="text-muted">Project name</h3>
              </div>-->
-
+            <div class="pagecontent">
+                <h1>My Info</h1>
             <div class="myimage">
-                <img src="http://placehold.it/150x150&text=Hello world" />.
+                <img src="http://placehold.it/150x150&text=Your image" />.
             </div>
-            <div class="formcontent"
+            <div class="formcontent">
                  <form class="form-horizontal form-signin" role="form" id="" action="" method="">
                     <legend>Your information:</legend>
                     <div class="form-group">
-                            <label class="control-label col-sm-2" for="firstname">Firstname:</label>
+                        <label class="control-label col-sm-2" for="firstname">Firstname:</label><br>
                             <!--<div class="col-sm-10">
                                 <input type="text" name="firstname" class="form-control" id="firstname">
                             </div>-->
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="lastname">Lastname:</label>
+                            <label class="control-label col-sm-2" for="lastname">Lastname:</label><br>
                             <!--<div class="col-sm-10">
                                 <input type="text" name="lastname" class="form-control" id="lastname">
                             </div>-->
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="birthdate">Date of Birth:</label>
+                            <label class="control-label col-sm-2" for="birthdate">Date of Birth:</label><br>
                            <!-- <div class="col-sm-10">
                                 <div class='input-group date' id='datetimepicker1'>
                                     <input type='text' class="form-control" />
@@ -90,7 +92,7 @@
                             </div>-->
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="nacionality">Country of origin:</label>
+                            <label class="control-label col-sm-2" for="nacionality">Country of origin:</label><br>
                            <!-- <div class="col-sm-10">
                                 <select class="form-control">
                                     <option>1</option>
@@ -102,7 +104,7 @@
                             </div>-->
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="career">Career:</label>
+                            <label class="control-label col-sm-2" for="career">Career:</label><br>
                             <!--<div class="col-sm-10">
                                 <select class="form-control">
                                     <option>1</option>
@@ -114,7 +116,7 @@
                             </div>-->
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="startdate">Studies start:</label>
+                            <label class="control-label col-sm-2" for="startdate">Studies start:</label><br>
                            <!-- <div class="col-sm-10">
                                 <div class='input-group date' id='datetimepicker2'>
                                     <input type='text' class="form-control" />
@@ -125,7 +127,7 @@
                             </div>-->
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="finnishdate">Studies end:</label>
+                            <label class="control-label col-sm-2" for="finnishdate">Studies end:</label><br>
                             <!--<div class="col-sm-10">
                                 <div class='input-group date' id='datetimepicker2'>
                                     <input type='text' class="form-control" />
@@ -136,7 +138,7 @@
                             </div>-->
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="username">Username:</label>
+                            <label class="control-label col-sm-2" for="username">Username:</label><br>
                            <!-- <div class="col-sm-10">
                                 <input type="email" name="username" class="form-control" id="username">
                             </div>-->
@@ -155,12 +157,13 @@
                         </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-default" name="action" id="Edit" value="Edit">Login</button>
-                            <button type="submit" class="btn btn-default" name="action" id="Save" value="Save">Save changess</button>
+                            <button type="submit" class="btn btn-default" name="action" id="Edit" value="Edit">Edit</button>
+                            <button type="submit" class="btn btn-default" name="action" id="Save" value="Save">Save changes</button>
                         </div>
                     </div>
 
                 </form>
+            </div>
             </div>
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

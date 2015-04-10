@@ -49,110 +49,117 @@
                 </div>
             </div>
         </nav>
+        <div class="container">
+            <div class="pagecontent">
+                <h1>My Info</h1>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="myimage">
+                            <img src="http://placehold.it/150x150&text=Your image" />.
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="formcontent">
+                            <form class="form-horizontal form-signin" role="form" id="" action="" method="">
+                                <legend>Your information:</legend>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" for="firstname">Firstname:</label><br>
+                                    <!--<div class="col-sm-10">
+                                        <input type="text" name="firstname" class="form-control" id="firstname">
+                                    </div>-->
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" for="lastname">Lastname:</label><br>
+                                    <!--<div class="col-sm-10">
+                                        <input type="text" name="lastname" class="form-control" id="lastname">
+                                    </div>-->
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" for="birthdate">Date of Birth:</label><br>
+                                    <!-- <div class="col-sm-10">
+                                         <div class='input-group date' id='datetimepicker1'>
+                                             <input type='text' class="form-control" />
+                                             <span class="input-group-addon">
+                                                 <span class="glyphicon glyphicon-calendar"></span>
+                                             </span>
+                                         </div>
+                                     </div>-->
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" for="nacionality">Country of origin:</label><br>
+                                    <!-- <div class="col-sm-10">
+                                         <select class="form-control">
+                                             <option>1</option>
+                                             <option>2</option>
+                                             <option>3</option>
+                                             <option>4</option>
+                                             <option>5</option>
+                                         </select>
+                                     </div>-->
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" for="career">Career:</label><br>
+                                    <!--<div class="col-sm-10">
+                                        <select class="form-control">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>-->
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" for="startdate">Studies start:</label><br>
+                                    <!-- <div class="col-sm-10">
+                                         <div class='input-group date' id='datetimepicker2'>
+                                             <input type='text' class="form-control" />
+                                             <span class="input-group-addon">
+                                                 <span class="glyphicon glyphicon-calendar"></span>
+                                             </span>
+                                         </div>
+                                     </div>-->
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" for="finnishdate">Studies end:</label><br>
+                                    <!--<div class="col-sm-10">
+                                        <div class='input-group date' id='datetimepicker2'>
+                                            <input type='text' class="form-control" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>-->
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" for="username">Username:</label><br>
+                                    <!-- <div class="col-sm-10">
+                                         <input type="email" name="username" class="form-control" id="username">
+                                     </div>-->
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" for="password">Password:</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" name="password" class="form-control" id="password" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" for="password">Password again:</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" name="password" class="form-control" id="password" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-default" name="action" id="Edit" value="Edit">Edit</button>
+                                        <button type="submit" class="btn btn-default" name="action" id="Save" value="Save">Save changes</button>
+                                    </div>
+                                </div>
 
-        <div class="pagecontent">
-            <h1>My Info</h1>
-            <div class="myimage">
-                <img src="http://placehold.it/150x150&text=Your image" />.
-            </div>
-            <div class="formcontent">
-                <form class="form-horizontal form-signin" role="form" id="" action="" method="">
-                    <legend>Your information:</legend>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="firstname">Firstname:</label><br>
-                        <!--<div class="col-sm-10">
-                            <input type="text" name="firstname" class="form-control" id="firstname">
-                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="lastname">Lastname:</label><br>
-                        <!--<div class="col-sm-10">
-                            <input type="text" name="lastname" class="form-control" id="lastname">
-                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="birthdate">Date of Birth:</label><br>
-                        <!-- <div class="col-sm-10">
-                             <div class='input-group date' id='datetimepicker1'>
-                                 <input type='text' class="form-control" />
-                                 <span class="input-group-addon">
-                                     <span class="glyphicon glyphicon-calendar"></span>
-                                 </span>
-                             </div>
-                         </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="nacionality">Country of origin:</label><br>
-                        <!-- <div class="col-sm-10">
-                             <select class="form-control">
-                                 <option>1</option>
-                                 <option>2</option>
-                                 <option>3</option>
-                                 <option>4</option>
-                                 <option>5</option>
-                             </select>
-                         </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="career">Career:</label><br>
-                        <!--<div class="col-sm-10">
-                            <select class="form-control">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="startdate">Studies start:</label><br>
-                        <!-- <div class="col-sm-10">
-                             <div class='input-group date' id='datetimepicker2'>
-                                 <input type='text' class="form-control" />
-                                 <span class="input-group-addon">
-                                     <span class="glyphicon glyphicon-calendar"></span>
-                                 </span>
-                             </div>
-                         </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="finnishdate">Studies end:</label><br>
-                        <!--<div class="col-sm-10">
-                            <div class='input-group date' id='datetimepicker2'>
-                                <input type='text' class="form-control" />
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                            </div>
-                        </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="username">Username:</label><br>
-                        <!-- <div class="col-sm-10">
-                             <input type="email" name="username" class="form-control" id="username">
-                         </div>-->
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="password">Password:</label>
-                        <div class="col-sm-10">
-                            <input type="password" name="password" class="form-control" id="password" >
+                            </form>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="password">Password again:</label>
-                        <div class="col-sm-10">
-                            <input type="password" name="password" class="form-control" id="password" >
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-default" name="action" id="Edit" value="Edit">Edit</button>
-                            <button type="submit" class="btn btn-default" name="action" id="Save" value="Save">Save changes</button>
-                        </div>
-                    </div>
-
-                </form>
+                </div>
             </div>
         </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

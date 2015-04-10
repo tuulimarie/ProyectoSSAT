@@ -41,39 +41,46 @@
                  </div><!--/.navbar-collapse -->
             </div>
         </nav>
-
-        <div class="pagecontent">
-            <h1>Welcome newbies!</h1>
-            <div class="textcontent">
-                <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-                </p>
-            </div>
-            <div class="formcontent">
-                <form class="form-horizontal form-login" role="form" id="" action="" method="">
-                    <legend>Log in:</legend>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="username">Username:</label>
-                        <div class="col-sm-10">
-                            <input type="email" name="username" class="form-control" id="username">
+        <div class="container">
+            <div class="pagecontent">
+                <h1>Welcome newbies!</h1>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="textcontent">
+                            <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                            </p>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="password">Password:</label>
-                        <div class="col-sm-10">
-                            <input type="password" name="password" class="form-control" id="lastname" >
+                    <div class="col-md-4">
+                        <div class="formcontent">
+                            <form class="form-horizontal form-login" role="form" id="" action="" method="">
+                                <legend>Log in:</legend>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" for="username">Username:</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" name="username" class="form-control" id="username">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2" for="password">Password:</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" name="password" class="form-control" id="lastname" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-default" name="action" id="Login" value="Login">Login</button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div>
+                                        <p>Not registered? <a href="mypage.jsp">Sign up!</a></p>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-default" name="action" id="Login" value="Login">Login</button>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div>
-                            <p>Not registered? <a href="mypage.jsp">Sign up!</a></p>
-                        </div>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
 

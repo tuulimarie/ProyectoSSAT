@@ -17,7 +17,7 @@
         <title>SSAT</title>
     </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top navbar-default">
+        <nav class="navbar navbar-inverse navbar-default">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -43,7 +43,7 @@
         </nav>
 
         <div class="container">
-            <div class="header clearfix">
+            <!--<div class="header clearfix">
                 <nav>
                     <ul class="nav nav-pills pull-right">
                         <li role="presentation" class="active"><a href="#">Home</a></li>
@@ -52,9 +52,9 @@
                     </ul>
                 </nav>
                 <h3 class="text-muted">Project name</h3>
-            </div>
+            </div>-->
 
-            <div class="jumbotron">
+            <div class="pagecontent">
                 <h1>Welcome newbies!</h1>
                 <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
                 </p>
@@ -80,11 +80,16 @@
                     </div>
                     <div class="form-group">
                         <div>
-                            <p>Not registered? <a href="registration.jsp">Sign up!</a></p>
+                            <p>Not registered? <a href="/WEB-INF/mypage.jsp">Sign up!</a></p>
                         </div>
                     </div>
                 </form>
             </div>
-
+            
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    
     </body>
 </html>

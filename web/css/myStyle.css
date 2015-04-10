@@ -9,7 +9,7 @@ and open the template in the editor.
 */
 
 body {
-    background-color: #E9D558;
+    background-color: #FFED90;
 }
 
 #inputInfo {
@@ -22,41 +22,45 @@ h1 {
     padding-top: 30px;
 }
 
+.pagecontent {
+    width: 100%;
+}
 .navbar {
     height: 100px;
 }
 
 .navbar-brand {
     font-size: 30px;
+    padding: 30px;
 }
 
 .navbar-default {
-    background-color: #434D53;
-    border-color: #434D53;
+    background-color: #3C3251;
+    border-color: #3C3251;
     background-image: none;
     background-repeat: no-repeat;
 }
 
 .btn-default {
-    background-color: #0E8D94;
-    border-color: #0E8D94;
+    background-color: #359668;
+    border-color: #359668;
     background-image: none;
     background-repeat: no-repeat;
     padding: 10px;
 }
 
-.jumbotron {
+/*.jumbotron {
 
     background: rgba(233, 213, 88, 0.5);
     background-image: none;
     background-repeat: no-repeat;
     width: 100%;
-}
+}*/
 
 //INDEX
-.jumbotron h1 {
+/*.jumbotron h1 {
     width: 300px;
-}
+}*/
 
 .lead {
     float: left;
@@ -66,7 +70,7 @@ h1 {
 
 .form-signin {
     float: left;
-    width: 600px; 
+    //width: 600px; 
     margin: 10px;
 }
 
@@ -74,3 +78,12 @@ h1 {
     width: 300px;
 }
 
+.textcontent {
+    width: 300px;
+    max-width: 100%;
+}
+
+.formcontent {
+    width: 450px;
+    float: left;
+}

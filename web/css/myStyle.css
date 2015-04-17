@@ -7,9 +7,19 @@ and open the template in the editor.
     Created on : 12.3.2015, 17:31:44
     Author     : tuuli-marietiilikainen
 */
+@import url(http://fonts.googleapis.com/css?family=Voltaire);
 
+h1,h2,h3,h4,.lead,.btn,.navbar a {
+    text-transform:uppercase;
+    font-family:'Voltaire',Arial,sans-serif;
+    letter-spacing:2px;
+}
 body {
-    background-color: #E0E4CC;
+    height: 100%;
+    width: 100%;
+    font-family:Arial,sans-serif;
+    background-color: whitesmoke;
+    /* background-color: #F6F7BD;*/
 }
 
 #inputInfo {
@@ -18,45 +28,80 @@ body {
 }
 
 h1 {
-   margin: 10px;
+    margin: 10px;
 }
 
-
 .pagecontent {
-  padding: 50px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
- /* background-color: rgba(50,50,50,0.5);*/
+    padding: 50px;
+    width: 100%;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: rgba(50,50,50,0.5);*/
 }
 /*NAVIGATION*/
 .navbar {
     height: 100px;
 }
 
+.navbar-default .navbar-brand {
+    color: whitesmoke;
+}
+
 .navbar-brand {
     font-size: 30px;
     padding: 30px;
+    color: black;
 }
 
 .navbar-default {
-    background-color: #0B486B;
-    border-color: #0B486B;
+    background-color: #CC2A41; //#BF4D28;
+    border-color: #CC2A41;
     background-image: none;
     background-repeat: no-repeat;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
+
+.navbar-default .navbar-nav > .active{
+      color: white;
+    background: #424254;
+  }
+  .navbar-default .navbar-nav > .active > a, 
+  .navbar-default .navbar-nav > .active > a:hover, 
+  .navbar-default .navbar-nav > .active > a:focus {
+          color: white;
+    background: #424254;
+   }
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #8a0e0b;
+}
+.navbar-default .navbar-nav > .active  {
+    color: #8a0e0b;
+    background: #d65c14;
 }
 
 #myNavbar {
     padding: 30px;
 }
+/*NAVIGATION ENDS*/
+
+#footer {
+    background-color: #351330; //#32121D;
+}
+
 /*BUTTONS*/
 .btn-default {
-    background-color: #F38630;
-    border-color: #F38630;
+    background-color: #424254; //#762722;
+    border-color: #424254;
     background-image: none;
     background-repeat: no-repeat;
     padding: 10px;
     margin: 10px;
+    color: whitesmoke
 }
 
 /*.jumbotron {
@@ -106,6 +151,7 @@ h1 {
     //width: 600px; 
     margin: 10px;
 }
+/*FORMS END*/
 
 .myimage {
     padding: 10px;

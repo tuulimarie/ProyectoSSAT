@@ -14,10 +14,11 @@
         <!-- Bootstrap theme -->
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="css/myStyle.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
         <title>SSAT</title>
     </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-default">
+        <nav class="navbar navbar-inverse navbar-fixed-top navbar-default">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -68,7 +69,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="col-sm-offset-2 col-sm-10 pull-right">
                                         <button type="submit" class="btn btn-default" name="action" id="Login" value="Login">Login</button>
                                     </div>
                                 </div>
@@ -83,11 +84,28 @@
                 </div>
             </div>
         </div>
+        <div id="footer">
+            <div class="navbar navbar-inner">
+                <p class="muted credit"><center>ver 1.0.1</center></p>
+            </div>
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <script src="js/bootstrap.min.js"></script>
 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>
+            <!--         <script>
+         
+           $(document).ready(function() {
+         
+            var docHeight = $(window).height();
+            var footerHeight = $('#footer').height();
+            var footerTop = $('#footer').position().top + footerHeight;
+         
+            if (footerTop < docHeight) {
+             $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+            }
+           });
+          </script>-->
 
     </body>
 </html>

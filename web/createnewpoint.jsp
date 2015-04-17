@@ -17,7 +17,7 @@
         <title>Points of Interest</title>
     </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-default">
+        <nav class="navbar navbar-inverse navbar-fixed-top navbar-default">
             <div class="container">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -32,7 +32,7 @@
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav pull-right">
                             <li><a href="home.jsp">Home</a></li>
-                            <li><a href="students.jsp">Students</a></li>
+                            <li><a href="studentcatalogue.jsp">Students</a></li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="">Forums
                                     <span class="caret"></span></a>
@@ -42,8 +42,17 @@
                                     <li><a href="#">Page 1-3</a></li>
                                 </ul>-->
                             </li>
-                            <li class="active"><a href="points.jsp">Points</a></li>
-                            <li><a href="#">MyInfo</a></li>
+                              <!--<li><a href="points.jsp">Points</a></li>-->
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="">Points
+                                    <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="createnewpoint.jsp">New Point</a></li>
+                                   <!-- <li><a href="#">Page 1-2</a></li>
+                                    <li><a href="#">Page 1-3</a></li>-->
+                                </ul>
+                            </li>
+                            <li><a href="mypage.jsp">MyInfo</a></li>
                         </ul>
                     </div>
                 </div>

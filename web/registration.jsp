@@ -18,7 +18,7 @@
         <title>SSAT</title>
     </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-default">
+        <nav class="navbar navbar-inverse navbar-fixed-top navbar-default">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -145,7 +145,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="col-sm-offset-2 col-sm-10 pull-right">
                                         <button type="submit" class="btn btn-default" name="action" id="signup" value="signup">Signup</button>
                                     </div>
                                 </div>
@@ -156,6 +156,11 @@
                 </div>
             </div>
         </div>
+        <div id="footer">
+            <div class="navbar navbar-inner">
+                <p class="muted credit"><center>ver 1.0.1</center></p>
+            </div>
+            </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->

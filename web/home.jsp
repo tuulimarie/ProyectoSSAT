@@ -17,7 +17,7 @@
         <title>SSAT</title>
     </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-default">
+        <nav class="navbar navbar-inverse navbar-fixed-top navbar-default">
             <div class="container">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -31,8 +31,8 @@
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav pull-right">
-                            <li><a href="home.jsp">Home</a></li>
-                            <li><a href="students.jsp">Students</a></li>
+                            <li class="active"><a href="home.jsp">Home</a></li>
+                            <li><a href="studentcatalogue.jsp">Students</a></li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="">Forums
                                     <span class="caret"></span></a>
@@ -42,8 +42,17 @@
                                     <li><a href="#">Page 1-3</a></li>
                                 </ul>-->
                             </li>
-                            <li><a href="points.jsp">Points</a></li>
-                            <li class="active"><a href="#">MyInfo</a></li>
+                            <!--<li><a href="points.jsp">Points</a></li>-->
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="">Points
+                                    <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="createnewpoint.jsp">New Point</a></li>
+                                   <!-- <li><a href="#">Page 1-2</a></li>
+                                    <li><a href="#">Page 1-3</a></li>-->
+                                </ul>
+                            </li>
+                            <li><a href="mypage.jsp">MyInfo</a></li>
                         </ul>
                     </div>
                 </div>
@@ -80,6 +89,10 @@
                 </div>
             </div>
         </div>
+        <div id="footer">
+            <div class="navbar navbar-inner">
+                <p class="muted credit"><center>ver 1.0.1</center></p>
+            </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->

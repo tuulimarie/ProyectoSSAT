@@ -48,8 +48,8 @@
                                     <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="createnewpoint.jsp">New Point</a></li>
-                                   <!-- <li><a href="#">Page 1-2</a></li>
-                                    <li><a href="#">Page 1-3</a></li>-->
+                                    <!-- <li><a href="#">Page 1-2</a></li>
+                                     <li><a href="#">Page 1-3</a></li>-->
                                 </ul>
                             </li>
                             <li><a href="mypage.jsp">MyInfo</a></li>
@@ -70,16 +70,16 @@
                             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
                         </div>
                         <div class="col-md-4">
-                             <p class="lead">Here you will find...
+                            <p class="lead">Here you will find...
                             </p>
                         </div>
-                        </div>
-                        <div class="row">
+                    </div>
+                    <div class="row">
                         <div class="col-md-4">
                             <h2>Forums button here</h2>
                             <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
                         </div>
-                            </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-4">
                             <h2>Top points button here</h2>
@@ -89,10 +89,11 @@
                 </div>
             </div>
         </div>
-        <div id="footer">
-            <div class="navbar navbar-inner">
-                <p class="muted credit"><center>ver 1.0.1</center></p>
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted">Place sticky footer content here.</p>
             </div>
+        </footer>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->

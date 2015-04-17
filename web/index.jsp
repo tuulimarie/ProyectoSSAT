@@ -21,12 +21,6 @@
         <nav class="navbar navbar-inverse navbar-fixed-top navbar-default">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
                     <a class="navbar-brand" href="#">SSAT<br> or something</a>
                 </div>
                 <!-- <div id="navbar" class="navbar-collapse collapse">
@@ -75,7 +69,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div>
-                                        <p>Not registered? <a href="registration.jsp">Sign up!</a></p>
+                                        <p><center>Not registered? <a href="registration.jsp">Sign up!</a></center></p>
                                     </div>
                                 </div>
                             </form>
@@ -84,28 +78,29 @@
                 </div>
             </div>
         </div>
-        <div id="footer">
-            <div class="navbar navbar-inner">
-                <p class="muted credit"><center>ver 1.0.1</center></p>
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted">Place sticky footer content here.</p>
             </div>
-            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-            <!-- Include all compiled plugins (below), or include individual files as needed -->
-            <script src="js/bootstrap.min.js"></script>
+        </footer>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
 
-            <!--         <script>
-         
-           $(document).ready(function() {
-         
-            var docHeight = $(window).height();
-            var footerHeight = $('#footer').height();
-            var footerTop = $('#footer').position().top + footerHeight;
-         
-            if (footerTop < docHeight) {
-             $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
-            }
-           });
-          </script>-->
+        <!--         <script>
+     
+       $(document).ready(function() {
+     
+        var docHeight = $(window).height();
+        var footerHeight = $('#footer').height();
+        var footerTop = $('#footer').position().top + footerHeight;
+     
+        if (footerTop < docHeight) {
+         $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+        }
+       });
+      </script>-->
 
     </body>
 </html>

@@ -63,19 +63,28 @@
         <div class="container">
             <div class="pagecontent">
                 <h1>Exchange Students Search</h1>
+
+                <div>
+                    <table id="contenido" class="table table-responsive">
+                        <tr>
+                            <td>Name</td>
+                            <td>Last Name</td>
+                            <td>Country</td>
+                            <td>Email</td>
+                        </tr> 
+                        <tbody id="cuerpo"></tbody>
+                    </table> 
+                </div>
             </div>
         </div>
-        <div>
-            <table id="contenido" class="table table-responsive">
-                <tr>
-                    <td>Name</td>
-                    <td>Last Name</td>
-                    <td>Country</td>
-                    <td>Email</td>
-                </tr> 
-                <tbody id="cuerpo"></tbody>
-            </table> 
-        </div>
-
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted">Place sticky footer content here.</p>
+            </div>
+        </footer>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
     </body>
 </html>

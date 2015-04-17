@@ -14,7 +14,7 @@
         <!-- Bootstrap theme -->
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="css/myStyle.css" rel="stylesheet">
-          <link href='http://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
         <title>SSAT</title>
     </head>
     <body>
@@ -49,8 +49,8 @@
                                     <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="createnewpoint.jsp">New Point</a></li>
-                                   <!-- <li><a href="#">Page 1-2</a></li>
-                                    <li><a href="#">Page 1-3</a></li>-->
+                                    <!-- <li><a href="#">Page 1-2</a></li>
+                                     <li><a href="#">Page 1-3</a></li>-->
                                 </ul>
                             </li>
                             <li class="active"><a href="#">MyInfo</a></li>
@@ -162,7 +162,7 @@
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <button type="submit" class="btn btn-default" name="action" id="Edit" value="Edit">Edit</button>
-                                        </div>
+                                    </div>
                                     <div class="col-sm-4 pull-right">
                                         <button type="submit" class="btn btn-default" name="action" id="Save" value="Save">Save changes</button>
                                     </div>
@@ -173,11 +173,13 @@
                     </div>
                 </div>
             </div>
+
         </div>
-         <div id="footer">
-            <div class="navbar navbar-inner navbar-bottom"style="padding:0 0 120px 0">
-                <p class="muted credit"><center>ver 1.0.1</center></p>
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted">Place sticky footer content here.</p>
             </div>
+        </footer>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->

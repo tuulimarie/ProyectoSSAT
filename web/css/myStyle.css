@@ -89,8 +89,9 @@ h1 {
 }
 /*NAVIGATION ENDS*/
 
-#footer {
+.footer {
     background-color: #351330; //#32121D;
+    height: 50px;
 }
 
 /*BUTTONS*/

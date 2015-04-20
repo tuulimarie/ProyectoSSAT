@@ -67,7 +67,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <h2>Students button here</h2>
-                            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                            <p><a class="btn btn-default" href="#" role="button">View details &#x00A; of all &#x00A; the students!&raquo;</a></p>
                         </div>
                         <div class="col-md-4">
                             <p class="lead">Here you will find...

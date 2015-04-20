@@ -7,6 +7,18 @@
             <file>file:/Users/alejandro/Documents/ProyectoSSAT/src/conf/MANIFEST.MF</file>
             <file>file:/Users/alejandro/Documents/ProyectoSSAT/web/META-INF/context.xml</file>
         </group>
-        <group name="ProyectoSSAT"/>
+        <group name="ProyectoSSAT">
+            <file>file:/Users/tuuli-marietiilikainen/NetBeansProjects/ProyectoSSAT/web/index.jsp</file>
+            <file>file:/Users/tuuli-marietiilikainen/NetBeansProjects/ProyectoSSAT/web/points.jsp</file>
+            <file>file:/Users/tuuli-marietiilikainen/NetBeansProjects/ProyectoSSAT/web/pointdetails.jsp</file>
+            <file>file:/Users/tuuli-marietiilikainen/NetBeansProjects/ProyectoSSAT/web/studentcatalogue.jsp</file>
+            <file>file:/Users/tuuli-marietiilikainen/NetBeansProjects/ProyectoSSAT/web/registration.jsp</file>
+            <file>file:/Users/tuuli-marietiilikainen/NetBeansProjects/ProyectoSSAT/web/css/myStyle.css</file>
+            <file>file:/Users/tuuli-marietiilikainen/NetBeansProjects/ProyectoSSAT/web/mypage.jsp</file>
+            <file>file:/Users/tuuli-marietiilikainen/NetBeansProjects/ProyectoSSAT/web/js/myjs.js</file>
+            <file>file:/Users/tuuli-marietiilikainen/NetBeansProjects/ProyectoSSAT/web/createnewpoint.jsp</file>
+            <file>file:/Users/tuuli-marietiilikainen/NetBeansProjects/ProyectoSSAT/web/home.jsp</file>
+            <file>file:/Users/tuuli-marietiilikainen/NetBeansProjects/ProyectoSSAT/web/css/bootstrap.min.css</file>
+        </group>
     </open-files>
 </project-private>

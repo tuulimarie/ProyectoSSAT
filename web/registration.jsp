@@ -84,11 +84,11 @@
                                     <label class="control-label col-sm-2" for="nacionality">Country of origin:</label>
                                     <div class="col-sm-10">
                                         <select class="form-control">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
+                                            <option value="">--Choose country--</option>
+                                            <option>options</option>
+                                            <option>from</option>
+                                            <option>data</option>
+                                            <option>base</option>
                                         </select>
                                     </div>
                                 </div>
@@ -96,34 +96,31 @@
                                     <label class="control-label col-sm-2" for="career">Career:</label>
                                     <div class="col-sm-10">
                                         <select class="form-control">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
+                                            <option value="">--Choose career--</option>
+                                            <option value="business">Business</option>
+                                            <option value="it">IT</option>
+                                            <option value="marketing">Marketing</option>
+                                            <option value="megatronics">Megatronics</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-sm-2" for="startdate">Studies start:</label>
-                                    <div class="col-sm-10">
-                                        <div class='input-group date' id='datetimepicker2'>
-                                            <input type='text' class="form-control" />
-                                            <span class="input-group-addon">
-                                                <span class="glyphicon glyphicon-calendar"></span>
-                                            </span>
-                                        </div>
+                                    <label class="control-label col-sm-2" for="studytime">Time of studies:</label>
+                                     <div class="col-sm-2">
+                                        <select class="form-control">
+                                            <option>Spring</option>
+                                            <option>Summer</option>
+                                            <option>Autumn</option>
+                                        </select>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2" for="finnishdate">Studies end:</label>
-                                    <div class="col-sm-10">
-                                        <div class='input-group date' id='datetimepicker2'>
-                                            <input type='text' class="form-control" />
-                                            <span class="input-group-addon">
-                                                <span class="glyphicon glyphicon-calendar"></span>
-                                            </span>
-                                        </div>
+                                     <div class="col-sm-2">
+                                        <select class="form-control">
+                                            <option>2015</option>
+                                            <option>2014</option>
+                                            <option>2013</option>
+                                            <option>2012</option>
+                                            <option>2011</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">

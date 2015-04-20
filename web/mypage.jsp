@@ -120,25 +120,22 @@
                                     </div>-->
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-sm-2" for="startdate">Studies start:</label><br>
-                                    <!-- <div class="col-sm-10">
-                                         <div class='input-group date' id='datetimepicker2'>
-                                             <input type='text' class="form-control" />
-                                             <span class="input-group-addon">
-                                                 <span class="glyphicon glyphicon-calendar"></span>
-                                             </span>
-                                         </div>
-                                     </div>-->
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2" for="finnishdate">Studies end:</label><br>
-                                    <!--<div class="col-sm-10">
-                                        <div class='input-group date' id='datetimepicker2'>
-                                            <input type='text' class="form-control" />
-                                            <span class="input-group-addon">
-                                                <span class="glyphicon glyphicon-calendar"></span>
-                                            </span>
-                                        </div>
+                                    <label class="control-label col-sm-2" for="studytime">Time of studies:</label>
+                                   <!-- <div class="col-sm-2">
+                                        <select class="form-control">
+                                            <option>Spring</option>
+                                            <option>Summer</option>
+                                            <option>Autumn</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <select class="form-control">
+                                            <option>2015</option>
+                                            <option>2014</option>
+                                            <option>2013</option>
+                                            <option>2012</option>
+                                            <option>2011</option>
+                                        </select>
                                     </div>-->
                                 </div>
                                 <div class="form-group">

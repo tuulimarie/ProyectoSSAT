@@ -70,9 +70,9 @@
                     <div class="col-md-4">
                         <div class="formcontent">
                             <form class="form-horizontal form-login" role="form" id="" action="" method="">
-                                <legend>Add new...</legend>
+                                <legend>Add new... LOCATION!</legend>
                                 <div class="form-group">
-                                    <label class="control-label col-sm-2" for="nombre">Name:</label>
+                                    <label class="control-label col-sm-2" for="nombre">Name:*</label>
                                     <div class="col-sm-10">
                                         <input type="text" name="nombre" class="form-control" id="nombre">
                                     </div>
@@ -84,7 +84,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-sm-2" for="categoria">Category:</label>
+                                    <label class="control-label col-sm-2" for="categoria">Category:*</label>
                                     <div class="col-sm-10">
                                         <select class="form-control" id="categoria">
                                             <option>Categoria</option>
@@ -100,6 +100,19 @@
                                         <input type="text" name="telefono" class="form-control" id="telefono" >
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                <label class="control-label col-sm-2" for="rate">Rate:</label>
+                                <div class="col-sm-2">
+                                    <select class="form-control" id="rate">
+                                        <option>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                               </div>
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10 pull-right">
                                         <button type="submit" class="btn btn-default" name="action" id="SavePuntoInteres" value="Save">Save</button>

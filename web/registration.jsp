@@ -4,6 +4,10 @@
     Author     : tuuli-marietiilikainen
 --%>
 
+<%@page import="bean.NacionalidadBean"%>
+<%@page import="java.util.List"%>
+<%@page import="dao.NacionalidadDao"%>
+<%@page import="dao.NacionalidadDao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -85,10 +89,13 @@
                                     <div class="col-sm-10">
                                         <select class="form-control">
                                             <option value="">--Choose country--</option>
-                                            <option>options</option>
-                                            <option>from</option>
-                                            <option>data</option>
-                                            <option>base</option>
+                                            <% 
+                                                List list = NacionalidadDao.getContries();
+                                                for(int k = 0; k<list.size(); k++){
+                                                    NacionalidadBean bean = (NacionalidadBean)list.get(k);
+                                                    out.println("<option value=\""+bean.getIdNacionalidad()+"\">"+bean.getPais()+"</option>");
+                                                }
+                                            %>
                                         </select>
                                     </div>
                                 </div>
@@ -96,11 +103,12 @@
                                     <label class="control-label col-sm-2" for="career">Career:</label>
                                     <div class="col-sm-10">
                                         <select class="form-control">
-                                            <option value="">--Choose career--</option>
-                                            <option value="business">Business</option>
-                                            <option value="it">IT</option>
-                                            <option value="marketing">Marketing</option>
-                                            <option value="megatronics">Megatronics</option>
+                                            <option value="">--Choose area--</option>
+                                            <option value="Business & Management">Business & Management</option>
+                                            <option value="IT & Engineering">IT & Engineering</option>
+                                            <option value="Life Sciences & Medicine">Life Sciences & Medicine</option>
+                                            <option value="Social Sciences">Social Sciences</option>
+                                            <option value="Natural Sciences">Natural Sciences</option>
                                         </select>
                                     </div>
                                 </div>
@@ -115,6 +123,7 @@
                                     </div>
                                      <div class="col-sm-2">
                                         <select class="form-control">
+                                            <option>2016</option>
                                             <option>2015</option>
                                             <option>2014</option>
                                             <option>2013</option>

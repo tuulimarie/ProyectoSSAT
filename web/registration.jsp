@@ -13,12 +13,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <%String contexto = request.getContextPath();%>
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="css/datepicker.css">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <!-- Bootstrap theme -->
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="css/myStyle.css" rel="stylesheet">
+        
         <title>SSAT</title>
     </head>
     <body>
@@ -59,7 +61,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="formcontent">
-                            <form class="form-horizontal form-login" role="form" id="" action="" method="">
+                            <div class="form-horizontal form-login">
                                 <legend>Register:</legend>
                                 <div class="form-group">
                                     <label class="control-label col-sm-2" for="firstname">Firstname:</label>
@@ -74,20 +76,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-sm-2" for="birthdate">Date of Birth:</label>
+                                    <label class="control-label col-sm-2" for="nationality">Country of origin:</label>
                                     <div class="col-sm-10">
-                                        <div class='input-group date' id='datetimepicker1'>
-                                            <input type='text' class="form-control" />
-                                            <span class="input-group-addon">
-                                                <span class="glyphicon glyphicon-calendar"></span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2" for="nacionality">Country of origin:</label>
-                                    <div class="col-sm-10">
-                                        <select class="form-control">
+                                        <select class="form-control" id="nationality">
                                             <option value="">--Choose country--</option>
                                             <% 
                                                 List list = NacionalidadDao.getContries();
@@ -102,7 +93,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-2" for="career">Career:</label>
                                     <div class="col-sm-10">
-                                        <select class="form-control">
+                                        <select class="form-control" id="career">
                                             <option value="">--Choose area--</option>
                                             <option value="Business & Management">Business & Management</option>
                                             <option value="IT & Engineering">IT & Engineering</option>
@@ -115,25 +106,25 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-2" for="studytime">Time of studies:</label>
                                      <div class="col-sm-2">
-                                        <select class="form-control">
-                                            <option>Spring</option>
-                                            <option>Summer</option>
-                                            <option>Autumn</option>
+                                        <select class="form-control" id="date">
+                                            <option value="Spring">Spring</option>
+                                            <option value="Summer">Summer</option>
+                                            <option value="Autumn">Autumn</option>
                                         </select>
                                     </div>
                                      <div class="col-sm-2">
-                                        <select class="form-control">
-                                            <option>2016</option>
-                                            <option>2015</option>
-                                            <option>2014</option>
-                                            <option>2013</option>
-                                            <option>2012</option>
-                                            <option>2011</option>
+                                        <select class="form-control" id="year">
+                                            <option value="2016">2016</option>
+                                            <option value="2015">2015</option>
+                                            <option value="2015">2014</option>
+                                            <option value="2015">2013</option>
+                                            <option value="2015">2012</option>
+                                            <option value="2015">2011</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-sm-2" for="username">Username:</label>
+                                    <label class="control-label col-sm-2" for="username">Email:</label>
                                     <div class="col-sm-10">
                                         <input type="email" name="username" class="form-control" id="username">
                                     </div>
@@ -147,7 +138,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-2" for="password">Password again:</label>
                                     <div class="col-sm-10">
-                                        <input type="password" name="password" class="form-control" id="password" >
+                                        <input type="password" name="password" class="form-control" id="password2" >
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -156,7 +147,7 @@
                                     </div>
                                 </div>
 
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -164,7 +155,7 @@
         </div>
         <footer class="footer">
             <div class="container">
-                <p class="text-muted">Place sticky footer content here.</p>
+                <p class="text-muted">ITESM 2015.</p>
             </div>
         </footer>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -172,6 +163,7 @@
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
         <script src="js/bootstrap-datepicker.js"></script>
+        <script src="js/myjs.js"></script>
         <!-- <script type="text/javascript">
        // When the document is ready
        $(document).ready(function () {

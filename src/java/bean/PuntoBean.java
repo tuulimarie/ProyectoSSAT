@@ -14,8 +14,6 @@ public class PuntoBean {
     private int idPuntosDeInteres;
     private String nombre;
     private String descripcion;
-    private float latitude;
-    private String longitude;
     private String paginaWeb;
     private String telefono;
     private CategoriaBean categoria;
@@ -42,22 +40,6 @@ public class PuntoBean {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
-
-    public float getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(float latitude) {
-        this.latitude = latitude;
-    }
-
-    public String getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
     }
 
     public String getPaginaWeb() {

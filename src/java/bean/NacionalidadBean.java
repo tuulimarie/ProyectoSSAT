@@ -13,7 +13,6 @@ package bean;
 public class NacionalidadBean {
     private int idNacionalidad;
     private String pais;
-    private String continente;
 
     public int getIdNacionalidad() {
         return idNacionalidad;
@@ -29,14 +28,6 @@ public class NacionalidadBean {
 
     public void setPais(String pais) {
         this.pais = pais;
-    }
-
-    public String getContinente() {
-        return continente;
-    }
-
-    public void setContinente(String continente) {
-        this.continente = continente;
     }
     
 }

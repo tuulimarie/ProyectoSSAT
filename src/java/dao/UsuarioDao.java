@@ -24,8 +24,8 @@ public class UsuarioDao {
     private static String sql1 = "SELECT * FROM Usuario;";
     private static String sql2 = "SELECT * FROM Usuario WHERE idUsuario=?;";
     private static String sql3 = "SELECT * FROM Usuario WHERE nacionalidad=?;";
-    private static String sql4 = "SELECT idUsuario FROM Usuario WHERE email=?;";
-    private static String sql5 = "UPDATE Usuario SET nombre=?, apellidos=?, nacionalidad=?, password=? WHERE idUsuario=?";
+    private static String sql4 = "SELECT idUsuario,nombre FROM Usuario WHERE email=?;";
+    private static String sql5 = "UPDATE Usuario SET nombre=?, apellidos=?, nacionalidad=?, password=?, degree=?, date=? WHERE idUsuario=?";
     
     public static UsuarioBean getStudentById(int id) throws SQLException{
         Connection con = ConexionSql.getConnection();
@@ -35,6 +35,7 @@ public class UsuarioDao {
         UsuarioBean bean = null;
         if(rs.next()){
             bean = new UsuarioBean();
+            bean.setIdUsuario(rs.getInt(1));
             bean.setNombre(rs.getString(2));
             bean.setApellidos(rs.getString(3));
             NacionalidadBean nac = new NacionalidadBean();
@@ -42,6 +43,8 @@ public class UsuarioDao {
             bean.setNacionalidad(nac);
             bean.setEmail(rs.getString(5));
             bean.setPassword(rs.getString(6));
+            bean.setDegree(rs.getString(7));
+            bean.setDate(rs.getString(8));
         }
         return bean;
     }
@@ -54,6 +57,7 @@ public class UsuarioDao {
         List usuarios = new ArrayList<UsuarioBean>();
         while(rs.next()){
             bean = new UsuarioBean();
+            bean.setIdUsuario(rs.getInt(1));
             bean.setNombre(rs.getString(2));
             bean.setApellidos(rs.getString(3));
             NacionalidadBean nac = new NacionalidadBean();
@@ -61,6 +65,8 @@ public class UsuarioDao {
             bean.setNacionalidad(nac);
             bean.setEmail(rs.getString(5));
             bean.setPassword(rs.getString(6));
+            bean.setDegree(rs.getString(7));
+            bean.setDate(rs.getString(8));
             usuarios.add(bean);
         }
         return usuarios;
@@ -74,6 +80,7 @@ public class UsuarioDao {
         List usuarios = new ArrayList<UsuarioBean>();
         while(rs.next()){
             bean = new UsuarioBean();
+            bean.setIdUsuario(rs.getInt(1));
             bean.setNombre(rs.getString(2));
             bean.setApellidos(rs.getString(3));
             NacionalidadBean nac = new NacionalidadBean();
@@ -81,6 +88,8 @@ public class UsuarioDao {
             bean.setNacionalidad(nac);
             bean.setEmail(rs.getString(5));
             bean.setPassword(rs.getString(6));
+            bean.setDegree(rs.getString(7));
+            bean.setDate(rs.getString(8));
             usuarios.add(bean);
         }
         return usuarios;
@@ -91,12 +100,15 @@ public class UsuarioDao {
         ps.setString(1, bean.getEmail());
         ResultSet rs = ps.executeQuery();
         if(rs.next()){
-            if(rs.getString(2).equals("")){
+            if(rs.getString(2)==null){
                 ps = con.prepareStatement(sql5);
                 ps.setString(1,bean.getNombre());
                 ps.setString(2,bean.getApellidos());
                 ps.setInt(3,bean.getNacionalidad().getIdNacionalidad());
                 ps.setString(4,bean.getPassword());
+                ps.setString(5,bean.getDegree());
+                ps.setString(6,bean.getDate());
+                ps.setInt(7,rs.getInt(1));
                 ps.executeUpdate();
             }else{
                 return false;

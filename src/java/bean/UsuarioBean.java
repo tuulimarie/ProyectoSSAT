@@ -17,8 +17,24 @@ public class UsuarioBean {
     private NacionalidadBean nacionalidad;
     private String email;
     private String password;
-    private String telefono;
-    private String usuarioFB;
+    private String degree;
+    private String date;
+
+    public String getDegree() {
+        return degree;
+    }
+
+    public void setDegree(String degree) {
+        this.degree = degree;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     public int getIdUsuario() {
         return idUsuario;
@@ -66,22 +82,6 @@ public class UsuarioBean {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public String getUsuarioFB() {
-        return usuarioFB;
-    }
-
-    public void setUsuarioFB(String usuarioFB) {
-        this.usuarioFB = usuarioFB;
     }
     
 }

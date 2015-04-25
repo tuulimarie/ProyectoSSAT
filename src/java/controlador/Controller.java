@@ -5,8 +5,14 @@
  */
 package controlador;
 
+import bean.NacionalidadBean;
+import bean.UsuarioBean;
+import dao.UsuarioDao;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,22 +37,57 @@ public class Controller extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        try {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Controller</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Controller at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        } finally {
-            out.close();
+        String opcion = request.getParameter("opcion");
+        if(opcion.equals("1")){
+            registration(request, response);
+        }else if(opcion.equals("2")){
+            
         }
+    }
+    
+    private void registration(HttpServletRequest request, HttpServletResponse response) throws IOException{
+        String nombre = request.getParameter("nombre");
+        String apellido = request.getParameter("apellidos");
+        int nacionalidad = 1;
+        if(request.getParameter("nacionalidad").length()>1){
+            nacionalidad = Integer.parseInt(request.getParameter("nacionalidad"));
+        }
+        String email = request.getParameter("email");
+        String password = request.getParameter("password1");
+        String password2 = request.getParameter("password2");
+        String degree = request.getParameter("career");
+        String date = request.getParameter("date") + request.getParameter("year");
+        if(password.equals(password2)){
+            if(email!=null){
+                UsuarioBean bean = new UsuarioBean();
+                NacionalidadBean nac = new NacionalidadBean();
+                nac.setIdNacionalidad(nacionalidad);
+                bean.setNacionalidad(nac);
+                bean.setNombre(nombre);
+                bean.setApellidos(apellido);
+                bean.setEmail(email);
+                bean.setPassword(password);
+                bean.setDegree(degree);
+                bean.setDate(date);
+                try {
+                    if(UsuarioDao.registerNew(bean)){
+                        response.getWriter().write("true");
+                        return;
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }else{
+                response.getWriter().write("false");
+                return;
+            }
+        }else{
+            response.getWriter().write("false");
+            return;
+        }
+        
+        
+        response.getWriter().write("false");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

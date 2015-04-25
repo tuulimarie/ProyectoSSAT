@@ -15,7 +15,7 @@ $(document).ready(function (){
             success: function(data) {
                 if (data.toString() == "true") {
                     alert("Datos guardados");
-                    location.reload();
+                    location.replace("index.jsp");
                 } else {
                     alert("Error al insertar.");
                 }

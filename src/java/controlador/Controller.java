@@ -41,7 +41,7 @@ public class Controller extends HttpServlet {
         if(opcion.equals("1")){
             registration(request, response);
         }else if(opcion.equals("2")){
-            
+            login(request,response);
         }
     }
     
@@ -76,6 +76,8 @@ public class Controller extends HttpServlet {
                     }
                 } catch (SQLException ex) {
                     Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+                    response.getWriter().write("false");
+                    return;
                 }
             }else{
                 response.getWriter().write("false");
@@ -90,6 +92,27 @@ public class Controller extends HttpServlet {
         response.getWriter().write("false");
     }
 
+    private void login(HttpServletRequest request, HttpServletResponse response) throws IOException{
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        System.out.println(email + " " + password);
+        UsuarioBean bean = new UsuarioBean();
+        bean.setEmail(email);
+        bean.setPassword(password);
+        try {
+            bean = UsuarioDao.login(bean);
+        } catch (SQLException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            response.getWriter().write("false");
+            return;
+        }
+        if(bean!=null){
+            request.getSession().setAttribute("usuario", bean);
+            response.getWriter().write("true");
+            return;
+        }
+        response.getWriter().write("false");
+    }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

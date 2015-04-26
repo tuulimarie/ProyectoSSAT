@@ -23,6 +23,7 @@ import utilerias.ConexionSql;
 public class UsuarioDao {
     private static String sql1 = "SELECT * FROM Usuario;";
     private static String sql2 = "SELECT * FROM Usuario WHERE idUsuario=?;";
+    private static String sql6 = "SELECT * FROM Usuario WHERE email=?;";
     private static String sql3 = "SELECT * FROM Usuario WHERE nacionalidad=?;";
     private static String sql4 = "SELECT idUsuario,nombre FROM Usuario WHERE email=?;";
     private static String sql5 = "UPDATE Usuario SET nombre=?, apellidos=?, nacionalidad=?, password=?, degree=?, date=? WHERE idUsuario=?";
@@ -117,5 +118,27 @@ public class UsuarioDao {
             return false;
         }
         return true;
+    }
+    public static UsuarioBean login(UsuarioBean bean) throws SQLException{
+        Connection con = ConexionSql.getConnection();
+        PreparedStatement ps = con.prepareStatement(sql6);
+        ps.setString(1, bean.getEmail());
+        ResultSet rs = ps.executeQuery();
+        if(rs.next()){
+            UsuarioBean bean2 = new UsuarioBean();
+            bean2.setEmail(rs.getString("email"));
+            bean2.setIdUsuario(rs.getInt("idUsuario"));
+            bean2.setPassword(rs.getString("password"));
+            bean2.setDegree(rs.getString("degree"));
+            bean2.setDate(rs.getString("date"));
+            bean2.setNombre(rs.getString("nombre"));
+            bean2.setApellidos(rs.getString("apellidos"));
+            NacionalidadBean nac = NacionalidadDao.getCountryByID(rs.getInt("nacionalidad"));
+            bean2.setNacionalidad(nac);
+            if(bean2.getPassword().equals(bean.getPassword())){
+                return bean2;
+            }
+        }
+            return null;
     }
 }

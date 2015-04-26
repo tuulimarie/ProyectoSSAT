@@ -21,6 +21,7 @@ import utilerias.ConexionSql;
  */
 public class NacionalidadDao {
     private static String sql = "SELECT idNacionalidad,pais FROM nacionalidad;";
+    private static String sql2 = "SELECT idNacionalidad,pais FROM nacionalidad WHERE idNacionalidad=?;";
     
     public static List getContries() throws SQLException{
         List countries = new ArrayList<NacionalidadBean>();
@@ -35,5 +36,19 @@ public class NacionalidadDao {
            countries.add(bean);
         }
         return countries;
+    }
+     public static NacionalidadBean getCountryByID(int id) throws SQLException{
+        Connection con = ConexionSql.getConnection();
+        PreparedStatement ps = con.prepareStatement(sql2);
+        ps.setInt(1,id);
+        ResultSet rs = ps.executeQuery();
+        if(rs.next()){
+           NacionalidadBean bean = new NacionalidadBean();
+           bean.setIdNacionalidad(rs.getInt(1));
+           bean.setPais(rs.getString(2));
+           return bean;
+        }else{
+           return null;
+        }
     }
 }

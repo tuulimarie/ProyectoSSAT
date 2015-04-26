@@ -4,6 +4,12 @@
     Author     : alejandro
 --%>
 
+<%@page import="bean.UsuarioBean"%>
+<%@page import="dao.UsuarioDao"%>
+<%@page import="bean.NacionalidadBean"%>
+<%@page import="dao.NacionalidadDao"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -63,7 +69,22 @@
         <div class="container">
             <div class="pagecontent">
                 <h1>Exchange Students Search</h1>
-
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="nationality">Country of origin:</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="nationality">
+                            <option value="-2">--Choose a country--</option>
+                            <option value="-1">All</option>
+                            <% 
+                                List list = NacionalidadDao.getContries();
+                                for(int k = 0; k<list.size(); k++){
+                                    NacionalidadBean bean = (NacionalidadBean)list.get(k);
+                                    out.println("<option value=\""+bean.getIdNacionalidad()+"\">"+bean.getPais()+"</option>");
+                                }
+                            %>
+                        </select>
+                    </div>
+                </div>
                 <div>
                     <table id="contenido" class="table table-responsive">
                         <tr>
@@ -72,7 +93,29 @@
                             <td>Country</td>
                             <td>Email</td>
                         </tr> 
-                        <tbody id="cuerpo"></tbody>
+                        <tbody id="cuerpo"> 
+                            <%
+                                if(session.getAttribute("studentsTable")==null){
+                                    List students = UsuarioDao.getAllStudents();
+                                    String table = "";
+                                    for (int i = 0; i < students.size(); i++) {
+                                        UsuarioBean bean = (UsuarioBean)students.get(i);
+                                        table+="<tr>";
+                                        table+="<td>"+bean.getNombre()+"</td>";
+                                        table+="<td>"+bean.getApellidos()+"</td>";
+                                        table+="<td>"+bean.getNacionalidad().getPais()+"</td>";
+                                        table+="<td>"+bean.getEmail()+"</td>";
+                                        table+="<td><button id=\""+bean.getIdUsuario()+"\">Details</button></td>";
+                                        table+="</tr>";
+                                        System.out.println("Iteracion: "+i);
+                                    }
+                                    out.print(table);
+                                }else{
+                                    out.print(session.getAttribute("studentsTable"));
+                                    session.removeAttribute("studentsTable");
+                                }
+                            %>
+                        </tbody>
                     </table> 
                 </div>
             </div>
@@ -86,5 +129,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/myjs.js"></script>
     </body>
 </html>

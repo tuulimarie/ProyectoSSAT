@@ -37,4 +37,19 @@ $(document).ready(function (){
             }
         });
     });
+    $( "#nationality" ).change(function() {
+        $.ajax({
+            type: "POST",
+            url: 'Controller',
+            data: "opcion=3"+"&nationality=" + $("#nationality").val(),
+            dataType: "json",
+            success: function(data) {
+                if (data == "false") {
+                    alert("Couldn't load content.");
+                } else {
+                     location.reload();
+                }
+            }
+        });
+    });
 });

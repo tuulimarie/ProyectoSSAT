@@ -11,6 +11,7 @@ import dao.UsuarioDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -42,6 +43,8 @@ public class Controller extends HttpServlet {
             registration(request, response);
         }else if(opcion.equals("2")){
             login(request,response);
+        }else if(opcion.equals("3")){
+            loadStudentsFrom(request,response);
         }
     }
     
@@ -112,6 +115,39 @@ public class Controller extends HttpServlet {
             return;
         }
         response.getWriter().write("false");
+    }
+    
+    private void loadStudentsFrom(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String table = "";
+        int id = Integer.parseInt(request.getParameter("nationality"));
+        List students;
+        System.out.println("Pais: "+id);
+        try {
+            if(id==-1){
+                students = UsuarioDao.getAllStudents();
+            }else{
+                students = UsuarioDao.getStudentsFrom(id);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            response.getWriter().write("false");
+            return;
+        }
+        for (int i = 0; i < students.size(); i++) {
+            UsuarioBean bean = (UsuarioBean)students.get(i);
+            table+="<tr>";
+            table+="<td>"+bean.getNombre()+"</td>";
+            table+="<td>"+bean.getApellidos()+"</td>";
+            table+="<td>"+bean.getNacionalidad().getPais()+"</td>";
+            table+="<td>"+bean.getEmail()+"</td>";
+            table+="<td><button id=\""+bean.getIdUsuario()+"\">Details</button></td>";
+            table+="</tr>";
+            System.out.println("Iteracion: "+i);
+        }
+        System.out.println(table);
+        request.getSession().setAttribute("studentsTable", table);
+        response.getWriter().write("true");
+        System.out.println("fin del metodo");
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

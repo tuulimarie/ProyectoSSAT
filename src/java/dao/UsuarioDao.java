@@ -39,8 +39,8 @@ public class UsuarioDao {
             bean.setIdUsuario(rs.getInt(1));
             bean.setNombre(rs.getString(2));
             bean.setApellidos(rs.getString(3));
-            NacionalidadBean nac = new NacionalidadBean();
-            nac.setIdNacionalidad(rs.getInt(4));
+            NacionalidadBean nac;
+            nac = NacionalidadDao.getCountryByID(rs.getInt(4));
             bean.setNacionalidad(nac);
             bean.setEmail(rs.getString(5));
             bean.setPassword(rs.getString(6));
@@ -52,7 +52,7 @@ public class UsuarioDao {
     public static List getStudentsFrom(int idNacionalidad) throws SQLException{
         Connection con = ConexionSql.getConnection();
         PreparedStatement ps = con.prepareCall(sql3);
-        
+        ps.setInt(1, idNacionalidad);
         ResultSet rs = ps.executeQuery();
         UsuarioBean bean = null;
         List usuarios = new ArrayList<UsuarioBean>();
@@ -61,8 +61,8 @@ public class UsuarioDao {
             bean.setIdUsuario(rs.getInt(1));
             bean.setNombre(rs.getString(2));
             bean.setApellidos(rs.getString(3));
-            NacionalidadBean nac = new NacionalidadBean();
-            nac.setIdNacionalidad(rs.getInt(4));
+            NacionalidadBean nac;
+            nac = NacionalidadDao.getCountryByID(rs.getInt(4));
             bean.setNacionalidad(nac);
             bean.setEmail(rs.getString(5));
             bean.setPassword(rs.getString(6));
@@ -84,8 +84,8 @@ public class UsuarioDao {
             bean.setIdUsuario(rs.getInt(1));
             bean.setNombre(rs.getString(2));
             bean.setApellidos(rs.getString(3));
-            NacionalidadBean nac = new NacionalidadBean();
-            nac.setIdNacionalidad(rs.getInt(4));
+            NacionalidadBean nac;
+            nac = NacionalidadDao.getCountryByID(rs.getInt(4));
             bean.setNacionalidad(nac);
             bean.setEmail(rs.getString(5));
             bean.setPassword(rs.getString(6));

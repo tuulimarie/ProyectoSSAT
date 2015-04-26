@@ -4,10 +4,21 @@
     Author     : tuuli-marietiilikainen
 --%>
 
+<%@page import="bean.UsuarioBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
+        
+        <%
+        //This should be in every other webpage.
+        UsuarioBean usuario = null;
+        if(session.getAttribute("usuario")==null){
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
+        }else{
+            usuario = (UsuarioBean)session.getAttribute("usuario");
+        }
+        %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -73,30 +84,19 @@
                             <form class="form-horizontal form-login" role="form" id="" action="" method="">
                                 <legend>Your information:</legend>
                                 <div class="form-group">
-                                    <label class="control-label col-sm-2" for="firstname">Firstname:</label><br>
+                                    <label class="control-label col-sm-2" for="firstname">Firstname: </label><%=usuario.getNombre()%><br>
                                     <!--<div class="col-sm-10">
                                         <input type="text" name="firstname" class="form-control" id="firstname">
                                     </div>-->
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-sm-2" for="lastname">Lastname:</label><br>
+                                    <label class="control-label col-sm-2" for="lastname">Lastname: </label><%=usuario.getApellidos()%><br>
                                     <!--<div class="col-sm-10">
                                         <input type="text" name="lastname" class="form-control" id="lastname">
                                     </div>-->
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-sm-2" for="birthdate">Date of Birth:</label><br>
-                                    <!-- <div class="col-sm-10">
-                                         <div class='input-group date' id='datetimepicker1'>
-                                             <input type='text' class="form-control" />
-                                             <span class="input-group-addon">
-                                                 <span class="glyphicon glyphicon-calendar"></span>
-                                             </span>
-                                         </div>
-                                     </div>-->
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2" for="nacionality">Country of origin:</label><br>
+                                    <label class="control-label col-sm-2" for="nacionality">Country of origin: </label><%=usuario.getNacionalidad().getPais()%><br>
                                     <!-- <div class="col-sm-10">
                                          <select class="form-control">
                                              <option>1</option>
@@ -108,7 +108,7 @@
                                      </div>-->
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-sm-2" for="career">Career:</label><br>
+                                    <label class="control-label col-sm-2" for="career">Career: </label> <%=usuario.getDegree()%><br>
                                     <!--<div class="col-sm-10">
                                         <select class="form-control">
                                             <option>1</option>
@@ -120,7 +120,7 @@
                                     </div>-->
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-sm-2" for="studytime">Time of studies:</label>
+                                    <label class="control-label col-sm-2" for="studytime">Time of studies:</label><%=usuario.getDate()%>
                                    <!-- <div class="col-sm-2">
                                         <select class="form-control">
                                             <option>Spring</option>
@@ -139,7 +139,7 @@
                                     </div>-->
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-sm-2" for="username">Username:</label><br>
+                                    <label class="control-label col-sm-2" for="username">Email:</label><%=usuario.getEmail()%><br>
                                     <!-- <div class="col-sm-10">
                                          <input type="email" name="username" class="form-control" id="username">
                                      </div>-->

@@ -22,4 +22,19 @@ $(document).ready(function (){
             }
         });
     });
+    $("#login").click(function(){
+         $.ajax({
+            type: "POST",
+            url: 'Controller',
+            data: "opcion=2"+"&email=" + $("#username").val()+"&password=" + $("#password").val(),
+            dataType: "json",
+            success: function(data) {
+                if (data.toString() == "true") {
+                    location.replace("home.jsp");
+                } else {
+                    alert("Invalid user or password.");
+                }
+            }
+        });
+    });
 });

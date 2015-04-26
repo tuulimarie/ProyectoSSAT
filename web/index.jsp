@@ -48,10 +48,10 @@
                     </div>
                     <div class="col-md-4">
                         <div class="formcontent">
-                            <form class="form-horizontal form-login" role="form" id="" action="" method="">
+                            <div class="form-horizontal form-login">
                                 <legend>Log in:</legend>
                                 <div class="form-group">
-                                    <label class="control-label col-sm-2" for="username">Username:</label>
+                                    <label class="control-label col-sm-2" for="username">Email:</label>
                                     <div class="col-sm-10">
                                         <input type="email" name="username" class="form-control" id="username">
                                     </div>
@@ -59,12 +59,12 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-2" for="password">Password:</label>
                                     <div class="col-sm-10">
-                                        <input type="password" name="password" class="form-control" id="lastname" >
+                                        <input type="password" name="password" class="form-control" id="password" >
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10 pull-right">
-                                        <button type="submit" class="btn btn-default" name="action" id="Login" value="Login">Login</button>
+                                        <button type="submit" class="btn btn-default" name="action" id="login" value="Login">Login</button>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -72,7 +72,7 @@
                                         <p><center>Not registered? <a href="registration.jsp">Sign up!</a></center></p>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -87,6 +87,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/myjs.js"></script>
 
         <!--         <script>
      

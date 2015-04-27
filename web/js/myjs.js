@@ -52,4 +52,16 @@ $(document).ready(function (){
             }
         });
     });
+    $(".details-button").click(function() {
+        $.ajax({
+            type: "POST",
+            url: 'Controller',
+            data: "opcion=4" + "&idStudent=" + $(this).attr('id'),
+            dataType: "json",
+            success: function(data) {
+                     location.replace("studentdetails.jsp");
+                
+            }
+        });
+    });
 });

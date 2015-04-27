@@ -17,6 +17,15 @@ public class PuntoBean {
     private String paginaWeb;
     private String telefono;
     private CategoriaBean categoria;
+    private float calificacion;
+
+    public float getCalificacion() {
+        return calificacion;
+    }
+
+    public void setCalificacion(float calificacion) {
+        this.calificacion = calificacion;
+    }
 
     public int getIdPuntosDeInteres() {
         return idPuntosDeInteres;

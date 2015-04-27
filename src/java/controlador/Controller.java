@@ -6,7 +6,10 @@
 package controlador;
 
 import bean.NacionalidadBean;
+import bean.PuntoBean;
 import bean.UsuarioBean;
+import dao.CategoriaDao;
+import dao.PuntoDao;
 import dao.UsuarioDao;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -47,6 +50,8 @@ public class Controller extends HttpServlet {
             loadStudentsFrom(request,response);
         }else if(opcion.equals("4")){
             goToDetailsPage(request,response);
+        }else if(opcion.equals("5")){
+            addNewPuntoInteres(request,response);
         }
     }
     
@@ -155,6 +160,34 @@ public class Controller extends HttpServlet {
         System.out.println("Details");
         response.getWriter().write("true");
     }
+    
+    private void addNewPuntoInteres(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String nombre = request.getParameter("nombre");
+        String descripcion = request.getParameter("descripcion");
+        String telefono = request.getParameter("telefono");
+        String puntos = request.getParameter("puntos");
+        String categoria = request.getParameter("categoria");
+        PuntoBean bean = new PuntoBean();
+        bean.setNombre(nombre);
+        bean.setDescripcion(descripcion);
+        bean.setTelefono(telefono);
+        try {
+            bean.setCategoria(CategoriaDao.getCategoryByID(Integer.parseInt(categoria)));
+            PuntoDao.registerNew(bean);
+            int id = PuntoDao.getIdPuntoByName(nombre);
+            UsuarioBean usuario = (UsuarioBean)request.getSession().getAttribute("usuario");
+            PuntoDao.ratePunto(usuario.getIdUsuario(), id, Integer.parseInt(puntos));
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            response.getWriter().write("false");
+            return;
+        }
+        
+        response.getWriter().write("true");
+    }
+    
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

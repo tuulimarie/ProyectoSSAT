@@ -4,10 +4,24 @@
     Author     : alejandro
 --%>
 
+<%@page import="bean.UsuarioBean"%>
+<%@page import="bean.CategoriaBean"%>
+<%@page import="dao.CategoriaDao"%>
+<%@page import="bean.PuntoBean"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
+        <%
+        //This should be in every other webpage.
+        UsuarioBean usuario = null;
+        if(session.getAttribute("usuario")==null){
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
+        }else{
+            usuario = (UsuarioBean)session.getAttribute("usuario");
+        }
+        %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -69,7 +83,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="formcontent">
-                            <form class="form-horizontal form-login" role="form" id="" action="" method="">
+                            <div class="form-horizontal form-login">
                                 <legend>Add new... LOCATION!</legend>
                                 <div class="form-group">
                                     <label class="control-label col-sm-2" for="nombre">Name:*</label>
@@ -87,10 +101,13 @@
                                     <label class="control-label col-sm-2" for="categoria">Category:*</label>
                                     <div class="col-sm-10">
                                         <select class="form-control" id="categoria">
-                                            <option>Categoria</option>
-                                            <option>Categoria</option>
-                                            <option>Categoria</option>
-                                            <option>Categoria</option>
+                                            <% 
+                                                List list = CategoriaDao.getPuntosCategories();
+                                                for(int k = 0; k<list.size(); k++){
+                                                    CategoriaBean bean = (CategoriaBean)list.get(k);
+                                                    out.println("<option value=\""+bean.getIdCategoria()+"\">"+bean.getNombre()+"</option>");
+                                                }
+                                            %>
                                         </select>
                                     </div>
                                 </div>
@@ -104,12 +121,12 @@
                                 <label class="control-label col-sm-2" for="rate">Rate:</label>
                                 <div class="col-sm-2">
                                     <select class="form-control" id="rate">
-                                        <option>0</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
                                     </select>
                                 </div>
                                </div>
@@ -118,7 +135,7 @@
                                         <button type="submit" class="btn btn-default" name="action" id="SavePuntoInteres" value="Save">Save</button>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -130,9 +147,10 @@
                 <p class="text-muted">Place sticky footer content here.</p>
             </div>
         </footer>
-         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/myjs.js"></script>
     </body>
 </html>

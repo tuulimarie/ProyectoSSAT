@@ -52,6 +52,22 @@ $(document).ready(function (){
             }
         });
     });
+    $( "#SavePuntoInteres" ).click(function() {
+        $.ajax({
+            type: "POST",
+            url: 'Controller',
+            data: "opcion=5"+"&nombre=" + $("#nombre").val()+"&descripcion=" + $("#descripcion").val()+"&categoria=" + $("#categoria").val()+"&telefono=" + $("#telefono").val()+"&puntos=" + $("#rate").val(),
+            dataType: "json",
+            success: function(data) {
+                if (data.toString() == "true") {
+                    alert("Point of interest saved.");
+                    location.reload();
+                } else {
+                     alert("Error: Couldn't add location.");
+                }
+            }
+        });
+    });
     $(".details-button").click(function() {
         $.ajax({
             type: "POST",

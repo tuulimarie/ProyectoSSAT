@@ -24,11 +24,12 @@ public class PuntoDao {
     private static String sql1 = "SELECT * FROM PuntoInteres;";
     private static String sql3 = "SELECT idPuntoInteres FROM PuntoInteres WHERE nombre=?;";
     private static String sql2 = "SELECT * FROM PuntoInteres WHERE categoria=?;";
-    private static String sql4 = "SELECT AVG(puntos) AS promedio FROM Calificacion WHERE idPuntoInteres=?;";
+    private static String sql4 = "SELECT AVG(puntos) FROM Calificacion WHERE idPuntoInteres=?;";
     private static String sql5 = "INSERT INTO PuntoInteres (nombre,descripcion,paginaWeb,telefono,categoria) VALUES(?,?,?,?,?);";
     private static String sql6 = "INSERT INTO Calificacion (idPuntoInteres,idUsuario,puntos) VALUES(?,?,?);";
     private static String sql7 = "UPDATE Calificacion SET puntos=? WHERE idPuntoInteres=? AND idUsuario=?;";
     private static String sql8 = "SELECT * FROM Calificacion WHERE idPuntoInteres=? AND idUsuario=?;";
+    private static String sql9 = "SELECT * FROM PuntoInteres WHERE idPuntoInteres=?;";
     
     public static List getAllPuntos() throws SQLException{
         Connection con = ConexionSql.getConnection();
@@ -46,13 +47,37 @@ public class PuntoDao {
             ps.setInt(1, bean.getIdPuntosDeInteres());
             ResultSet rs2 = ps.executeQuery();
             if(rs2.next()){
-                bean.setCalificacion(rs.getFloat("promedio"));
+                bean.setCalificacion(rs2.getFloat(1));
             }
             CategoriaBean cat = CategoriaDao.getCategoryByID(rs.getInt("categoria"));
             bean.setCategoria(cat);
             puntos.add(bean);
         }
         return puntos;
+    }
+    
+    public static PuntoBean getPuntoById(int id) throws SQLException{
+        Connection con = ConexionSql.getConnection();
+        PuntoBean bean = new PuntoBean();
+        PreparedStatement ps = con.prepareStatement(sql9);
+        ps.setInt(1, id);
+        ResultSet rs = ps.executeQuery();
+        if(rs.next()){  
+            bean.setNombre(rs.getString("nombre"));
+            bean.setIdPuntosDeInteres(rs.getInt("idPuntoInteres"));
+            bean.setDescripcion(rs.getString("descripcion"));
+            bean.setPaginaWeb(rs.getString("paginaWeb"));
+            bean.setTelefono(rs.getString("telefono"));
+            ps=con.prepareStatement(sql4);
+            ps.setInt(1, bean.getIdPuntosDeInteres());
+            ResultSet rs2 = ps.executeQuery();
+            if(rs2.next()){
+                bean.setCalificacion(rs2.getFloat(1));
+            }
+            CategoriaBean cat = CategoriaDao.getCategoryByID(rs.getInt("categoria"));
+            bean.setCategoria(cat);
+        }else return null;
+        return bean;
     }
     
     public static List getPuntosFromCategory(int categoria) throws SQLException{
@@ -72,7 +97,7 @@ public class PuntoDao {
             ps.setInt(1, bean.getIdPuntosDeInteres());
             ResultSet rs2 = ps.executeQuery();
             if(rs2.next()){
-                bean.setCalificacion(rs2.getFloat("promedio"));
+                bean.setCalificacion(rs2.getFloat(1));
             }
             CategoriaBean cat = CategoriaDao.getCategoryByID(rs.getInt("categoria"));
             bean.setCategoria(cat);

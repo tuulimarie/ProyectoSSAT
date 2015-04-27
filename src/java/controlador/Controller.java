@@ -52,6 +52,10 @@ public class Controller extends HttpServlet {
             goToDetailsPage(request,response);
         }else if(opcion.equals("5")){
             addNewPuntoInteres(request,response);
+        }else if(opcion.equals("6")){
+            loadPuntosInteres(request,response);
+        }else if(opcion.equals("7")){
+            goToPuntosDetailsPage(request,response);
         }
     }
     
@@ -161,6 +165,13 @@ public class Controller extends HttpServlet {
         response.getWriter().write("true");
     }
     
+    private void goToPuntosDetailsPage(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String id = request.getParameter("idPunto");
+        request.getSession().setAttribute("idPunto", id);
+        System.out.println("Details");
+        response.getWriter().write("true");
+    }
+    
     private void addNewPuntoInteres(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String nombre = request.getParameter("nombre");
         String descripcion = request.getParameter("descripcion");
@@ -187,6 +198,37 @@ public class Controller extends HttpServlet {
         response.getWriter().write("true");
     }
     
+    private void loadPuntosInteres(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String table = "";
+        int id = Integer.parseInt(request.getParameter("categoria"));
+        List puntos;
+        System.out.println("Categoria: "+id);
+        try {
+            if(id==-1){
+                puntos = PuntoDao.getAllPuntos();
+            }else{
+                puntos = PuntoDao.getPuntosFromCategory(id);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            response.getWriter().write("false");
+            return;
+        }
+        for (int i = 0; i < puntos.size(); i++) {
+            PuntoBean bean = (PuntoBean)puntos.get(i);
+            table+="<tr>";
+            table+="<td>"+bean.getNombre()+"</td>";
+            table+="<td>"+bean.getDescripcion()+"</td>";
+            table+="<td>"+bean.getCategoria().getNombre()+"</td>";
+            table+="<td>"+bean.getTelefono()+"</td>";
+            table+="<td>"+bean.getCalificacion()+"</td>";
+            table+="<td><button class=\"details-button-puntos\" id=\""+bean.getIdPuntosDeInteres()+"\">Details</button></td>";
+            table+="</tr>";
+            System.out.println("Iteracion: "+i);
+        }
+        request.getSession().setAttribute("puntosTable", table);
+        response.getWriter().write("true");
+    }
     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

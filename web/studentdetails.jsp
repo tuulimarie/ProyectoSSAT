@@ -17,7 +17,7 @@
         if(session.getAttribute("usuario")==null){
             request.getRequestDispatcher("/index.jsp").forward(request, response);
         }else{
-            if(session.getAttribute("usuario")==null)request.getRequestDispatcher("/studentcatalogue.jsp").forward(request, response);
+            if(session.getAttribute("idStudent")==null)request.getRequestDispatcher("/studentcatalogue.jsp").forward(request, response);
             int id = Integer.parseInt(session.getAttribute("idStudent").toString());
             usuario = UsuarioDao.getStudentById(id);
         }

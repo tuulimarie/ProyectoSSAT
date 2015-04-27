@@ -4,6 +4,9 @@
     Author     : alejandro
 --%>
 
+<%@page import="bean.PuntoBean"%>
+<%@page import="dao.PuntoDao"%>
+<%@page import="bean.UsuarioBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,6 +17,17 @@
         <!-- Bootstrap theme -->
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="css/myStyle.css" rel="stylesheet">
+        <%
+        //This should be in every other webpage.
+        PuntoBean punto = null;
+        if(session.getAttribute("usuario")==null){
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
+        }else{
+            if(session.getAttribute("idPunto")==null)request.getRequestDispatcher("/points.jsp").forward(request, response);
+            int id = Integer.parseInt(session.getAttribute("idPunto").toString());
+            punto = PuntoDao.getPuntoById(id);
+        }
+        %>
         <title>Points of Interest</title>
     </head>
     <body>
@@ -63,40 +77,40 @@
                 <h1>Points of Interest</h1>
                 <div class="col-md-4">
                     <div class="formcontent">
-                        <form class="form-horizontal form-login" role="form" id="" action="" method="">
-                            <legend id="nombre">Nombre del lugar</legend>
+                        <div class="form-horizontal form-login" role="form">
+                            <legend id="nombre"><%=punto.getNombre()%></legend>
                             <div class="form-group">
                                 <label class="control-label col-sm-4" for="descripcion">Description:</label>
-                                <div class="col-sm-2" id="descripcion">asdasdasdasd</div>
+                                <div class="col-sm-2" id="descripcion"><%=punto.getDescripcion()%></div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-4" for="categoria">Category:</label>
-                                <div class="col-sm-2" id="categoria">Categoria</div>
+                                <div class="col-sm-2" id="categoria"><%=punto.getCategoria().getNombre()%></div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-4" for="telefono">Phone Number:</label>
-                                <div class="col-sm-2" id="telefono">7771221221</div>
+                                <div class="col-sm-2" id="telefono"><%=punto.getTelefono()%></div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-4" for="rate">Rate:</label>
                                 <div class="col-sm-2">
                                     <select class="form-control" id="rate">
-                                        <option>0</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
                                     </select>
                                 </div>
                                </div>
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-default" name="action" id="rate" value="rate">Rate</button>
+                                        <button type="submit" class="btn btn-default" name="action" id="rate-submit" value="rate">Rate</button>
                                     </div>
                                 </div>
                              
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -110,6 +124,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/myjs.js"></script>
     </body>
 </html>
 

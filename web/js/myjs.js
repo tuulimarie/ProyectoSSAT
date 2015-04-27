@@ -52,6 +52,21 @@ $(document).ready(function (){
             }
         });
     });
+    $( "#category" ).change(function() {
+        $.ajax({
+            type: "POST",
+            url: 'Controller',
+            data: "opcion=6"+"&categoria=" + $("#category").val(),
+            dataType: "json",
+            success: function(data) {
+                if (data == "false") {
+                    alert("Couldn't load content.");
+                } else {
+                     location.reload();
+                }
+            }
+        });
+    });
     $( "#SavePuntoInteres" ).click(function() {
         $.ajax({
             type: "POST",
@@ -79,5 +94,21 @@ $(document).ready(function (){
                 
             }
         });
+    });
+    $(".details-button-puntos").click(function() {
+        $.ajax({
+            type: "POST",
+            url: 'Controller',
+            data: "opcion=7" + "&idPunto=" + $(this).attr('id'),
+            dataType: "json",
+            success: function(data) {
+                     location.replace("pointdetails.jsp");
+                
+            }
+        });
+    });
+    
+    $("#rate-submit").click(function() {
+        alert("To do");
     });
 });

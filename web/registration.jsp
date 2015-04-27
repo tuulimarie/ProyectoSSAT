@@ -141,11 +141,12 @@
                                         <input type="password" name="password" class="form-control" id="password2" >
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10 pull-right">
+                                
+                                    <div class="row">
+                                        
                                         <button type="submit" class="btn btn-default" name="action" id="signup" value="signup">Signup</button>
                                     </div>
-                                </div>
+                               
 
                             </div>
                         </div>

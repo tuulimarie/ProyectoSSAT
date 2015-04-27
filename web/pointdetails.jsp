@@ -61,8 +61,9 @@
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="">Points
                                     <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li class="active"><a href="createnewpoint.jsp">New Point</a></li>
-                                    <!-- <li><a href="#">Page 1-2</a></li>
+                                    <li><a href="points.jsp">Points</a></li>
+                                    <li><a href="createnewpoint.jsp">New Point</a></li>
+                                    <!--
                                      <li><a href="#">Page 1-3</a></li>-->
                                 </ul>
                             </li>

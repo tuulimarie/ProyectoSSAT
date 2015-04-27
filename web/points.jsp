@@ -39,7 +39,7 @@
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav pull-right">
                             <li><a href="home.jsp">Home</a></li>
-                            <li class="active"><a href="#">Students</a></li>
+                            <li><a href="studentcatalogue.jsp">Students</a></li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="">Forums
                                     <span class="caret"></span></a>
@@ -50,12 +50,13 @@
                                 </ul>-->
                             </li>
                             <!--<li><a href="points.jsp">Points</a></li>-->
-                            <li class="dropdown">
+                            <li  class="active dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="">Points
                                     <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
+                                    <li><a href="points.jsp">Points</a></li>
                                     <li><a href="createnewpoint.jsp">New Point</a></li>
-                                    <!-- <li><a href="#">Page 1-2</a></li>
+                                    <!--
                                      <li><a href="#">Page 1-3</a></li>-->
                                 </ul>
                             </li>
@@ -69,7 +70,7 @@
         <div class="container">
             <div class="pagecontent">
                 <h1>Points of Interest Search</h1>
-                <div class="form-group">
+                <div class="row">
                     <label class="control-label col-sm-2" for="category">Category:</label>
                     <div class="col-sm-10">
                         <select class="form-control" id="category">
@@ -85,7 +86,7 @@
                         </select>
                     </div>
                 </div>
-                <div>
+                        <div class="row">
                     <table id="contenido" class="table table-responsive">
                         <tr>
                             <td>Name</td>

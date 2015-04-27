@@ -45,6 +45,8 @@ public class Controller extends HttpServlet {
             login(request,response);
         }else if(opcion.equals("3")){
             loadStudentsFrom(request,response);
+        }else if(opcion.equals("4")){
+            goToDetailsPage(request,response);
         }
     }
     
@@ -140,14 +142,18 @@ public class Controller extends HttpServlet {
             table+="<td>"+bean.getApellidos()+"</td>";
             table+="<td>"+bean.getNacionalidad().getPais()+"</td>";
             table+="<td>"+bean.getEmail()+"</td>";
-            table+="<td><button id=\""+bean.getIdUsuario()+"\">Details</button></td>";
+            table+="<td><button class=\"details-button\" id=\""+bean.getIdUsuario()+"\">Details</button></td>";
             table+="</tr>";
-            System.out.println("Iteracion: "+i);
         }
-        System.out.println(table);
         request.getSession().setAttribute("studentsTable", table);
         response.getWriter().write("true");
-        System.out.println("fin del metodo");
+    }
+    
+    private void goToDetailsPage(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String id = request.getParameter("idStudent");
+        request.getSession().setAttribute("idStudent", id);
+        System.out.println("Details");
+        response.getWriter().write("true");
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

@@ -31,7 +31,7 @@ public class UsuarioDao {
     public static UsuarioBean getStudentById(int id) throws SQLException{
         Connection con = ConexionSql.getConnection();
         PreparedStatement ps = con.prepareCall(sql2);
-        
+        ps.setInt(1, id);
         ResultSet rs = ps.executeQuery();
         UsuarioBean bean = null;
         if(rs.next()){

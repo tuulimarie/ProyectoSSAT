@@ -159,11 +159,10 @@
                                         </div>
                                     </div>
                                     <div class="row">
-
+                                        <div align="center">
                                         <button type="submit" class="btn btn-default" name="action" id="Edit" value="Edit">Edit</button>
-
                                         <button type="submit" class="btn btn-default" name="action" id="Save" value="Save">Save changes</button>
-
+                                        </div>
                                     </div>
                                 </form>
                             </div>

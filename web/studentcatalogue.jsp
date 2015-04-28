@@ -24,108 +24,108 @@
         <title>Students</title>
     </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top navbar-default">
-            <div class="container">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
-                            <!--<span class="sr-only">Toggle navigation</span>-->
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="index.jsp">SSAT<br> or something</a>
-                    </div>
-                    <div class="collapse navbar-collapse" id="myNavbar">
-                        <ul class="nav navbar-nav pull-right">
-                            <li><a href="home.jsp">Home</a></li>
-                            <li class="active"><a href="#">Students</a></li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="">Forums
-                                    <span class="caret"></span></a>
-                                <!--<ul class="dropdown-menu">
-                                    <li><a href="#">Page 1-1</a></li>
-                                    <li><a href="#">Page 1-2</a></li>
-                                    <li><a href="#">Page 1-3</a></li>
-                                </ul>-->
-                            </li>
-                            <!--<li><a href="points.jsp">Points</a></li>-->
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="">Points
-                                    <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="points.jsp">Points</a></li>
-                                    <li><a href="createnewpoint.jsp">New Point</a></li>
-                                    <!--
-                                     <li><a href="#">Page 1-3</a></li>-->
-                                </ul>
-                            </li>
-                            <li><a href="mypage.jsp">MyInfo</a></li>
-                        </ul>
+        <div id="wrapper">
+            <nav class="navbar navbar-inverse navbar-fixed-top navbar-default">
+                <div class="container">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+                                <!--<span class="sr-only">Toggle navigation</span>-->
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="index.jsp">SSAT<br> or something</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav pull-right">
+                                <li><a href="home.jsp">Home</a></li>
+                                <li class="active"><a href="#">Students</a></li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="">Forums
+                                        <span class="caret"></span></a>
+                                    <!--<ul class="dropdown-menu">
+                                        <li><a href="#">Page 1-1</a></li>
+                                        <li><a href="#">Page 1-2</a></li>
+                                        <li><a href="#">Page 1-3</a></li>
+                                    </ul>-->
+                                </li>
+                                <!--<li><a href="points.jsp">Points</a></li>-->
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="">Points
+                                        <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="points.jsp">Points</a></li>
+                                        <li><a href="createnewpoint.jsp">New Point</a></li>
+                                        <!--
+                                         <li><a href="#">Page 1-3</a></li>-->
+                                    </ul>
+                                </li>
+                                <li><a href="mypage.jsp">MyInfo</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
 
-        <div class="container">
-            <div class="pagecontent">
-                <h1>Exchange Students Search</h1>
-                <div class="row">
-                    <label class="control-label col-sm-2" for="nationality">Country of origin:</label>
-                    <div class="col-sm-10">
-                        <select class="form-control" id="nationality">
-                            <option value="-2">--Choose a country--</option>
-                            <option value="-1">All</option>
-                            <% 
-                                List list = NacionalidadDao.getContries();
-                                for(int k = 0; k<list.size(); k++){
-                                    NacionalidadBean bean = (NacionalidadBean)list.get(k);
-                                    out.println("<option value=\""+bean.getIdNacionalidad()+"\">"+bean.getPais()+"</option>");
-                                }
-                            %>
-                        </select>
-                    </div>
-                </div><br>
-                        <div class="row">
-                    <table id="contenido" class="table table-responsive">
-                        <tr>
-                            <td>Name</td>
-                            <td>Last Name</td>
-                            <td>Country</td>
-                            <td>Email</td>
-                        </tr> 
-                        <tbody id="cuerpo"> 
-                            <%
-                                if(session.getAttribute("studentsTable")==null){
-                                    List students = UsuarioDao.getAllStudents();
-                                    String table = "";
-                                    for (int i = 0; i < students.size(); i++) {
-                                        UsuarioBean bean = (UsuarioBean)students.get(i);
-                                        table+="<tr>";
-                                        table+="<td>"+bean.getNombre()+"</td>";
-                                        table+="<td>"+bean.getApellidos()+"</td>";
-                                        table+="<td>"+bean.getNacionalidad().getPais()+"</td>";
-                                        table+="<td>"+bean.getEmail()+"</td>";
-                                        table+="<td><button class=\"details-button\" id=\""+bean.getIdUsuario()+"\">Details</button></td>";
-                                        table+="</tr>";
-                                        System.out.println("Iteracion: "+i);
+            <div class="container">
+                <div class="pagecontent">
+                    <h1>Exchange Students Search</h1>
+                    <div class="row">
+                        <label class="control-label col-sm-2" for="nationality">Country of origin:</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="nationality">
+                                <option value="-2">--Choose a country--</option>
+                                <option value="-1">All</option>
+                                <%
+                                    List list = NacionalidadDao.getContries();
+                                    for (int k = 0; k < list.size(); k++) {
+                                        NacionalidadBean bean = (NacionalidadBean) list.get(k);
+                                        out.println("<option value=\"" + bean.getIdNacionalidad() + "\">" + bean.getPais() + "</option>");
                                     }
-                                    out.print(table);
-                                }else{
-                                    out.print(session.getAttribute("studentsTable"));
-                                    session.removeAttribute("studentsTable");
-                                }
-                            %>
-                        </tbody>
-                    </table> 
+                                %>
+                            </select>
+                        </div>
+                    </div><br>
+                    <div class="row">
+                        <table id="contenido" class="table table-responsive">
+                            <tr>
+                                <td>Name</td>
+                                <td>Last Name</td>
+                                <td>Country</td>
+                                <td>Email</td>
+                            </tr> 
+                            <tbody id="cuerpo"> 
+                                <%
+                                    if (session.getAttribute("studentsTable") == null) {
+                                        List students = UsuarioDao.getAllStudents();
+                                        String table = "";
+                                        for (int i = 0; i < students.size(); i++) {
+                                            UsuarioBean bean = (UsuarioBean) students.get(i);
+                                            table += "<tr>";
+                                            table += "<td>" + bean.getNombre() + "</td>";
+                                            table += "<td>" + bean.getApellidos() + "</td>";
+                                            table += "<td>" + bean.getNacionalidad().getPais() + "</td>";
+                                            table += "<td>" + bean.getEmail() + "</td>";
+                                            table += "<td><button class=\"details-button\" id=\"" + bean.getIdUsuario() + "\">Details</button></td>";
+                                            table += "</tr>";
+                                            System.out.println("Iteracion: " + i);
+                                        }
+                                        out.print(table);
+                                    } else {
+                                        out.print(session.getAttribute("studentsTable"));
+                                        session.removeAttribute("studentsTable");
+                                    }
+                                %>
+                            </tbody>
+                        </table> 
+                    </div>
                 </div>
             </div>
-        </div>
-        <footer class="footer">
-            <div class="container">
+            <footer class="footer">
                 <p class="text-muted">Place sticky footer content here.</p>
-            </div>
-        </footer>
+            </footer>
+        </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->

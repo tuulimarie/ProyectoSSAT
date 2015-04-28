@@ -14,12 +14,18 @@ h1,h2,h3,h4,.lead,.btn,.navbar a {
     font-family:'Voltaire',Arial,sans-serif;
     letter-spacing:2px;
 }
-body {
+html, body {
+    margin: 0;
+    padding: 0;
     height: 100%;
     width: 100%;
     font-family:Arial,sans-serif;
     background-color: whitesmoke;
     /* background-color: #F6F7BD;*/
+}
+#wrapper {
+    min-height: 100%;
+    position: relative;
 }
 
 #inputInfo {
@@ -34,9 +40,13 @@ h1 {
 .pagecontent {
     padding: 50px;
     width: 100%;
+    position: relative;
     margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
+    min-height: 100%;
+    height: auto;
+    height: 100%;
     /* background-color: rgba(50,50,50,0.5);*/
 }
 /*NAVIGATION*/
@@ -66,15 +76,15 @@ h1 {
 }
 
 .navbar-default .navbar-nav > .active{
-      color: white;
+    color: white;
     background: #424254;
-  }
-  .navbar-default .navbar-nav > .active > a, 
-  .navbar-default .navbar-nav > .active > a:hover, 
-  .navbar-default .navbar-nav > .active > a:focus {
-          color: white;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: white;
     background: #424254;
-   }
+}
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
     color: #8a0e0b;
@@ -90,7 +100,12 @@ h1 {
 /*NAVIGATION ENDS*/
 
 .footer {
+    width: 100%;
     background-color: #351330; //#32121D;
+    position: absolute;
+    bottom: 0;
+    /*bottom: -1;*/
+    left: 0;
     height: 50px;
 }
 

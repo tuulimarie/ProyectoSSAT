@@ -56,7 +56,28 @@ public class Controller extends HttpServlet {
             loadPuntosInteres(request,response);
         }else if(opcion.equals("7")){
             goToPuntosDetailsPage(request,response);
+        }else if(opcion.equals("8")){
+            ratePuntoInteres(request,response);
         }
+    }
+    
+    private void ratePuntoInteres(HttpServletRequest request, HttpServletResponse response) throws IOException{
+        String nombre = request.getParameter("nombre");
+        int rating = Integer.parseInt(request.getParameter("puntos"));
+        try {
+            int idPunto = PuntoDao.getIdPuntoByName(nombre);
+            if(idPunto==-1){
+                response.getWriter().write("false");
+                return;
+            }
+            UsuarioBean usuario = (UsuarioBean)request.getSession().getAttribute("usuario");
+            PuntoDao.ratePunto(usuario.getIdUsuario(), idPunto, rating);
+        } catch (SQLException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            response.getWriter().write("false");
+            return;
+        }
+        response.getWriter().write("true");
     }
     
     private void registration(HttpServletRequest request, HttpServletResponse response) throws IOException{

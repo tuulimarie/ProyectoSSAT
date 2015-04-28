@@ -102,13 +102,24 @@ $(document).ready(function (){
             data: "opcion=7" + "&idPunto=" + $(this).attr('id'),
             dataType: "json",
             success: function(data) {
-                     location.replace("pointdetails.jsp");
+                location.replace("pointdetails.jsp");
                 
             }
         });
     });
     
     $("#rate-submit").click(function() {
-        alert("To do");
+        $.ajax({
+            type: "POST",
+            url: 'Controller',
+            data: "opcion=8" + "&nombre=" + $("#nombre").text() + "&puntos=" +$("#rate").val(),
+            dataType: "json",
+            success: function(data) {
+                if(data.toString()=="true")
+                    alert("Rating sent for " + $("#nombre").text() +".");
+                else
+                    alert("Error: Try again later.");
+            }
+        });
     });
 });

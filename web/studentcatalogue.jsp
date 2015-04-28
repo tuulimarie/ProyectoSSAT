@@ -21,6 +21,12 @@
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="css/myStyle.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
+        <%
+        //This should be in every other webpage.
+        if(session.getAttribute("usuario")==null){
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
+        }
+        %>
         <title>Students</title>
     </head>
     <body>

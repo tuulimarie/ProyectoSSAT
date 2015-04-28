@@ -14,6 +14,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <%
+        //This should be in every other webpage.
+        if(session.getAttribute("usuario")==null){
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
+        }
+        %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -21,7 +27,7 @@
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="css/myStyle.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
-        <title>Students</title>
+        <title>Points of Interest</title>
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top navbar-default">

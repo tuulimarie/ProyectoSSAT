@@ -4,6 +4,7 @@
     Author     : tuuli-marietiilikainen
 --%>
 
+<%@page import="bean.UsuarioBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,6 +15,12 @@
         <!-- Bootstrap theme -->
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="css/myStyle.css" rel="stylesheet">
+        <%
+        //This should be in every other webpage.
+        if(session.getAttribute("usuario")==null){
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
+        }
+        %>
         <title>SSAT</title>
     </head>
     <body>

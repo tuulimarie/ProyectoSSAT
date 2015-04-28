@@ -8,6 +8,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <%
+        //This should be in every other webpage.
+        if(session.getAttribute("usuario")!=null){
+            request.getRequestDispatcher("/home.jsp").forward(request, response);
+        }
+        %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -48,7 +54,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="formcontent">
-                            <div class="form-horizontal form-login">
+                            <form class="form-horizontal form-login" action="javascript:void(0);">
                                 <legend>Log in:</legend>
                                 <div class="form-group">
                                     <label class="control-label col-sm-2" for="username">Email:</label>
@@ -72,7 +78,7 @@
                                         <p><center>Not registered? <a href="registration.jsp">Sign up!</a></center></p>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>

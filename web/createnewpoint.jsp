@@ -15,11 +15,8 @@
     <head>
         <%
         //This should be in every other webpage.
-        UsuarioBean usuario = null;
         if(session.getAttribute("usuario")==null){
             request.getRequestDispatcher("/index.jsp").forward(request, response);
-        }else{
-            usuario = (UsuarioBean)session.getAttribute("usuario");
         }
         %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

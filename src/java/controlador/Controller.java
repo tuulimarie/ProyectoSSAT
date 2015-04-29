@@ -5,10 +5,13 @@
  */
 package controlador;
 
+import bean.CategoriaBean;
+import bean.DiscusionBean;
 import bean.NacionalidadBean;
 import bean.PuntoBean;
 import bean.UsuarioBean;
 import dao.CategoriaDao;
+import dao.DiscusionDao;
 import dao.PuntoDao;
 import dao.UsuarioDao;
 import java.io.IOException;
@@ -58,6 +61,8 @@ public class Controller extends HttpServlet {
             goToPuntosDetailsPage(request,response);
         }else if(opcion.equals("8")){
             ratePuntoInteres(request,response);
+        }else if(opcion.equals("9")){
+            createNewThread(request,response);
         }
     }
     
@@ -147,6 +152,26 @@ public class Controller extends HttpServlet {
             return;
         }
         response.getWriter().write("false");
+    }
+    
+    private void createNewThread(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        ///////////////////////////////
+        DiscusionBean bean = new DiscusionBean();
+        bean.setTitulo(request.getParameter("title"));
+        bean.setContenido(request.getParameter("texto"));
+        UsuarioBean beanU = (UsuarioBean)request.getSession().getAttribute("usuario");
+        bean.setUsuario(beanU);
+        CategoriaBean cate = new CategoriaBean();
+        cate.setIdCategoria(Integer.parseInt(request.getParameter("category")));
+        bean.setCategoria(cate);
+        try {
+            DiscusionDao.createNewDiscusion(bean);
+        } catch (SQLException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            response.getWriter().write("false");
+            return;
+        }
+        response.getWriter().write("true");
     }
     
     private void loadStudentsFrom(HttpServletRequest request, HttpServletResponse response) throws IOException {

@@ -6,10 +6,7 @@
 
 <%@page import="bean.CategoriaBean"%>
 <%@page import="dao.CategoriaDao"%>
-<%@page import="bean.NacionalidadBean"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.NacionalidadDao"%>
-<%@page import="dao.NacionalidadDao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -22,7 +19,12 @@
         <!-- Bootstrap theme -->
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="css/myStyle.css" rel="stylesheet">
-
+        <%
+        //This should be in every other webpage.
+        if(session.getAttribute("usuario")==null){
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
+        }
+        %>
         <title>SSAT</title>
     </head>
     <body>
@@ -73,8 +75,7 @@
                 <div class="pagecontent">
                     <h1>Add new thread!</h1>
                     <div class="row">
-                   
-                        <div class="col-lg-12">
+                        <div class="col-lg-6">
                             <div class="formcontent">
                                 <div class="form-horizontal form-login">
                                     <legend>Write something or ask something:</legend>

@@ -122,4 +122,21 @@ $(document).ready(function (){
             }
         });
     });
+    
+    $("#create-thread").click(function() {
+        $.ajax({
+            type: "POST",
+            url: 'Controller',
+            data: "opcion=9" + "&title=" + $("#title").val() + "&texto=" +$("#texto").val() + "&category=" +$("#category").val(),
+            dataType: "json",
+            success: function(data) {
+                if(data.toString()=="true"){
+                    alert("New topic created.");
+                    location.replace("threads.jsp");
+                }
+                else
+                    alert("Error: Try again later.");
+            }
+        });
+    });
 });

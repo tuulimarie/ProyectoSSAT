@@ -55,7 +55,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="formcontent">
-                                <div class="form-horizontal form-login">
+                                <form class="form-horizontal form-login" action="javascript:void(0);">
                                     <legend>Log in:</legend>
                                     <div class="form-group">
                                         <label class="control-label col-sm-2" for="username">Email:</label>
@@ -79,8 +79,8 @@
                                             <p><center>Not registered? <a href="registration.jsp">Sign up!</a></center></p>
                                         </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>    

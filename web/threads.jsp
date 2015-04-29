@@ -1,26 +1,27 @@
 <%-- 
-    Document   : home
-    Created on : 8.4.2015, 11:39:10
-    Author     : tuuli-marietiilikainen
+    Document   : threads
+    Created on : Apr 28, 2015, 7:03:49 PM
+    Author     : alejandro
+--%>
+<%-- 
+    Document   : createnewthread
+    Created on : Apr 28, 2015, 6:58:04 PM
+    Author     : alejandro
 --%>
 
-<%@page import="bean.UsuarioBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <%String contexto = request.getContextPath();%>
         <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="css/datepicker.css">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <!-- Bootstrap theme -->
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="css/myStyle.css" rel="stylesheet">
-        <%
-        //This should be in every other webpage.
-        if(session.getAttribute("usuario")==null){
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
-        }
-        %>
+
         <title>SSAT</title>
     </head>
     <body>
@@ -39,10 +40,10 @@
                         </div>
                         <div class="collapse navbar-collapse" id="myNavbar">
                             <ul class="nav navbar-nav pull-right">
-                                <li class="active"><a href="home.jsp">Home</a></li>
+                                <li><a href="home.jsp">Home</a></li>
                                 <li><a href="studentcatalogue.jsp">Students</a></li>
-                                <li class="dropdown">
-                                    <a class="dropdown-toggle" data-toggle="dropdown" href="">Forums
+                                <li class="dropdown active">
+                                    <a class="dropdown-toggle active" data-toggle="dropdown" href="">Forums
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="createnewthread.jsp">Create New</a></li>
@@ -51,7 +52,7 @@
                                 </li>
                                 <!--<li><a href="points.jsp">Points</a></li>-->
                                 <li class="dropdown">
-                                    <a class="dropdown-toggle" data-toggle="dropdown" href="">Points
+                                    <a class="dropdown-toggle active" data-toggle="dropdown" href="">Points
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="points.jsp">Points</a></li>
@@ -66,44 +67,29 @@
                     </div>
                 </div>
             </nav>
+
             <div class="container">
                 <div class="pagecontent">
-                    <h1>Welcome!</h1>
-
-                    <div class="container">
-                        <!-- Example row of columns -->
-                        <div class="row">
-                            <div class="col-md-4">
-                                <h2>Students button here</h2>
-                                <p><a class="btn btn-default" href="#" role="button">View details of all <br> the students!&raquo;</a></p>
-                            </div>
-                            <div class="col-md-4">
-                                <p class="lead">Here you will find...
+                    <h1>Threads!</h1>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="textcontent">
+                                <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
                                 </p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <h2>Forums button here</h2>
-                                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <h2>Top points button here</h2>
-                                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <footer class="footer">
-                <p class="text-muted">Place sticky footer content here.</p>
+                <p class="text-muted">ITESM 2015.</p>
             </footer>
         </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap-datepicker.js"></script>
+        <script src="js/myjs.js"></script>
     </body>
 </html>

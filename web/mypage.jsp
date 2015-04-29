@@ -49,11 +49,10 @@
                                 <li class="dropdown">
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="">Forums
                                         <span class="caret"></span></a>
-                                    <!--<ul class="dropdown-menu">
-                                        <li><a href="#">Page 1-1</a></li>
-                                        <li><a href="#">Page 1-2</a></li>
-                                        <li><a href="#">Page 1-3</a></li>
-                                    </ul>-->
+                                    <ul class="dropdown-menu">
+                                        <li><a href="createnewthread.jsp">Create New</a></li>
+                                        <li><a href="threads.jsp">All Threads</a></li>
+                                    </ul>
                                 </li>
                                 <!--<li><a href="points.jsp">Points</a></li>-->
                                 <li class="dropdown">

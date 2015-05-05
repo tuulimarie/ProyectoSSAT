@@ -106,7 +106,7 @@
                 </div>
             </div>
             <footer class="footer">
-                <p class="text-muted">ITESM 2015.</p>
+                <p class="text-muted" align="center">ITESM 2015.</p>
             </footer>
         </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

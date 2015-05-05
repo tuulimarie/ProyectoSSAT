@@ -9,11 +9,6 @@ and open the template in the editor.
 */
 @import url(http://fonts.googleapis.com/css?family=Voltaire);
 
-h1,h2,h3,h4,.lead,.btn,.navbar a {
-    text-transform:uppercase;
-    font-family:'Voltaire',Arial,sans-serif;
-    letter-spacing:2px;
-}
 html, body {
     margin: 0;
     padding: 0;
@@ -23,6 +18,17 @@ html, body {
     background-color: whitesmoke;
     /* background-color: #F6F7BD;*/
 }
+
+h1,h2,h3,h4,.lead,.btn,.navbar a {
+    text-transform:uppercase;
+    font-family:'Voltaire',Arial,sans-serif;
+    letter-spacing:2px;
+}
+
+h1 {
+    margin: 10px;
+}
+
 #wrapper {
     min-height: 100%;
     position: relative;
@@ -33,8 +39,8 @@ html, body {
     padding-top: 10px;
 }
 
-h1 {
-    margin: 10px;
+label {
+    text-align: center;
 }
 
 .pagecontent {
@@ -42,6 +48,7 @@ h1 {
     width: 100%;
     position: relative;
     margin-top: 80px;
+    margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
     min-height: 100%;
@@ -49,6 +56,7 @@ h1 {
     height: 100%;
     /* background-color: rgba(50,50,50,0.5);*/
 }
+
 /*NAVIGATION*/
 .navbar {
     height: 100px;
@@ -79,17 +87,20 @@ h1 {
     color: white;
     background: #424254;
 }
+
 .navbar-default .navbar-nav > .active > a, 
 .navbar-default .navbar-nav > .active > a:hover, 
 .navbar-default .navbar-nav > .active > a:focus {
     color: white;
     background: #424254;
 }
+
 .navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
+.navbar-default .navbar-nav > li > a:focus{
     color: #8a0e0b;
 }
-.navbar-default .navbar-nav > .active  {
+
+.navbar-default .navbar-nav > .active {
     color: #8a0e0b;
     background: #d65c14;
 }
@@ -98,7 +109,7 @@ h1 {
     padding: 30px;
 }
 /*NAVIGATION ENDS*/
-
+/*FOOTER*/
 .footer {
     width: 100%;
     background-color: #351330; //#32121D;
@@ -106,9 +117,13 @@ h1 {
     bottom: 0;
     /*bottom: -1;*/
     left: 0;
-    height: 50px;
+    height: 70px;
 }
 
+.text-muted {
+    padding: 20px;
+}
+/*FOOTER ENDS*/
 /*BUTTONS*/
 .btn-default {
     background-color: #424254; //#762722;
@@ -120,18 +135,14 @@ h1 {
     color: whitesmoke
 }
 
-/*.jumbotron {
-
-    background: rgba(233, 213, 88, 0.5);
+.btn {
+    background-color: #424254;
+    border-color: #424254;
     background-image: none;
     background-repeat: no-repeat;
-    width: 100%;
-}*/
+}
 
-//INDEX
-/*.jumbotron h1 {
-    width: 300px;
-}*/
+/*BUTTONS END*/
 
 .lead {
     float: left;
@@ -166,6 +177,10 @@ h1 {
     float: left;
     //width: 600px; 
     margin: 10px;
+}
+
+.table tr td {
+    font-weight: bold;
 }
 /*FORMS END*/
 

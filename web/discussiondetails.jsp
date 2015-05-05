@@ -1,17 +1,8 @@
 <%-- 
-    Document   : threads
-    Created on : Apr 28, 2015, 7:03:49 PM
+    Document   : discussiondetails
+    Created on : Apr 29, 2015, 5:15:55 PM
     Author     : alejandro
 --%>
-<%@page import="bean.CategoriaBean"%>
-<%@page import="dao.CategoriaDao"%>
-<%@page import="java.util.List"%>
-<%-- 
-    Document   : createnewthread
-    Created on : Apr 28, 2015, 6:58:04 PM
-    Author     : alejandro
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -73,35 +64,47 @@
 
             <div class="container">
                 <div class="pagecontent">
-                    <h1>Forum</h1>
+                    <h1>Threads!</h1>
                     <div class="row">
-                        <label class="control-label col-sm-1" for="categoria-forum">Category:</label>
-                        <div class="col-sm-12">
-                            <select class="form-control" id="categoria-forum">
-                                <option value="-2">--Choose a category--</option>
-                                <option value="-1">All</option>
-                                <%
-                                    List list = CategoriaDao.getForumCategories();
-                                    for (int k = 0; k < list.size(); k++) {
-                                        CategoriaBean bean = (CategoriaBean) list.get(k);
-                                        out.println("<option value=\"" + bean.getIdCategoria()+ "\">" + bean.getNombre()+ "</option>");
-                                    }
-                                %>
-                            </select>
+                        <div class="well well-sm">
+                            <h3>Title</h3>
+                            <div class="row"><div class="col-lg-1">Content sfasdfsadf dsfgsdfgsdfgdfg <br> sfsdfsdgsdgsdfgdsfgdsfgdsfg</div></div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-6 author">Author</div>
+                                <div class="col-sm-6 author">Date</div>
+                            </div>
                         </div>
-                    </div><br>
+                    </div>
                     <div class="row">
-                        <table id="contenido" class="table table-responsive">
-                            <tr>
-                                <td>Title</td>
-                                <td>Author</td>
-                                <td>Category</td>
-                                <td>Date</td>
-                            </tr> 
-                            <tbody id="cuerpo"> 
-                              
-                            </tbody>
-                        </table> 
+                        <div class="well well-sm">
+                            <div class="row"><div class="col-lg-1">Content sfasdfsadf dsfgsdfgsdfgdfg <br> sfsdfsdgsdgsdfgdsfgdsfgdsfg</div></div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-6 author">Author</div>
+                                <div class="col-sm-6 author">Date</div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="well well-sm">
+                            <div class="row"><div class="col-lg-1">Content sfasdfsadf dsfgsdfgsdfgdfg <br> sfsdfsdgsdgsdfgdsfgdsfgdsfg</div></div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-6 author">Author</div>
+                                <div class="col-sm-6 author">Date</div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="well well-sm">
+                            <div class="row"><div class="col-lg-1">Content sfasdfsadf dsfgsdfgsdfgdfg <br> sfsdfsdgsdgsdfgdsfgdsfgdsfg</div></div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-6 author">Author</div>
+                                <div class="col-sm-6 author">Date</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

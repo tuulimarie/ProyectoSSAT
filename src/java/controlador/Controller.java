@@ -63,6 +63,10 @@ public class Controller extends HttpServlet {
             ratePuntoInteres(request,response);
         }else if(opcion.equals("9")){
             createNewThread(request,response);
+        }else if(opcion.equals("10")){
+            editMyinfo(request,response);
+        }else if(opcion.equals("11")){
+            saveChanges(request,response);
         }
     }
     
@@ -276,6 +280,13 @@ public class Controller extends HttpServlet {
         response.getWriter().write("true");
     }
     
+    private void editMyinfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        
+    }
+     
+    private void saveChanges(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        
+    }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

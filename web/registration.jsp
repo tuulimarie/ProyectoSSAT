@@ -61,7 +61,7 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="formcontent">
+                            <div class="rightcol">
                                 <form class="form-horizontal form-login" action="javascript:void(0);">
                                     <legend>Register:</legend>
                                     <div class="form-group">

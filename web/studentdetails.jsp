@@ -90,7 +90,7 @@
                                 <form class="form-horizontal form-login" role="form" id="" action="" method="">
                                     <legend>Student:</legend>
                                     <div class="form-group">
-                                        <label class="control-label col-sm-2" for="firstname">Firstname: </label><p><%=usuario.getNombre()%></p><br>
+                                        <label class="control-label col-sm-2" for="firstname">Firstname: </label><%=usuario.getNombre()%><br>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-sm-2" for="lastname">Lastname: </label><%=usuario.getApellidos()%><br>

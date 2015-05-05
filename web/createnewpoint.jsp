@@ -80,9 +80,9 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="formcontent">
+                            <div class="rightcol">
                                 <div class="form-horizontal form-login">
-                                    <legend>Add new... LOCATION!</legend>
+                                    <legend>Add new point:</legend>
                                     <div class="form-group">
                                         <label class="control-label col-sm-2" for="nombre">Name:*</label>
                                         <div class="col-sm-10">

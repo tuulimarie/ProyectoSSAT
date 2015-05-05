@@ -139,4 +139,31 @@ $(document).ready(function (){
             }
         });
     });
+    $("#Edit").click(function() {
+        $.ajax({
+            type:"POST",
+            url:"Controller",
+            data: "opcion=10",
+           dataType:"json",
+           success: function(data) {
+                   location.replace("editMypage.jsp");
+           }
+        });
+    });
+    $("#Save").click(function() {
+        $.ajax({
+            type:"POST",
+            url:"Controller",
+            data: "opcion=11" + "&nombre" + $("#firstname").val()+"&apellidos=" + $("#lastname").val()+"&nacionalidad=" + $("#nationality").val()+"&email=" + $("#username").val()+"&password1=" + $("#password").val()+"&password2=" + $("#password2").val()+"&date=" + $("#date").val()+ "&year=" + $("#year").val()+"&career=" + $("#career").val(),
+           dataType:"json",
+           success: function(data) {
+               if (data.toString()=="true"){
+                   alert("Changes have been saved!");
+                   location.replace("mypage.jsp");
+               }
+               else
+                   alert("Error saving data!");
+           }
+        });
+    });
 });

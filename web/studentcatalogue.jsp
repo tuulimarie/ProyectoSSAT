@@ -55,15 +55,12 @@
                                         <li><a href="threads.jsp">All Threads</a></li>
                                     </ul>
                                 </li>
-                                <!--<li><a href="points.jsp">Points</a></li>-->
                                 <li class="dropdown">
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="">Points
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="points.jsp">Points</a></li>
                                         <li><a href="createnewpoint.jsp">New Point</a></li>
-                                        <!--
-                                         <li><a href="#">Page 1-3</a></li>-->
                                     </ul>
                                 </li>
                                 <li><a href="mypage.jsp">MyInfo</a></li>
@@ -80,7 +77,7 @@
                         <label class="control-label col-sm-2" for="nationality">Country of origin:</label>
                         <div class="col-sm-10">
                             <select class="form-control" id="nationality">
-                                <option value="-2">--Choose a country--</option>
+                                <option value="-2">-Choose a country-</option>
                                 <option value="-1">All</option>
                                 <%
                                     List list = NacionalidadDao.getContries();
@@ -131,9 +128,7 @@
                 <p class="text-muted" align="center">Place sticky footer content here.</p>
             </footer>
         </div>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
         <script src="js/myjs.js"></script>
     </body>

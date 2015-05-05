@@ -73,7 +73,7 @@
 
             <div class="container">
                 <div class="pagecontent">
-                    <h1>Add new thread!</h1>
+                    <h1>Add new topic!</h1>
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="formcontent">

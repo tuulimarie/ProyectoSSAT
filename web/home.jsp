@@ -72,13 +72,10 @@
             <div class="container">
                 <div class="pagecontent">
                     <h1>Welcome!</h1>
-
                     <div class="container">
-                        <!-- Example row of columns -->
                         <div class="row">
                             <div class="col-md-4">
-                                <h2>Students button here</h2>
-                                <p><a class="btn btn-default" href="#" role="button">View details of all <br> the students!&raquo;</a></p>
+                                <p><a class="btn btn-default" href="studentcatalogue.jsp" role="button">View details of the students<br>  that have already <br> studied at Tec! &raquo;</a></p>
                             </div>
                             <div class="col-md-4">
                                 <p class="lead">Here you will find...
@@ -87,14 +84,12 @@
                         </div>
                         <div class="row">
                             <div class="col-md-4">
-                                <h2>Forums button here</h2>
-                                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                                <p><a class="btn btn-default" href="threads.jsp" role="button">Have a question? <br> Want to find information? <br> Check out forums! &raquo;</a></p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
-                                <h2>Top points button here</h2>
-                                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                                <p><a class="btn btn-default" href="points.jsp" role="button">Where to go? <br> What to do? <br> See top points! &raquo;</a></p>
                             </div>
                         </div>
                     </div>

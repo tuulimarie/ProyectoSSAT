@@ -26,17 +26,12 @@ h1,h2,h3,h4,.lead,.btn,.navbar a {
 }
 
 h1 {
-    margin: 10px;
+    padding-bottom: 10px;
 }
 
 #wrapper {
     min-height: 100%;
     position: relative;
-}
-
-#inputInfo {
-    padding-left: 30px;
-    padding-top: 10px;
 }
 
 label {

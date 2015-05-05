@@ -90,65 +90,22 @@
                                 <form class="form-horizontal form-login" role="form" id="" action="" method="">
                                     <legend>Student:</legend>
                                     <div class="form-group">
-                                        <label class="control-label col-sm-2" for="firstname">Firstname: </label><%=usuario.getNombre()%><br>
-                                        <!--<div class="col-sm-10">
-                                            <input type="text" name="firstname" class="form-control" id="firstname">
-                                        </div>-->
+                                        <label class="control-label col-sm-2" for="firstname">Firstname: </label><p><%=usuario.getNombre()%></p><br>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-sm-2" for="lastname">Lastname: </label><%=usuario.getApellidos()%><br>
-                                        <!--<div class="col-sm-10">
-                                            <input type="text" name="lastname" class="form-control" id="lastname">
-                                        </div>-->
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-sm-2" for="nacionality">Country of origin: </label><%=usuario.getNacionalidad().getPais()%><br>
-                                        <!-- <div class="col-sm-10">
-                                             <select class="form-control">
-                                                 <option>1</option>
-                                                 <option>2</option>
-                                                 <option>3</option>
-                                                 <option>4</option>
-                                                 <option>5</option>
-                                             </select>
-                                         </div>-->
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-sm-2" for="career">Career: </label> <%=usuario.getDegree()%><br>
-                                        <!--<div class="col-sm-10">
-                                            <select class="form-control">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>-->
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-sm-2" for="studytime">Time of studies:</label><%=usuario.getDate()%>
-                                        <!-- <div class="col-sm-2">
-                                             <select class="form-control">
-                                                 <option>Spring</option>
-                                                 <option>Summer</option>
-                                                 <option>Autumn</option>
-                                             </select>
-                                         </div>
-                                         <div class="col-sm-2">
-                                             <select class="form-control">
-                                                 <option>2015</option>
-                                                 <option>2014</option>
-                                                 <option>2013</option>
-                                                 <option>2012</option>
-                                                 <option>2011</option>
-                                             </select>
-                                         </div>-->
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-sm-2" for="username">Email:</label><%=usuario.getEmail()%><br>
-                                        <!-- <div class="col-sm-10">
-                                             <input type="email" name="username" class="form-control" id="username">
-                                         </div>-->
                                     </div>
                                 </form>
                             </div>

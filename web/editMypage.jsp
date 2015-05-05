@@ -1,9 +1,14 @@
 <%-- 
-    Document   : mypage
-    Created on : 8.4.2015, 11:39:26
+    Document   : editMypage
+    Created on : 4.5.2015, 19:53:33
     Author     : tuuli-marietiilikainen
 --%>
 
+
+<%@page import="dao.UsuarioDao"%>
+<%@page import="bean.NacionalidadBean"%>
+<%@page import="dao.NacionalidadDao"%>
+<%@page import="java.util.List"%>
 <%@page import="bean.UsuarioBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,15 +17,18 @@
 
         <%
             //This should be in every other webpage.
-            UsuarioBean usuario = null;
+           UsuarioBean usuario = null;
             if (session.getAttribute("usuario") == null) {
                 request.getRequestDispatcher("/index.jsp").forward(request, response);
             } else {
-                usuario = (UsuarioBean) session.getAttribute("usuario");
+                if (session.getAttribute("idStudent") == null) {
+                    request.getRequestDispatcher("/studentcatalogue.jsp").forward(request, response);
+                }
+                int id = Integer.parseInt(session.getAttribute("idStudent").toString());
+                usuario = UsuarioDao.getStudentById(id);
             }
         %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <%String contexto = request.getContextPath();%>
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <!-- Bootstrap theme -->
@@ -86,39 +94,86 @@
                                 <form class="form-horizontal form-login" role="form" id="" action="" method="">
                                     <legend>Your information:</legend>
                                     <div class="form-group">
-                                        <label class="control-label col-sm-2" for="firstname">Firstname: </label><%=usuario.getNombre()%><br>
+                                        <label class="control-label col-sm-2" for="firstname">Firstname: </label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="firstname" class="form-control" id="firstname">
+                                        </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-sm-2" for="lastname">Lastname: </label><%=usuario.getApellidos()%><br>
+                                        <label class="control-label col-sm-2" for="lastname">Lastname: </label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="lastname" class="form-control" id="lastname">
+                                        </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-sm-2" for="nacionality">Country of origin: </label><%=usuario.getNacionalidad().getPais()%><br>
+                                        <label class="control-label col-sm-2" for="nacionality">Country of origin: </label>
+                                        <div class="col-sm-10">
+                                            <select class="form-control" id="nationality">
+                                                <option value="">--Choose country--</option>
+                                                <%
+                                                    List list = NacionalidadDao.getContries();
+                                                    for (int k = 0; k < list.size(); k++) {
+                                                        NacionalidadBean bean = (NacionalidadBean) list.get(k);
+                                                        out.println("<option value=\"" + bean.getIdNacionalidad() + "\">" + bean.getPais() + "</option>");
+                                                    }
+                                                %>
+                                            </select>
+                                        </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-sm-2" for="career">Career: </label> <%=usuario.getDegree()%><br>
+                                        <label class="control-label col-sm-2" for="career">Career: </label>
+                                        <div class="col-sm-10">
+                                            <select class="form-control" id="career">
+                                                <option value="">--Choose area--</option>
+                                                <option value="Business & Management">Business & Management</option>
+                                                <option value="IT & Engineering">IT & Engineering</option>
+                                                <option value="Life Sciences & Medicine">Life Sciences & Medicine</option>
+                                                <option value="Social Sciences">Social Sciences</option>
+                                                <option value="Natural Sciences">Natural Sciences</option>
+                                            </select>
+                                        </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-sm-2" for="studytime">Time of studies:</label><%=usuario.getDate()%>
+                                        <label class="control-label col-sm-2" for="studytime">Time of studies:</label>
+                                         <div class="col-sm-2">
+                                            <select class="form-control" id="date">
+                                                <option value="Spring">Spring</option>
+                                                <option value="Summer">Summer</option>
+                                                <option value="Autumn">Autumn</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <select class="form-control" id="year">
+                                                <option value="2016">2016</option>
+                                                <option value="2015">2015</option>
+                                                <option value="2015">2014</option>
+                                                <option value="2015">2013</option>
+                                                <option value="2015">2012</option>
+                                                <option value="2015">2011</option>
+                                            </select>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-sm-2" for="username">Email:</label><%=usuario.getEmail()%><br>
+                                         <div class="col-sm-10">
+                                             <input type="email" name="username" class="form-control" id="username">
+                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-sm-2" for="password">Password:</label>
-                                        <!--<div class="col-sm-10">
+                                        <div class="col-sm-10">
                                             <input type="password" name="password" class="form-control" id="password" >
-                                        </div>-->
+                                        </div>
                                     </div>
-                                   <!-- <div class="form-group">
+                                    <div class="form-group">
                                         <label class="control-label col-sm-2" for="password">Password again:</label>
                                         <div class="col-sm-10">
                                             <input type="password" name="password" class="form-control" id="password" >
                                         </div>
-                                    </div>-->
+                                    </div>
                                     <div class="row">
                                         <div align="center">
-                                        <button type="submit" class="btn btn-default" id="Edit" value="Edit">Edit</button>
-                                        <!--<button type="submit" class="btn btn-default" name="action" id="Save" value="Save">Save changes</button>-->
+                                        <button type="submit" class="btn btn-default" name="action" id="Save" value="Save">Save changes</button>
                                         </div>
                                     </div>
                                 </form>

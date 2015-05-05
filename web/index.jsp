@@ -30,17 +30,6 @@
                     <div class="navbar-header">
                         <a class="navbar-brand" href="#">SSAT<br> or something</a>
                     </div>
-                    <!-- <div id="navbar" class="navbar-collapse collapse">
-                         <form class="navbar-form navbar-right">
-                             <div class="form-group">
-                                 <input type="text" placeholder="Email" class="form-control">
-                             </div>
-                             <div class="form-group">
-                                 <input type="password" placeholder="Password" class="form-control">
-                             </div>
-                             <button type="submit" class="btn btn-success btn-default">Sign in</button>
-                         </form>
-                     </div><!--/.navbar-collapse -->
                 </div>
             </nav>
             <div class="container">
@@ -94,20 +83,5 @@
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
         <script src="js/myjs.js"></script>
-
-        <!--         <script>
-     
-       $(document).ready(function() {
-     
-        var docHeight = $(window).height();
-        var footerHeight = $('#footer').height();
-        var footerTop = $('#footer').position().top + footerHeight;
-     
-        if (footerTop < docHeight) {
-         $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
-        }
-       });
-      </script>-->
-
     </body>
 </html>

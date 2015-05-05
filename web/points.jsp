@@ -80,7 +80,7 @@
                         <label class="control-label col-sm-2" for="category">Category:</label>
                         <div class="col-sm-10">
                             <select class="form-control" id="category">
-                                <option value="-2">--Choose a category--</option>
+                                <option value="-2">-Choose a category-</option>
                                 <option value="-1">All</option>
                                 <%
                                     List list = CategoriaDao.getPuntosCategories();

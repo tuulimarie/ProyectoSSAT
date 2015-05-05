@@ -93,7 +93,7 @@
                         </div>
                     </div><br>
                     <div class="row">
-                        <table id="contenido" class="table table-responsive">
+                        <table id="contenido" class="table table-striped">
                             <tr>
                                 <td>Name</td>
                                 <td>Last Name</td>
@@ -112,7 +112,7 @@
                                             table += "<td>" + bean.getApellidos() + "</td>";
                                             table += "<td>" + bean.getNacionalidad().getPais() + "</td>";
                                             table += "<td>" + bean.getEmail() + "</td>";
-                                            table += "<td><button class=\"details-button\" id=\"" + bean.getIdUsuario() + "\">Details</button></td>";
+                                            table += "<td><button class=\"details-button btn btn-default btn-sm\" id=\"" + bean.getIdUsuario() + "\">Details</button></td>";
                                             table += "</tr>";
                                             System.out.println("Iteracion: " + i);
                                         }
@@ -128,7 +128,7 @@
                 </div>
             </div>
             <footer class="footer">
-                <p class="text-muted">Place sticky footer content here.</p>
+                <p class="text-muted" align="center">Place sticky footer content here.</p>
             </footer>
         </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

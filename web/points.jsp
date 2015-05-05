@@ -91,9 +91,9 @@
                                 %>
                             </select>
                         </div>
-                    </div>
+                    </div><br>
                     <div class="row">
-                        <table id="contenido" class="table table-responsive">
+                        <table id="contenido" class="table table-striped">
                             <tr>
                                 <td>Name</td>
                                 <td>Description</td>
@@ -131,7 +131,7 @@
                 </div>
             </div>
             <footer class="footer">
-                <p class="text-muted">Place sticky footer content here.</p>
+                <p class="text-muted" align="center">Place sticky footer content here.</p>
             </footer>
         </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

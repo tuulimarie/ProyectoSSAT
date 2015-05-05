@@ -86,7 +86,7 @@
                 </div>    
             </div>
             <footer class="footer">
-                <p class="text-muted"><center>Place sticky footer content here.</center></p>
+                <p class="text-muted" align="center">Place sticky footer content here.</center</p>
             </footer>
         </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

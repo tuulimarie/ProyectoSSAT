@@ -16,10 +16,10 @@
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="css/myStyle.css" rel="stylesheet">
         <%
-        //This should be in every other webpage.
-        if(session.getAttribute("usuario")==null){
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
-        }
+            //This should be in every other webpage.
+            if (session.getAttribute("usuario") == null) {
+                request.getRequestDispatcher("/index.jsp").forward(request, response);
+            }
         %>
         <title>SSAT</title>
     </head>
@@ -61,6 +61,9 @@
                                     </ul>
                                 </li>
                                 <li><a href="mypage.jsp">MyInfo</a></li>
+                                <li><a href="index.jsp" class="btn btn-info btn-lg">
+                                    <span class="glyphicon glyphicon-log-out"></span>Log out</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -98,7 +101,7 @@
                 </div>
             </div>
             <footer class="footer">
-                <p class="text-muted">Place sticky footer content here.</p>
+                <p class="text-muted" align="center">Place sticky footer content here.</p>
             </footer>
         </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

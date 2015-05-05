@@ -21,6 +21,7 @@
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="css/myStyle.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
         <title>SSAT</title>
     </head>
     <body>
@@ -43,7 +44,7 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="formcontent">
+                            <div class="rightcol">
                                 <form class="form-horizontal form-login" action="javascript:void(0);">
                                     <legend>Log in:</legend>
                                     <div class="form-group">

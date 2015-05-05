@@ -67,6 +67,8 @@ public class Controller extends HttpServlet {
             editMyinfo(request,response);
         }else if(opcion.equals("11")){
             saveChanges(request,response);
+        }else if(opcion.equals("12")){
+            logout(request,response);
         }
     }
     
@@ -201,7 +203,7 @@ public class Controller extends HttpServlet {
             table+="<td>"+bean.getApellidos()+"</td>";
             table+="<td>"+bean.getNacionalidad().getPais()+"</td>";
             table+="<td>"+bean.getEmail()+"</td>";
-            table+="<td><button class=\"details-button\" id=\""+bean.getIdUsuario()+"\">Details</button></td>";
+            table+="<td><button class=\"details-button btn btn-default btn-xs\" id=\""+bean.getIdUsuario()+"\">Details</button></td>";
             table+="</tr>";
         }
         request.getSession().setAttribute("studentsTable", table);
@@ -287,6 +289,11 @@ public class Controller extends HttpServlet {
     private void saveChanges(HttpServletRequest request, HttpServletResponse response) throws IOException {
         
     }
+    
+    private void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        
+    }
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

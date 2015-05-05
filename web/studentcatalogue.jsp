@@ -109,7 +109,7 @@
                                             table += "<td>" + bean.getApellidos() + "</td>";
                                             table += "<td>" + bean.getNacionalidad().getPais() + "</td>";
                                             table += "<td>" + bean.getEmail() + "</td>";
-                                            table += "<td><button class=\"details-button btn btn-default btn-sm\" id=\"" + bean.getIdUsuario() + "\">Details</button></td>";
+                                            table += "<td><button class=\"details-button btn btn-default btn-xs\" id=\"" + bean.getIdUsuario() + "\">Details</button></td>";
                                             table += "</tr>";
                                             System.out.println("Iteracion: " + i);
                                         }

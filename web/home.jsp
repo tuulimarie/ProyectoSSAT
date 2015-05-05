@@ -15,6 +15,7 @@
         <!-- Bootstrap theme -->
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="css/myStyle.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
         <%
             //This should be in every other webpage.
             if (session.getAttribute("usuario") == null) {
@@ -61,8 +62,8 @@
                                     </ul>
                                 </li>
                                 <li><a href="mypage.jsp">MyInfo</a></li>
-                                <li><a href="index.jsp" class="btn btn-info btn-lg">
-                                    <span class="glyphicon glyphicon-log-out"></span>Log out</a>
+                                <li><a href="index.jsp" class="logoutbtn">
+                                        <span class="glyphicon glyphicon-log-out"></span>Log out</a>
                                 </li>
                             </ul>
                         </div>
@@ -73,23 +74,23 @@
                 <div class="pagecontent">
                     <h1>Welcome!</h1>
                     <div class="container">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <p><a class="btn btn-default" href="studentcatalogue.jsp" role="button">View details of the students<br>  that have already <br> studied at Tec! &raquo;</a></p>
+                        <div class="col-md-4">
+                            <div class="leftcol">
+                                <div class="homebtn">
+                                    <p><a class="btn btn-default" href="studentcatalogue.jsp" role="button">View details of the students<br>  that have already <br> studied at Tec! &raquo;</a></p>                     
+                                </div>
+                                <div class="homebtn">
+                                    <p><a class="btn btn-default" href="threads.jsp" role="button">Have a question? <br> Want to find information? <br> Check out forums! &raquo;</a></p>
+                                </div>
+                                <div class="homebtn">
+                                    <p><a class="btn btn-default" href="points.jsp" role="button">Where to go? <br> What to do? <br> See top points! &raquo;</a></p>
+                                </div>
                             </div>
-                            <div class="col-md-4">
-                                <p class="lead">Here you will find...
+                        </div>
+                        <div class="col-md-4">
+                            <div class="rightcol">
+                                <p class="lead">Here you will find...Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
                                 </p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <p><a class="btn btn-default" href="threads.jsp" role="button">Have a question? <br> Want to find information? <br> Check out forums! &raquo;</a></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <p><a class="btn btn-default" href="points.jsp" role="button">Where to go? <br> What to do? <br> See top points! &raquo;</a></p>
                             </div>
                         </div>
                     </div>

@@ -166,4 +166,15 @@ $(document).ready(function (){
            }
         });
     });
+     $(".logout").click(function() {
+        $.ajax({
+            type:"POST",
+            url:"Controller",
+            data: "opcion=12",
+           dataType:"json",
+           success: function(data) {
+                   location.replace("index.jsp");
+           }    
+        });
+    });
 });

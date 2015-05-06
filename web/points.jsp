@@ -78,7 +78,7 @@
             <div class="container">
                 <div class="pagecontent">
                     <h1>Points of Interest Search</h1>
-                    <div class="row">
+                    <div class="row form-horizontal form-login" id="select">
                         <label class="control-label col-sm-2" for="category">Category:</label>
                         <div class="col-sm-10">
                             <select class="form-control" id="category">
@@ -93,7 +93,7 @@
                                 %>
                             </select>
                         </div>
-                    </div><br>
+                    </div>
                     <div class="row">
                         <table id="contenido" class="table table-striped">
                             <tr>

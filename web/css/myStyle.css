@@ -27,7 +27,7 @@ legend,.lead,.btn,.navbar a {
 /*h1,h2,h3,h4,*/
 h1 {
     font-family: 'Pacifico', Arial, cursive;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 #wrapper {
@@ -186,4 +186,8 @@ label {
 
 .myimage {
     padding: 10px;
+}
+
+#select {
+    padding-bottom: 20px;
 }

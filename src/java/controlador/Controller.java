@@ -69,7 +69,39 @@ public class Controller extends HttpServlet {
             saveChanges(request,response);
         }else if(opcion.equals("12")){
             logout(request,response);
+        }else if(opcion.equals("13")){
+            loadDiscussions(request,response);
         }
+    }
+    
+    private void loadDiscussions(HttpServletRequest request, HttpServletResponse response) throws IOException{
+        String table = "";
+        int id = Integer.parseInt(request.getParameter("categoria"));
+        List discussions;
+        try {
+            if(id==-1){
+                discussions = DiscusionDao.loadDiscusiones();
+            }else{
+                discussions = DiscusionDao.loadDiscusionesByCategoria(id);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            response.getWriter().write("false");
+            return;
+        }
+        for (int i = 0; i < discussions.size(); i++) {
+            DiscusionBean bean = (DiscusionBean)discussions.get(i);
+            table+="<tr>";
+            table+="<td>"+bean.getTitulo()+"</td>";
+            table+="<td>"+bean.getUsuario().getNombre()+" "+bean.getUsuario().getApellidos()+"</td>";
+            table+="<td>"+bean.getCategoria().getNombre()+"</td>";
+            table+="<td>"+bean.getFecha()+"</td>";
+            table+="<td><button class=\"details-button-forum btn btn-default btn-xs\" id=\""+bean.getIdDiscusion()+"\">See topic</button></td>";
+            table+="</tr>";
+            System.out.println("controller=" + i);
+        }
+        request.getSession().setAttribute("topicsTable", table);
+        response.getWriter().write("true");
     }
     
     private void ratePuntoInteres(HttpServletRequest request, HttpServletResponse response) throws IOException{

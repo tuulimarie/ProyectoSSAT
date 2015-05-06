@@ -44,6 +44,7 @@ public class DiscusionDao {
         PreparedStatement ps = con.prepareStatement(sql1);
         ResultSet rs = ps.executeQuery();
         List discusiones = new ArrayList<DiscusionBean>();
+        int i = 1;
         
         while(rs.next()){
             DiscusionBean bean = new DiscusionBean();
@@ -51,9 +52,11 @@ public class DiscusionDao {
             bean.setContenido(rs.getString("contenido"));
             bean.setFecha(rs.getDate("fecha").toString());
             bean.setCategoria(CategoriaDao.getCategoryByID(rs.getInt("categoria")));
-            bean.setUsuario(UsuarioDao.getStudentById(rs.getInt("usuario")));
+            bean.setUsuario(UsuarioDao.getStudentById(rs.getInt("idUsuario")));
             discusiones.add(bean);
+            
         }
+        
      return discusiones;
     }
     
@@ -70,7 +73,7 @@ public class DiscusionDao {
             bean.setContenido(rs.getString("contenido"));
             bean.setFecha(rs.getDate("fecha").toString());
             bean.setCategoria(CategoriaDao.getCategoryByID(rs.getInt("categoria")));
-            bean.setUsuario(UsuarioDao.getStudentById(rs.getInt("usuario")));
+            bean.setUsuario(UsuarioDao.getStudentById(rs.getInt("idUsuario")));
             discusiones.add(bean);
         }
      return discusiones;

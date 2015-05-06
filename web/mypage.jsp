@@ -69,6 +69,9 @@
                                     </ul>
                                 </li>
                                 <li class="active"><a href="#">MyInfo</a></li>
+                                <li><a href="index.jsp" class="logoutbtn">
+                                        <span class="glyphicon glyphicon-log-out"></span>Log out</a>
+                                </li>
                             </ul>
                         </div>
                     </div>

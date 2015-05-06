@@ -10,7 +10,7 @@ $(document).ready(function (){
          $.ajax({
             type: "POST",
             url: 'Controller',
-            data: "opcion=1"+"&nombre=" + $("#firstname").val()+"&apellidos=" + $("#lastname").val()+"&nacionalidad=" + $("#nationality").val()+"&email=" + $("#username").val()+"&password1=" + $("#password").val()+"&password2=" + $("#password2").val()+"&date=" + $("#date").val()+ "&year=" + $("#year").val()+"&career=" + $("#career").val(),
+            data: "opcion=1"+"&nombre=" + $("#firstname").val()+"&apellidos=" + $("#lastname").val()+"&nacionalidad=" + $("#nationality").val()+"&email=" + $("#username").val()+"&password1=" + sha256_digest($("#password").val())+"&password2=" + sha256_digest($("#password2").val())+"&date=" + $("#date").val()+ "&year=" + $("#year").val()+"&career=" + $("#career").val(),
             dataType: "json",
             success: function(data) {
                 if (data.toString() == "true") {
@@ -67,6 +67,22 @@ $(document).ready(function (){
             }
         });
     });
+    $( "#categoria-forum" ).change(function() {
+        $.ajax({
+            type: "POST",
+            url: 'Controller',
+            data: "opcion=13"+"&categoria=" + $("#categoria-forum").val(),
+            dataType: "json",
+            success: function(data) {
+                if (data == "false") {
+                    alert("Couldn't load content.");
+                } else {
+                     location.reload();
+                }
+            }
+        });
+    });
+    
     $( "#SavePuntoInteres" ).click(function() {
         $.ajax({
             type: "POST",
@@ -88,6 +104,18 @@ $(document).ready(function (){
             type: "POST",
             url: 'Controller',
             data: "opcion=4" + "&idStudent=" + $(this).attr('id'),
+            dataType: "json",
+            success: function(data) {
+                     location.replace("studentdetails.jsp");
+                
+            }
+        });
+    });
+    $(".details-button-forum").click(function() {
+        $.ajax({
+            type: "POST",
+            url: 'Controller',
+            data: "opcion=14" + "&idStudent=" + $(this).attr('id'),
             dataType: "json",
             success: function(data) {
                      location.replace("studentdetails.jsp");

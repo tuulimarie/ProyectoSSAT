@@ -36,7 +36,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.jsp">SSAT<br> or something</a>
+                        <a class="navbar-brand" href="index.jsp"><img src="logo.png" alt="logo" id="logo"></a>
                     </div>
                     <!-- <div id="navbar" class="navbar-collapse collapse">
                          <form class="navbar-form navbar-right">

@@ -29,7 +29,7 @@
             <nav class="navbar navbar-inverse navbar-fixed-top navbar-default">
                 <div class="container">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="#">SSAT<br> or something</a>
+                        <a class="navbar-brand" href="#"><img src="logo.png" alt="logo" id="logo"></a>
                     </div>
                 </div>
             </nav>

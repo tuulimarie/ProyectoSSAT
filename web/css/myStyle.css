@@ -65,7 +65,7 @@ label {
 
 .navbar-brand {
     font-size: 30px;
-    padding: 30px;
+    margin: -10px;
     color: black;
 }
 
@@ -194,4 +194,8 @@ label {
 
 #homebtn {
     width:250px;
+}
+
+.pointpage {
+    align:center;
 }

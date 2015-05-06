@@ -27,6 +27,8 @@
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="css/myStyle.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
+                <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
         <title>SSAT</title>
     </head>
     <body>
@@ -117,7 +119,7 @@
                                     </div>-->
                                     <div class="row">
                                         <div align="center">
-                                        <button type="submit" class="btn btn-default" id="Edit" value="Edit">Edit</button>
+                                            <button type="submit" class="btn btn-default" id="Edit" value="Edit">Edit</button>
                                         <!--<button type="submit" class="btn btn-default" name="action" id="Save" value="Save">Save changes</button>-->
                                         </div>
                                     </div>
@@ -135,5 +137,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
+    
+    </script>
     </body>
 </html>

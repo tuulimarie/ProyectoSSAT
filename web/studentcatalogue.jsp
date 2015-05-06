@@ -21,6 +21,8 @@
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="css/myStyle.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
+                <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
         <%
         //This should be in every other webpage.
         if(session.getAttribute("usuario")==null){
@@ -73,7 +75,8 @@
             <div class="container">
                 <div class="pagecontent">
                     <h1>Exchange Students Search</h1>
-                    <div class="row">
+                    
+                    <div class="form-group">
                         <label class="control-label col-sm-2" for="nationality">Country of origin:</label>
                         <div class="col-sm-10">
                             <select class="form-control" id="nationality">
@@ -88,7 +91,8 @@
                                 %>
                             </select>
                         </div>
-                    </div><br>
+                    </div>
+                    
                     <div class="row">
                         <table id="contenido" class="table table-striped">
                             <tr>

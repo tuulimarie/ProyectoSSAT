@@ -75,8 +75,7 @@
             <div class="container">
                 <div class="pagecontent">
                     <h1>Exchange Students Search</h1>
-                    
-                    <div class="form-group">
+                    <div class="row form-horizontal form-login" id="select">     
                         <label class="control-label col-sm-2" for="nationality">Country of origin:</label>
                         <div class="col-sm-10">
                             <select class="form-control" id="nationality">
@@ -92,7 +91,9 @@
                             </select>
                         </div>
                     </div>
-                    
+                           
+                            
+                            <br>
                     <div class="row">
                         <table id="contenido" class="table table-striped">
                             <tr>

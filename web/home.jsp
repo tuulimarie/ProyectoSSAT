@@ -77,13 +77,13 @@
                         <div class="col-md-4">
                             <div class="leftcol">
                                 <div class="homebtn">
-                                    <p><a class="btn btn-default" href="studentcatalogue.jsp" role="button">View details of the students<br>  that have already <br> studied at Tec! &raquo;</a></p>                     
+                                    <p><a class="btn btn-default" id="homebtn" href="studentcatalogue.jsp" role="button">View details of the students<br>  that have already <br> studied at Tec! &raquo;</a></p>                     
                                 </div>
                                 <div class="homebtn">
-                                    <p><a class="btn btn-default" href="threads.jsp" role="button">Have a question? <br> Want to find information? <br> Check out forums! &raquo;</a></p>
+                                    <p><a class="btn btn-default" id="homebtn" href="threads.jsp" role="button">Have a question? <br> Want to find information? <br> Check out forums! &raquo;</a></p>
                                 </div>
                                 <div class="homebtn">
-                                    <p><a class="btn btn-default" href="points.jsp" role="button">Where to go? <br> What to do? <br> See top points! &raquo;</a></p>
+                                    <p><a class="btn btn-default" id="homebtn" href="points.jsp" role="button">Where to go? <br> What to do? <br> See top points! &raquo;</a></p>
                                 </div>
                             </div>
                         </div>

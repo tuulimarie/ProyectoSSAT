@@ -143,9 +143,10 @@ $(document).ready(function (){
             data: "opcion=8" + "&nombre=" + $("#nombre").text() + "&puntos=" +$("#rate").val(),
             dataType: "json",
             success: function(data) {
-                if(data.toString()=="true")
+                if(data.toString()=="true"){
                     alert("Rating sent for " + $("#nombre").text() +".");
-                else
+                    location.replace("points.jsp");
+                }else
                     alert("Error: Try again later.");
             }
         });

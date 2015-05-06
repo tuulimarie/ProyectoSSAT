@@ -44,8 +44,12 @@ public class Controller extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         String opcion = request.getParameter("opcion");
-        if(opcion.equals("1")){
+        if(opcion==null){
+            request.getSession().setAttribute("usuario", null);
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        }else if(opcion.equals("1")){
             registration(request, response);
         }else if(opcion.equals("2")){
             login(request,response);

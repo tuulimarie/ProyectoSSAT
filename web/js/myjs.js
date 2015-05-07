@@ -145,7 +145,7 @@ $(document).ready(function (){
                 if(data.toString()=="true"){
                     alert("Reply sent.");
                     $("#texto").val('');
-                    location.replace("threads.jsp");
+                    location.reload();
                 }else
                     alert("Error: Try again later.");
             }

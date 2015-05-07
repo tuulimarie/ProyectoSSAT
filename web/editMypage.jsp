@@ -93,7 +93,7 @@
                         <div class="col-md-4">
                             <div class="rightcol">
                                 <div class="formcontent">
-                                    <form class="form-horizontal form-login" role="form" id="" action="" method="">
+                                    <form class="form-horizontal form-login" role="form" id="" action="javascript:void(0);" method="">
                                         <legend>Your information:</legend>
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="firstname">Firstname: </label>
@@ -193,5 +193,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/myjs.js"></script>
     </body>
 </html>

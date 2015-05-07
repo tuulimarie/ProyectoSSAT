@@ -156,7 +156,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-sm-2" for="username">Email:</label><%=usuario.getEmail()%><br>
+                                            <label class="control-label col-sm-2" for="username">Email:</label>
                                             <div class="col-sm-10">
                                                 <input type="email" name="username" class="form-control" id="username">
                                             </div>

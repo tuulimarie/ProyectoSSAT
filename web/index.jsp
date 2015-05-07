@@ -39,7 +39,8 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="textcontent">
-                                <p class="lead">This is the webpage for the exchange students to share their experience and learn from the others' experience. If you want to register, please contact the web administrator.
+                               <p class="lead">This webpage is for exchange students that have studied at Tecnologico de Monterrey, Campus Cuernavaca.
+                                    Here you can share your experience in Mexico and learn from the others' experiences. If you want to register, please contact the web administrator .
                                 </p>
                             </div>
                         </div>

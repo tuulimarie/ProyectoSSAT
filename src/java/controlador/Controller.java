@@ -9,14 +9,17 @@ import bean.CategoriaBean;
 import bean.DiscusionBean;
 import bean.NacionalidadBean;
 import bean.PuntoBean;
+import bean.RespuestaBean;
 import bean.UsuarioBean;
 import dao.CategoriaDao;
 import dao.DiscusionDao;
 import dao.PuntoDao;
+import dao.RespuestaDao;
 import dao.UsuarioDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -75,9 +78,31 @@ public class Controller extends HttpServlet {
             logout(request,response);
         }else if(opcion.equals("13")){
             loadDiscussions(request,response);
+        }else if(opcion.equals("14")){
+            forumDetails(request,response);
+        }else if(opcion.equals("15")){
+            submitResponse(request,response);
         }
     }
-    
+    private void submitResponse(HttpServletRequest request, HttpServletResponse response) throws IOException{
+        UsuarioBean usuario=(UsuarioBean)request.getSession().getAttribute("usuario");
+        int id=Integer.parseInt(request.getSession().getAttribute("idDiscusion").toString());
+        String texto = request.getParameter("texto");
+        RespuestaBean bean = new RespuestaBean();
+        bean.setContenido(texto);
+        bean.setUsuario(usuario);
+        try {
+            bean.setDiscusion(DiscusionDao.getDiscussionForID(id));
+            RespuestaDao.createNewResponse(bean);
+        } catch (SQLException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            response.getWriter().write("false");
+            return;
+        }
+        System.out.println(usuario.getNombre() + "idDIscusion " + id);
+        
+        response.getWriter().write("true");
+    }
     private void loadDiscussions(HttpServletRequest request, HttpServletResponse response) throws IOException{
         String table = "";
         int id = Integer.parseInt(request.getParameter("categoria"));
@@ -250,6 +275,49 @@ public class Controller extends HttpServlet {
         String id = request.getParameter("idStudent");
         request.getSession().setAttribute("idStudent", id);
         System.out.println("Details");
+        response.getWriter().write("true");
+    }
+    
+    private void forumDetails(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        int id = Integer.parseInt(request.getParameter("idDiscusion"));
+        request.getSession().setAttribute("idDiscusion", request.getParameter("idDiscusion"));
+        String heading="";
+        DiscusionBean bean = null;
+        try{
+            bean = DiscusionDao.getDiscussionForID(id);
+        }catch(SQLException ex){
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            response.getWriter().write("false");
+            return;
+        }
+        heading+="<div class=\"row\">";
+        heading+="<div class=\"well well-sm\">";
+        heading+="<h3>"+bean.getTitulo()+"</h3>";
+        heading+="<div class=\"row\"><div class=\"col-lg-1\">"+bean.getContenido()+"</div></div>";
+        heading+="<br>";
+        heading+="<div class=\"row\">";
+        heading+="<div class=\"col-sm-6 author\">"+bean.getUsuario().getNombre()+" "+bean.getUsuario().getApellidos()+"</div>";
+        heading+="<div class=\"col-sm-6 author\">"+bean.getFecha()+"</div></div></div></div>";
+        System.out.println("asdasdasd");
+        List respuestas = new ArrayList();
+        try {
+             respuestas = RespuestaDao.getResponsesForID(id);
+        } catch (SQLException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            response.getWriter().write("false");
+            return;
+        }
+        for(int i = 0; i<respuestas.size();i++){
+            RespuestaBean beanResp = (RespuestaBean)respuestas.get(i);
+            heading+="<div class=\"row\">";
+            heading+="<div class=\"well well-sm\">";
+            heading+="<div class=\"row\"><div class=\"col-lg-1\">"+beanResp.getContenido()+"</div></div>";
+            heading+="<br>";
+            heading+="<div class=\"row\">";
+            heading+="<div class=\"col-sm-6 author\">"+beanResp.getUsuario().getNombre()+" "+beanResp.getUsuario().getApellidos()+"</div>";
+            heading+="<div class=\"col-sm-6 author\">"+beanResp.getFecha()+"</div></div></div></div>";
+        }
+        request.getSession().setAttribute("tituloDiscusion", heading);
         response.getWriter().write("true");
     }
     

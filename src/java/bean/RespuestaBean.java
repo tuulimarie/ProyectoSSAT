@@ -16,7 +16,7 @@ public class RespuestaBean {
     private int idRespuesta;
     private String titulo;
     private String contenido;
-    private Date fecha;
+    private String fecha;
     private DiscusionBean discusion;
     private UsuarioBean usuario;
 
@@ -44,11 +44,11 @@ public class RespuestaBean {
         this.contenido = contenido;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 

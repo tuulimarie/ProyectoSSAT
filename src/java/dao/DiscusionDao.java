@@ -22,6 +22,7 @@ import utilerias.ConexionSql;
 public class DiscusionDao {
     private static String sql1 = "SELECT * FROM discusion;";
     private static String sql2 = "SELECT * FROM discusion WHERE categoria=?;";
+    private static String sql3 = "SELECT * FROM discusion WHERE idDiscusion=?;";
     private static String sql4 = "INSERT INTO discusion (titulo,contenido,fecha,idusuario,categoria) VALUES(?,?,?,?,?);";
     
     public static void createNewDiscusion(DiscusionBean bean) throws SQLException{
@@ -38,6 +39,24 @@ public class DiscusionDao {
         ps.executeUpdate();
         
     }
+    public static DiscusionBean getDiscussionForID(int id) throws SQLException{
+        Connection con = ConexionSql.getConnection();
+        PreparedStatement ps = con.prepareStatement(sql3);
+        ps.setInt(1, id);
+        System.out.println("idhjjhg="+id);
+        ResultSet rs = ps.executeQuery();
+        
+        rs.next();
+        
+        DiscusionBean bean = new DiscusionBean();
+        bean.setTitulo(rs.getString("titulo"));
+        bean.setIdDiscusion(id);
+        bean.setContenido(rs.getString("contenido"));
+        bean.setFecha(rs.getDate("fecha").toString());
+        bean.setCategoria(CategoriaDao.getCategoryByID(rs.getInt("categoria")));
+        bean.setUsuario(UsuarioDao.getStudentById(rs.getInt("idUsuario")));
+        return bean;
+    }
     
     public static List loadDiscusiones() throws SQLException{
         Connection con = ConexionSql.getConnection();
@@ -48,6 +67,7 @@ public class DiscusionDao {
         
         while(rs.next()){
             DiscusionBean bean = new DiscusionBean();
+            bean.setIdDiscusion(rs.getInt("idDiscusion"));
             bean.setTitulo(rs.getString("titulo"));
             bean.setContenido(rs.getString("contenido"));
             bean.setFecha(rs.getDate("fecha").toString());
@@ -69,6 +89,7 @@ public class DiscusionDao {
         
         while(rs.next()){
             DiscusionBean bean = new DiscusionBean();
+            bean.setIdDiscusion(rs.getInt("idDiscusion"));
             bean.setTitulo(rs.getString("titulo"));
             bean.setContenido(rs.getString("contenido"));
             bean.setFecha(rs.getDate("fecha").toString());

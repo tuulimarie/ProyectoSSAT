@@ -115,10 +115,10 @@ $(document).ready(function (){
         $.ajax({
             type: "POST",
             url: 'Controller',
-            data: "opcion=14" + "&idStudent=" + $(this).attr('id'),
+            data: "opcion=14" + "&idDiscusion=" + $(this).attr('id'),
             dataType: "json",
             success: function(data) {
-                     location.replace("studentdetails.jsp");
+                     location.replace("discussiondetails.jsp");
                 
             }
         });
@@ -135,7 +135,22 @@ $(document).ready(function (){
             }
         });
     });
-    
+    $("#submit-reply").click(function() {
+        $.ajax({
+            type: "POST",
+            url: 'Controller',
+            data: "opcion=15" + "&texto=" +$("#texto").val(),
+            dataType: "json",
+            success: function(data) {
+                if(data.toString()=="true"){
+                    alert("Reply sent.");
+                    $("#texto").val('');
+                    location.replace("threads.jsp");
+                }else
+                    alert("Error: Try again later.");
+            }
+        });
+    });
     $("#rate-submit").click(function() {
         $.ajax({
             type: "POST",
@@ -166,17 +181,6 @@ $(document).ready(function (){
                 else
                     alert("Error: Try again later.");
             }
-        });
-    });
-    $("#Edit").click(function() {
-        $.ajax({
-            type:"POST",
-            url:"Controller",
-            data: "opcion=10",
-           dataType:"json",
-           success: function(data) {
-                   location.replace("editMypage.jsp");
-           }
         });
     });
     $("#Save").click(function() {

@@ -39,7 +39,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="textcontent">
-                                <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                                <p class="lead">This is the webpage for the exchange students to share their experience and learn from the others' experience. If you want to register, please contact the web administrator.
                                 </p>
                             </div>
                         </div>

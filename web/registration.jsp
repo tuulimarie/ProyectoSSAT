@@ -58,7 +58,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="textcontent">
-                                <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                                <p class="lead">Please create the account using the email you provided to the web administrator. 
                                 </p>
                             </div>
                         </div>

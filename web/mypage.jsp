@@ -88,7 +88,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="formcontent">
-                                <form class="form-horizontal form-login" role="form" id="" action="" method="">
+                                <div class="form-horizontal form-login" role="form">
                                     <legend>Your information:</legend>
                                     <div class="form-group">
                                         <label class="control-label col-sm-2" for="firstname">Firstname: </label><%=usuario.getNombre()%><br>
@@ -122,11 +122,11 @@
                                     </div>-->
                                     <div class="row">
                                         <div align="center">
-                                            <button type="submit" class="btn btn-default" id="Edit" value="Edit">Edit</button>
+                                            <a href="editMypage.jsp"><button class="btn btn-default" id="Edit" value="Edit">Edit</button></a>
                                         <!--<button type="submit" class="btn btn-default" name="action" id="Save" value="Save">Save changes</button>-->
                                         </div>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -140,7 +140,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
-    
+        <script src="js/myjs.js"></script>
     </script>
     </body>
 </html>

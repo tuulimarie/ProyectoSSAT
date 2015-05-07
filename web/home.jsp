@@ -18,9 +18,11 @@
         <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
         <%
             //This should be in every other webpage.
+            UsuarioBean usuario=null;
             if (session.getAttribute("usuario") == null) {
                 request.getRequestDispatcher("/index.jsp").forward(request, response);
-            }
+            }else
+                usuario = (UsuarioBean)session.getAttribute("usuario");
         %>
         <title>SSAT</title>
     </head>
@@ -72,7 +74,7 @@
             </nav>
             <div class="container">
                 <div class="pagecontent">
-                    <h1>Welcome!</h1>
+                    <h1>Welcome, <%=usuario.getNombre()%>! </h1>
                     <div class="container">
                         <div class="col-md-4">
                             <div class="leftcol">
@@ -89,7 +91,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="rightcol">
-                                <p class="lead">Here you will find...Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                                <p class="lead"> 
                                 </p>
                             </div>
                         </div>

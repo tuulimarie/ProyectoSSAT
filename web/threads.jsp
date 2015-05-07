@@ -3,6 +3,8 @@
     Created on : Apr 28, 2015, 7:03:49 PM
     Author     : alejandro
 --%>
+<%@page import="bean.DiscusionBean"%>
+<%@page import="dao.DiscusionDao"%>
 <%@page import="bean.CategoriaBean"%>
 <%@page import="dao.CategoriaDao"%>
 <%@page import="java.util.List"%>
@@ -16,6 +18,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+       <% if (session.getAttribute("usuario") == null) {
+                request.getRequestDispatcher("/index.jsp").forward(request, response);
+            }
+       %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%String contexto = request.getContextPath();%>
         <!-- Bootstrap core CSS -->
@@ -82,7 +88,7 @@
                         <label class="control-label col-sm-1" for="categoria-forum">Category:</label>
                         <div class="col-sm-12">
                             <select class="form-control" id="categoria-forum">
-                                <option value="-2">--Choose a category--</option>
+                                <option value="-1">--Choose a category--</option>
                                 <option value="-1">All</option>
                                 <%
                                     List list = CategoriaDao.getForumCategories();
@@ -103,7 +109,27 @@
                                 <td>Date</td>
                             </tr> 
                             <tbody id="cuerpo"> 
-                              
+                               <%
+                                if (session.getAttribute("topicsTable") == null){
+                                    List discussions;
+                                    String table = "";
+                                    discussions = DiscusionDao.loadDiscusiones();
+                                    for (int i = 0; i < discussions.size(); i++) {
+                                        DiscusionBean bean = (DiscusionBean)discussions.get(i);
+                                        table+="<tr>";
+                                        table+="<td>"+bean.getTitulo()+"</td>";
+                                        table+="<td>"+bean.getUsuario().getNombre()+" "+bean.getUsuario().getApellidos()+"</td>";
+                                        table+="<td>"+bean.getCategoria().getNombre()+"</td>";
+                                        table+="<td>"+bean.getFecha()+"</td>";
+                                        table+="<td><button class=\"details-button-forum btn btn-default btn-xs\" id=\""+bean.getIdDiscusion()+"\">See topic</button></td>";
+                                        table+="</tr>";
+                                        System.out.println("idDisucusion: "+bean.getIdDiscusion());
+                                    }
+                                    out.print(table);
+                                }else{
+                                    out.print(session.getAttribute("topicsTable"));
+                                }
+                               %>
                             </tbody>
                         </table> 
                     </div>

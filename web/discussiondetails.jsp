@@ -3,6 +3,9 @@
     Created on : Apr 29, 2015, 5:15:55 PM
     Author     : alejandro
 --%>
+<%@page import="dao.DiscusionDao"%>
+<%@page import="bean.DiscusionBean"%>
+<%@page import="bean.UsuarioBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,7 +19,19 @@
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="css/myStyle.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-
+        <%
+            //This should be in every other webpage.
+            DiscusionBean discusion = null;
+            if (session.getAttribute("usuario") == null) {
+                request.getRequestDispatcher("/index.jsp").forward(request, response);
+            } else {
+                if (session.getAttribute("tituloDiscusion") == null||session.getAttribute("idDiscusion") == null) {
+                    request.getRequestDispatcher("/threads.jsp").forward(request, response);
+                }
+                int id = Integer.parseInt(session.getAttribute("idDiscusion").toString());
+                discusion = DiscusionDao.getDiscussionForID(id);
+            }
+        %>
         <title>SSAT</title>
     </head>
     <body>
@@ -69,45 +84,15 @@
             <div class="container">
                 <div class="pagecontent">
                     <h1>Threads!</h1>
-                    <div class="row">
-                        <div class="well well-sm">
-                            <h3>Title</h3>
-                            <div class="row"><div class="col-lg-1">Content sfasdfsadf dsfgsdfgsdfgdfg <br> sfsdfsdgsdgsdfgdsfgdsfgdsfg</div></div>
-                            <br>
-                            <div class="row">
-                                <div class="col-sm-6 author">Author</div>
-                                <div class="col-sm-6 author">Date</div>
-                            </div>
+                    <%=session.getAttribute("tituloDiscusion")%>
+                    <div class="form-group">
+                        <div class="col-lg-12">
+                            <textarea class="form-control" id="texto" rows="10"></textarea>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="well well-sm">
-                            <div class="row"><div class="col-lg-1">Content sfasdfsadf dsfgsdfgsdfgdfg <br> sfsdfsdgsdgsdfgdsfgdsfgdsfg</div></div>
-                            <br>
-                            <div class="row">
-                                <div class="col-sm-6 author">Author</div>
-                                <div class="col-sm-6 author">Date</div>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="row">
-                        <div class="well well-sm">
-                            <div class="row"><div class="col-lg-1">Content sfasdfsadf dsfgsdfgsdfgdfg <br> sfsdfsdgsdgsdfgdsfgdsfgdsfg</div></div>
-                            <br>
-                            <div class="row">
-                                <div class="col-sm-6 author">Author</div>
-                                <div class="col-sm-6 author">Date</div>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="row">
-                        <div class="well well-sm">
-                            <div class="row"><div class="col-lg-1">Content sfasdfsadf dsfgsdfgsdfgdfg <br> sfsdfsdgsdgsdfgdsfgdsfgdsfg</div></div>
-                            <br>
-                            <div class="row">
-                                <div class="col-sm-6 author">Author</div>
-                                <div class="col-sm-6 author">Date</div>
-                            </div>
+                        <div align="center">
+                            <button type="submit" class="btn btn-default" name="action" id="submit-reply" value="create">Reply</button>
                         </div>
                     </div>
                 </div>

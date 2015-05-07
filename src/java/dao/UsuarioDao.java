@@ -27,7 +27,7 @@ public class UsuarioDao {
     private static String sql3 = "SELECT * FROM Usuario WHERE nacionalidad=?;";
     private static String sql4 = "SELECT idUsuario,nombre FROM Usuario WHERE email=?;";
     private static String sql5 = "UPDATE Usuario SET nombre=?, apellidos=?, nacionalidad=?, password=?, degree=?, date=? WHERE idUsuario=?";
-    
+    private static String sql7 = "UPDATE Usuario SET nombre=?, apellidos=?, nacionalidad=?, password=?, degree=?, date=?, email=? WHERE idUsuario=?";
     public static UsuarioBean getStudentById(int id) throws SQLException{
         Connection con = ConexionSql.getConnection();
         PreparedStatement ps = con.prepareCall(sql2);
@@ -117,6 +117,23 @@ public class UsuarioDao {
         }else{
             return false;
         }
+        return true;
+    }
+    public static boolean editMyInfo(UsuarioBean bean) throws SQLException{
+        Connection con = ConexionSql.getConnection();
+        PreparedStatement ps;
+       
+        ps = con.prepareStatement(sql7);
+        ps.setString(1,bean.getNombre());
+        ps.setString(2,bean.getApellidos());
+        ps.setInt(3,bean.getNacionalidad().getIdNacionalidad());
+        ps.setString(4,bean.getPassword());
+        ps.setString(5,bean.getDegree());
+        ps.setString(6,bean.getDate());
+        ps.setString(7,bean.getEmail());
+        ps.setInt(8,bean.getIdUsuario());
+        ps.executeUpdate();
+
         return true;
     }
     public static UsuarioBean login(UsuarioBean bean) throws SQLException{

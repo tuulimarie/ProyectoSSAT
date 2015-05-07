@@ -84,25 +84,7 @@ public class Controller extends HttpServlet {
             submitResponse(request,response);
         }
     }
-    private void submitResponse(HttpServletRequest request, HttpServletResponse response) throws IOException{
-        UsuarioBean usuario=(UsuarioBean)request.getSession().getAttribute("usuario");
-        int id=Integer.parseInt(request.getSession().getAttribute("idDiscusion").toString());
-        String texto = request.getParameter("texto");
-        RespuestaBean bean = new RespuestaBean();
-        bean.setContenido(texto);
-        bean.setUsuario(usuario);
-        try {
-            bean.setDiscusion(DiscusionDao.getDiscussionForID(id));
-            RespuestaDao.createNewResponse(bean);
-        } catch (SQLException ex) {
-            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
-            response.getWriter().write("false");
-            return;
-        }
-        System.out.println(usuario.getNombre() + "idDIscusion " + id);
-        
-        response.getWriter().write("true");
-    }
+    
     private void loadDiscussions(HttpServletRequest request, HttpServletResponse response) throws IOException{
         String table = "";
         int id = Integer.parseInt(request.getParameter("categoria"));
@@ -277,7 +259,62 @@ public class Controller extends HttpServlet {
         System.out.println("Details");
         response.getWriter().write("true");
     }
-    
+    private void submitResponse(HttpServletRequest request, HttpServletResponse response) throws IOException{
+        UsuarioBean usuario=(UsuarioBean)request.getSession().getAttribute("usuario");
+        int id=Integer.parseInt(request.getSession().getAttribute("idDiscusion").toString());
+        String texto = request.getParameter("texto");
+        RespuestaBean bean = new RespuestaBean();
+        bean.setContenido(texto);
+        bean.setUsuario(usuario);
+        try {
+            bean.setDiscusion(DiscusionDao.getDiscussionForID(id));
+            RespuestaDao.createNewResponse(bean);
+        } catch (SQLException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            response.getWriter().write("false");
+            return;
+        }
+        System.out.println(usuario.getNombre() + "idDIscusion " + id);
+        String heading="";
+        DiscusionBean beanD = null;
+        try{
+            beanD = DiscusionDao.getDiscussionForID(id);
+        }catch(SQLException ex){
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            response.getWriter().write("false");
+            return;
+        }
+        heading+="<div class=\"row\">";
+        heading+="<div class=\"well well-sm\">";
+        heading+="<h3>"+beanD.getTitulo()+"</h3>";
+        heading+="<div class=\"row\"><div class=\"col-lg-1\">"+beanD.getContenido()+"</div></div>";
+        heading+="<br>";
+        heading+="<div class=\"row\">";
+        heading+="<div class=\"col-sm-6 author\">"+beanD.getUsuario().getNombre()+" "+beanD.getUsuario().getApellidos()+"</div>";
+        heading+="<div class=\"col-sm-6 author\">"+beanD.getFecha()+"</div></div></div></div>";
+        System.out.println("asdasdasd");
+        List respuestas = new ArrayList();
+        try {
+             respuestas = RespuestaDao.getResponsesForID(id);
+        } catch (SQLException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            response.getWriter().write("false");
+            return;
+        }
+        for(int i = 0; i<respuestas.size();i++){
+            RespuestaBean beanResp = (RespuestaBean)respuestas.get(i);
+            heading+="<div class=\"row\">";
+            heading+="<div class=\"well well-sm\">";
+            heading+="<div class=\"row\"><div class=\"col-lg-1\">"+beanResp.getContenido()+"</div></div>";
+            heading+="<br>";
+            heading+="<div class=\"row\">";
+            heading+="<div class=\"col-sm-6 author\">"+beanResp.getUsuario().getNombre()+" "+beanResp.getUsuario().getApellidos()+"</div>";
+            heading+="<div class=\"col-sm-6 author\">"+beanResp.getFecha()+"</div></div></div></div>";
+        }
+        request.getSession().setAttribute("tituloDiscusion", heading);
+        request.getSession().setAttribute("idDiscusion",id);
+        response.getWriter().write("true");
+    }
     private void forumDetails(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int id = Integer.parseInt(request.getParameter("idDiscusion"));
         request.getSession().setAttribute("idDiscusion", request.getParameter("idDiscusion"));
@@ -392,6 +429,7 @@ public class Controller extends HttpServlet {
      
     private void saveChanges(HttpServletRequest request, HttpServletResponse response) throws IOException {
         
+        response.getWriter().write("true");
     }
     
     private void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {

@@ -121,10 +121,10 @@ public class Controller extends HttpServlet {
         for (int i = 0; i < discussions.size(); i++) {
             DiscusionBean bean = (DiscusionBean)discussions.get(i);
             table+="<tr>";
-            table+="<td>"+bean.getTitulo()+"</td>";
-            table+="<td>"+bean.getUsuario().getNombre()+" "+bean.getUsuario().getApellidos()+"</td>";
-            table+="<td>"+bean.getCategoria().getNombre()+"</td>";
-            table+="<td>"+bean.getFecha()+"</td>";
+            table+="<td style=\"vertical-align:middle\">"+bean.getTitulo()+"</td>";
+            table+="<td style=\"vertical-align:middle\">"+bean.getUsuario().getNombre()+" "+bean.getUsuario().getApellidos()+"</td>";
+            table+="<td style=\"vertical-align:middle\">"+bean.getCategoria().getNombre()+"</td>";
+            table+="<td style=\"vertical-align:middle\">"+bean.getFecha()+"</td>";
             table+="<td><button class=\"details-button-forum btn btn-default btn-xs\" id=\""+bean.getIdDiscusion()+"\">See topic</button></td>";
             table+="</tr>";
             System.out.println("controller=" + i);
@@ -373,12 +373,12 @@ public class Controller extends HttpServlet {
         for (int i = 0; i < puntos.size(); i++) {
             PuntoBean bean = (PuntoBean)puntos.get(i);
             table+="<tr>";
-            table+="<td>"+bean.getNombre()+"</td>";
-            table+="<td>"+bean.getDescripcion()+"</td>";
-            table+="<td>"+bean.getCategoria().getNombre()+"</td>";
-            table+="<td>"+bean.getTelefono()+"</td>";
-            table+="<td>"+bean.getCalificacion()+"</td>";
-            table+="<td><button class=\"details-button-puntos\" id=\""+bean.getIdPuntosDeInteres()+"\">Details</button></td>";
+            table+="<td style=\"vertical-align:middle\">"+bean.getNombre()+"</td>";
+            table+="<td style=\"vertical-align:middle\">"+bean.getDescripcion()+"</td>";
+            table+="<td style=\"vertical-align:middle\">"+bean.getCategoria().getNombre()+"</td>";
+            table+="<td style=\"vertical-align:middle\">"+bean.getTelefono()+"</td>";
+            table+="<td style=\"vertical-align:middle\">"+bean.getCalificacion()+"</td>";
+            table+="<td><button class=\"details-button-puntos btn btn-default btn-xs\" id=\""+bean.getIdPuntosDeInteres()+"\">Details</button></td>";
             table+="</tr>";
             System.out.println("Iteracion: "+i);
         }

@@ -114,7 +114,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-sm-2" for="telefono">Website:</label>
+                                        <label class="control-label col-sm-2" for="paginaWeb">Website:</label>
                                         <div class="col-sm-10">
                                             <input type="text" name="paginaWeb" class="form-control" id="paginaWeb" >
                                         </div>

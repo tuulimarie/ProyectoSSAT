@@ -14,7 +14,7 @@ $(document).ready(function (){
             dataType: "json",
             success: function(data) {
                 if (data.toString() == "true") {
-                    alert("Registration ready!");
+                    alert("Registration ready");
                     location.replace("index.jsp");
                 } else {
                     alert("Error al insertar.");
@@ -219,7 +219,7 @@ $(document).ready(function (){
         $.ajax({
             type:"POST",
             url:"Controller",
-            data: "opcion=11" + "&nombre=" + $("#firstname").val()+"&apellidos=" + $("#lastname").val()+"&nacionalidad=" + $("#nationality").val()+"&email=" + $("#username").val()+"&password1=" + $("#password").val()+"&password2=" + $("#password2").val()+"&date=" + $("#date").val()+ "&year=" + $("#year").val()+"&career=" + $("#career").val(),
+            data: "opcion=11" + "&nombre=" + $("#firstname").val()+"&apellidos=" + $("#lastname").val()+"&nacionalidad=" + $("#nationality").val()+"&email=" + $("#username").val()+"&password1=" + sha256_digest($("#password").val())+"&password2=" + sha256_digest($("#password2").val())+"&date=" + $("#date").val()+ "&year=" + $("#year").val()+"&career=" + $("#career").val(),
            dataType:"json",
            success: function(data) {
                if (data.toString()=="true"){

@@ -13,6 +13,7 @@ import bean.RespuestaBean;
 import bean.UsuarioBean;
 import dao.CategoriaDao;
 import dao.DiscusionDao;
+import dao.NacionalidadDao;
 import dao.PuntoDao;
 import dao.RespuestaDao;
 import dao.UsuarioDao;
@@ -428,8 +429,36 @@ public class Controller extends HttpServlet {
     }
      
     private void saveChanges(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        UsuarioBean bean = (UsuarioBean)request.getSession().getAttribute("usuario");
+        bean.setApellidos(request.getParameter("apellidos"));
+        bean.setNombre(request.getParameter("nombre"));
+        bean.setEmail(request.getParameter("email"));
+        System.out.println(request.getParameter("nombre"));
+        try {
+            bean.setNacionalidad(NacionalidadDao.getCountryByID(Integer.parseInt(request.getParameter("nacionalidad"))));
+        } catch (SQLException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            response.getWriter().write("false");
+            return;
+        }
+        if(request.getParameter("password1").equals(request.getParameter("password2"))){
+            bean.setPassword(request.getParameter("password1"));
+            bean.setDate(request.getParameter("date") + request.getParameter("year"));
+            bean.setDegree(request.getParameter("career"));
+            try {
+                UsuarioDao.editMyInfo(bean);
+            } catch (SQLException ex) {
+                Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+                response.getWriter().write("false");
+                return;
+            }
+            request.getSession().setAttribute("usuario", bean);
+            response.getWriter().write("true");
+        }else {
+            System.out.println("password error");
+            response.getWriter().write("false");
+        }
         
-        response.getWriter().write("true");
     }
     
     private void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {

@@ -132,8 +132,9 @@ public class UsuarioDao {
         ps.setString(6,bean.getDate());
         ps.setString(7,bean.getEmail());
         ps.setInt(8,bean.getIdUsuario());
+        System.out.println("Query");
         ps.executeUpdate();
-
+        System.out.println("Execute");
         return true;
     }
     public static UsuarioBean login(UsuarioBean bean) throws SQLException{

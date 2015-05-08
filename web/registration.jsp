@@ -12,6 +12,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <%
+        //This should be in every other webpage.
+        if(session.getAttribute("usuario")!=null){
+            request.getRequestDispatcher("/home.jsp").forward(request, response);
+        }
+        %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%String contexto = request.getContextPath();%>
         <!-- Bootstrap core CSS -->

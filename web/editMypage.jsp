@@ -71,7 +71,7 @@
                                     </ul>
                                 </li>
                                 <li class="active"><a href="#">MyInfo</a></li>
-                                <li><a href="index.jsp" class="logoutbtn">
+                                <li><a href="Controller" class="logoutbtn">
                                         <span class="glyphicon glyphicon-log-out"></span>Log out</a>
                                 </li>
                             </ul>
@@ -170,7 +170,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="password">Password again:</label>
                                             <div class="col-sm-10">
-                                                <input type="password" name="password" class="form-control" id="password" >
+                                                <input type="password" name="password" class="form-control" id="password2" >
                                             </div>
                                         </div>
                                         <div class="row">

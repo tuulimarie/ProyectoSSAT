@@ -22,13 +22,13 @@ import utilerias.ConexionSql;
  */
 public class UsuarioDao {
     private static String sql1 = "SELECT * FROM Usuario;";
+    private static String sql8 = "INSERT INTO Usuario (email) VALUES (?);";
     private static String sql2 = "SELECT * FROM Usuario WHERE idUsuario=?;";
     private static String sql6 = "SELECT * FROM Usuario WHERE email=?;";
     private static String sql3 = "SELECT * FROM Usuario WHERE nacionalidad=?;";
     private static String sql4 = "SELECT idUsuario,nombre FROM Usuario WHERE email=?;";
     private static String sql5 = "UPDATE Usuario SET nombre=?, apellidos=?, nacionalidad=?, password=?, degree=?, date=? WHERE idUsuario=?";
     private static String sql7 = "UPDATE Usuario SET nombre=?, apellidos=?, nacionalidad=?, password=?, degree=?, date=?, email=? WHERE idUsuario=?";
-   
     public static UsuarioBean getStudentById(int id) throws SQLException{
         Connection con = ConexionSql.getConnection();
         PreparedStatement ps = con.prepareCall(sql2);
@@ -49,6 +49,19 @@ public class UsuarioDao {
             bean.setDate(rs.getString(8));
         }
         return bean;
+    }
+    public static boolean insertNewEmail(String email) throws SQLException{
+        Connection con = ConexionSql.getConnection();
+        PreparedStatement ps = con.prepareCall(sql6);
+        ps.setString(1, email);
+        ResultSet rs = ps.executeQuery();
+        if(!rs.next()){
+            ps = con.prepareCall(sql8);
+            ps.setString(1, email);
+            ps.executeUpdate();
+            return true;
+        }else
+            return false;
     }
     public static List getStudentsFrom(int idNacionalidad) throws SQLException{
         Connection con = ConexionSql.getConnection();

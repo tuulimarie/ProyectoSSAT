@@ -83,9 +83,38 @@ public class Controller extends HttpServlet {
             forumDetails(request,response);
         }else if(opcion.equals("15")){
             submitResponse(request,response);
+        }else if(opcion.equals("16")){
+            String username = request.getParameter("email");
+            String password = request.getParameter("password");
+            
+            if(username.equals("admin")&&password.equals("5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8")){
+                request.getSession().setAttribute("manage", password);
+                System.out.println(password);
+                response.getWriter().write("true");
+                
+            }else{
+                response.getWriter().write("false");
+            }
+        }else if(opcion.equals("17")){
+            addNewEmail(request,response);
         }
+                
     }
-    
+    private void addNewEmail(HttpServletRequest request, HttpServletResponse response) throws IOException{
+        String email1 = request.getParameter("email1");
+        String email2 = request.getParameter("email2");
+        if(email1.equals(email2)){
+            try {
+                if(UsuarioDao.insertNewEmail(email2)){
+                    response.getWriter().write("true");
+                    return;
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        response.getWriter().write("false");
+    }
     private void loadDiscussions(HttpServletRequest request, HttpServletResponse response) throws IOException{
         String table = "";
         int id = Integer.parseInt(request.getParameter("categoria"));
@@ -243,10 +272,10 @@ public class Controller extends HttpServlet {
         for (int i = 0; i < students.size(); i++) {
             UsuarioBean bean = (UsuarioBean)students.get(i);
             table+="<tr>";
-            table+="<td style=\"vertical-align:middle\">"+bean.getNombre()+"</td>";
-            table+="<td style=\"vertical-align:middle\">"+bean.getApellidos()+"</td>";
-            table+="<td style=\"vertical-align:middle\">"+bean.getNacionalidad().getPais()+"</td>";
-            table+="<td style=\"vertical-align:middle\">"+bean.getEmail()+"</td>";
+            table+="<td>"+bean.getNombre()+"</td>";
+            table+="<td>"+bean.getApellidos()+"</td>";
+            table+="<td>"+bean.getNacionalidad().getPais()+"</td>";
+            table+="<td>"+bean.getEmail()+"</td>";
             table+="<td><button class=\"details-button btn btn-default btn-xs\" id=\""+bean.getIdUsuario()+"\">Details</button></td>";
             table+="</tr>";
         }

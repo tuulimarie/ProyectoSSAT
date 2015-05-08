@@ -61,13 +61,13 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div align="center">
+                                        <div class="loginbtnDiv">
                                             <button type="submit" class="btn btn-default" name="action" id="login" value="Login">Login</button>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <div>
-                                            <p><center>Not registered? <a href="registration.jsp">Sign up!</a></center></p>
+                                        <div class="signupLink">
+                                            <p>Not registered? <a href="registration.jsp">Sign up!</a></p>
                                         </div>
                                     </div>
                                 </form>

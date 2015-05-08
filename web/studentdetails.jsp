@@ -57,8 +57,8 @@
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="">Forums
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="createnewthread.jsp">Create New</a></li>
-                                        <li><a href="threads.jsp">All Threads</a></li>
+                                        <li><a href="threads.jsp">All Posts</a></li>
+                                        <li><a href="createnewthread.jsp">Create New</a></li>    
                                     </ul>
                                 </li>
                                 <!--<li><a href="points.jsp">Points</a></li>-->

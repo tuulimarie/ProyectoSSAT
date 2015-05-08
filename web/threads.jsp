@@ -56,8 +56,8 @@
                                     <a class="dropdown-toggle active" data-toggle="dropdown" href="">Forums
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="createnewthread.jsp">Create New</a></li>
-                                        <li><a href="threads.jsp">All Threads</a></li>
+                                        <li><a href="threads.jsp">All Posts</a></li>
+                                        <li><a href="createnewthread.jsp">Create New</a></li>    
                                     </ul>
                                 </li>
                                 <!--<li><a href="points.jsp">Points</a></li>-->
@@ -84,11 +84,11 @@
             <div class="container">
                 <div class="pagecontent">
                     <h1>Forum</h1>
-                    <div class="row">
-                        <label class="control-label col-sm-1" for="categoria-forum">Category:</label>
-                        <div class="col-sm-12">
+                    <div class="row form-horizontal form-login" id="select"">
+                        <label class="control-label col-sm-2" for="categoria-forum">Category:</label>
+                        <div class="col-sm-10">
                             <select class="form-control" id="categoria-forum">
-                                <option value="-1">--Choose a category--</option>
+                                <option value="-1">-Choose a category-</option>
                                 <option value="-1">All</option>
                                 <%
                                     List list = CategoriaDao.getForumCategories();

@@ -51,8 +51,8 @@
                                     <a class="dropdown-toggle active" data-toggle="dropdown" href="">Forums
                                         <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="createnewthread.jsp">Create New</a></li>
-                                        <li><a href="threads.jsp">All Threads</a></li>
+                                        <li><a href="threads.jsp">All Posts</a></li>
+                                        <li><a href="createnewthread.jsp">Create New</a></li>    
                                     </ul>
                                 </li>
                                 <!--<li><a href="points.jsp">Points</a></li>-->
@@ -85,8 +85,7 @@
                                 <div class="form-horizontal form-login">
                                     <legend>Write something or ask something:</legend>
                                     <div class="form-group">
-                                        <label class="control-label col-lg-6" for="title">Title:</label>
-                                       
+                                        <label class="control-label col-lg-6" for="title">Title:</label>                
                                         <div class="col-lg-6">
                                             <input type="text" name="title" class="form-control" id="title">
                                         </div>

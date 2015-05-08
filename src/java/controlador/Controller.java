@@ -272,10 +272,10 @@ public class Controller extends HttpServlet {
         for (int i = 0; i < students.size(); i++) {
             UsuarioBean bean = (UsuarioBean)students.get(i);
             table+="<tr>";
-            table+="<td>"+bean.getNombre()+"</td>";
-            table+="<td>"+bean.getApellidos()+"</td>";
-            table+="<td>"+bean.getNacionalidad().getPais()+"</td>";
-            table+="<td>"+bean.getEmail()+"</td>";
+            table+="<td style=\"vertical-align:middle\">"+bean.getNombre()+"</td>";
+            table+="<td style=\"vertical-align:middle\">"+bean.getApellidos()+"</td>";
+            table+="<td style=\"vertical-align:middle\">"+bean.getNacionalidad().getPais()+"</td>";
+            table+="<td style=\"vertical-align:middle\">"+bean.getEmail()+"</td>";
             table+="<td><button class=\"details-button btn btn-default btn-xs\" id=\""+bean.getIdUsuario()+"\">Details</button></td>";
             table+="</tr>";
         }

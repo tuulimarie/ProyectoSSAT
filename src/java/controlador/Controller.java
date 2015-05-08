@@ -398,6 +398,7 @@ public class Controller extends HttpServlet {
     private void addNewPuntoInteres(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String nombre = request.getParameter("nombre");
         String descripcion = request.getParameter("descripcion");
+        String paginaWeb = request.getParameter("paginaWeb");
         String telefono = request.getParameter("telefono");
         String puntos = request.getParameter("puntos");
         String categoria = request.getParameter("categoria");
@@ -405,6 +406,7 @@ public class Controller extends HttpServlet {
         bean.setNombre(nombre);
         bean.setDescripcion(descripcion);
         bean.setTelefono(telefono);
+        bean.setPaginaWeb(paginaWeb);
         try {
             bean.setCategoria(CategoriaDao.getCategoryByID(Integer.parseInt(categoria)));
             PuntoDao.registerNew(bean);

@@ -114,7 +114,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-sm-2" for="telefono">Website:</label>
+                                        <label class="control-label col-sm-2" for="paginaWeb">Website:</label>
                                         <div class="col-sm-10">
                                             <input type="text" name="paginaWeb" class="form-control" id="paginaWeb" >
                                         </div>
@@ -150,7 +150,7 @@
                 </div>
             </div>
             <footer class="footer">
-                <p class="text-muted" align="center">Place sticky footer content here.</p>
+                <p class="text-muted" align="center">Tecnológico de Monterrey 2015<br> <a href="http://www.cva.itesm.mx/internationals ">www.cva.itesm.mx</a>&nbsp;&middot;&nbsp;<a href="">Contact</a>&nbsp;&middot;&nbsp;<a href="privacypolicy.jsp">Privacy Policy</a></center</p>
             </footer>
         </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

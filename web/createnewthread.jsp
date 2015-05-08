@@ -105,15 +105,14 @@
                                             </select>
                                         </div>
                                     </div>
-    
                                     <div class="form-group">
                                         <label class="control-label col-lg-6" for="texto">Text:</label>
                                         <div class="col-lg-4">
-                                            <textarea class="form-control" id="texto" rows="10"></textarea>
+                                            <textarea class="form-control" id="texto"style="width: 300px; height: 150px;"></textarea>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div align="center">
+                                        <div class="pull-right" >
                                             <button type="submit" class="btn btn-default" name="action" id="create-thread" value="create">Create</button>
                                         </div>
                                     </div>
@@ -122,9 +121,10 @@
                         </div>
                     </div>
                 </div>
+                                            
             </div>
             <footer class="footer">
-                <p class="text-muted" align="center">ITESM 2015.</p>
+                <p class="text-muted" align="center">Tecnológico de Monterrey 2015<br> <a href="http://www.cva.itesm.mx/internationals ">www.cva.itesm.mx</a>&nbsp;&middot;&nbsp;<a href="">Contact</a>&nbsp;&middot;&nbsp;<a href="privacypolicy.jsp">Privacy Policy</a></center</p>
             </footer>
         </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

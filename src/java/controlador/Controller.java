@@ -487,7 +487,7 @@ public class Controller extends HttpServlet {
             System.out.println("password error");
             response.getWriter().write("false");
         }
-        
+        response.getWriter().write("false");
     }
     
     private void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {

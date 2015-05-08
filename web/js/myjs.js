@@ -26,11 +26,43 @@ $(document).ready(function (){
          $.ajax({
             type: "POST",
             url: 'Controller',
-            data: "opcion=2"+"&email=" + $("#username").val()+"&password=" + $("#password").val(),
+            data: "opcion=2"+"&email=" + $("#username").val()+"&password=" + sha256_digest($("#password").val()),
             dataType: "json",
             success: function(data) {
                 if (data.toString() == "true") {
                     location.replace("home.jsp");
+                } else {
+                    alert("Invalid user or password.");
+                }
+            }
+        });
+    });
+     $("#add-new-email").click(function(){
+         $.ajax({
+            type: "POST",
+            url: 'Controller',
+            data: "opcion=17"+"&email1=" + $("#email1").val()+"&email2=" +$("#email2").val() ,
+            dataType: "json",
+            success: function(data) {
+                if (data.toString() == "true") {
+                    alert("Email saved. Now you can register with "+ $("#email1").val() +".");
+                    $("#email1").val(' ');
+                    $("#email2").val(' ');
+                } else {
+                    alert("The email is already taken or emails don't match.");
+                }
+            }
+        });
+    });
+    $("#login-admin").click(function(){
+         $.ajax({
+            type: "POST",
+            url: 'Controller',
+            data: "opcion=16"+"&email=" + $("#username").val()+"&password=" + sha256_digest($("#password").val()),
+            dataType: "json",
+            success: function(data) {
+                if (data.toString() == "true") {
+                    location.replace("adminpage.jsp");
                 } else {
                     alert("Invalid user or password.");
                 }
@@ -87,7 +119,7 @@ $(document).ready(function (){
         $.ajax({
             type: "POST",
             url: 'Controller',
-            data: "opcion=5"+"&nombre=" + $("#nombre").val()+"&descripcion=" + $("#descripcion").val()+"&categoria=" + $("#categoria").val()+"&paginaWeb=" + $("#paginaWeb").val()+"&telefono=" + $("#telefono").val()+"&puntos=" + $("#rate").val(),
+            data: "opcion=5"+"&nombre=" + $("#nombre").val()+"&descripcion=" + $("#descripcion").val()+"&categoria=" + $("#categoria").val()+"&telefono=" + $("#telefono").val()+"&puntos=" + $("#rate").val(),
             dataType: "json",
             success: function(data) {
                 if (data.toString() == "true") {

@@ -82,7 +82,7 @@
                         <label class="control-label col-sm-2" for="nationality">Country of origin:</label>
                         <div class="col-sm-10">
                             <select class="form-control" id="nationality">
-                                <option value="-2">-Choose a country-</option>
+                                <option value="-1">-Choose a country-</option>
                                 <option value="-1">All</option>
                                 <%
                                     List list = NacionalidadDao.getContries();

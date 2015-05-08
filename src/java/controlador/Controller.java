@@ -317,7 +317,7 @@ public class Controller extends HttpServlet {
         heading+="<div class=\"row\">";
         heading+="<div class=\"well well-sm\">";
         heading+="<h3>"+beanD.getTitulo()+"</h3>";
-        heading+="<div class=\"row\"><div class=\"col-lg-1\">"+beanD.getContenido()+"</div></div>";
+        heading+="<div class=\"row\"><div class=\"col-lg-10\">"+beanD.getContenido()+"</div></div>";
         heading+="<br>";
         heading+="<div class=\"row\">";
         heading+="<div class=\"col-sm-6 author\">"+beanD.getUsuario().getNombre()+" "+beanD.getUsuario().getApellidos()+"</div>";
@@ -335,7 +335,7 @@ public class Controller extends HttpServlet {
             RespuestaBean beanResp = (RespuestaBean)respuestas.get(i);
             heading+="<div class=\"row\">";
             heading+="<div class=\"well well-sm\">";
-            heading+="<div class=\"row\"><div class=\"col-lg-1\">"+beanResp.getContenido()+"</div></div>";
+            heading+="<div class=\"row\"><div class=\"col-lg-10\">"+beanResp.getContenido()+"</div></div>";
             heading+="<br>";
             heading+="<div class=\"row\">";
             heading+="<div class=\"col-sm-6 author\">"+beanResp.getUsuario().getNombre()+" "+beanResp.getUsuario().getApellidos()+"</div>";
@@ -360,7 +360,7 @@ public class Controller extends HttpServlet {
         heading+="<div class=\"row\">";
         heading+="<div class=\"well well-sm\">";
         heading+="<h3>"+bean.getTitulo()+"</h3>";
-        heading+="<div class=\"row\"><div class=\"col-lg-1\">"+bean.getContenido()+"</div></div>";
+        heading+="<div class=\"row\"><div class=\"col-lg-10\">"+bean.getContenido()+"</div></div>";
         heading+="<br>";
         heading+="<div class=\"row\">";
         heading+="<div class=\"col-sm-6 author\">"+bean.getUsuario().getNombre()+" "+bean.getUsuario().getApellidos()+"</div>";
@@ -378,7 +378,7 @@ public class Controller extends HttpServlet {
             RespuestaBean beanResp = (RespuestaBean)respuestas.get(i);
             heading+="<div class=\"row\">";
             heading+="<div class=\"well well-sm\">";
-            heading+="<div class=\"row\"><div class=\"col-lg-1\">"+beanResp.getContenido()+"</div></div>";
+            heading+="<div class=\"row\"><div class=\"col-lg-10\">"+beanResp.getContenido()+"</div></div>";
             heading+="<br>";
             heading+="<div class=\"row\">";
             heading+="<div class=\"col-sm-6 author\">"+beanResp.getUsuario().getNombre()+" "+beanResp.getUsuario().getApellidos()+"</div>";
@@ -485,6 +485,7 @@ public class Controller extends HttpServlet {
             }
             request.getSession().setAttribute("usuario", bean);
             response.getWriter().write("true");
+            return;
         }else {
             System.out.println("password error");
             response.getWriter().write("false");

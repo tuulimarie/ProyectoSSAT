@@ -22,7 +22,7 @@ import utilerias.ConexionSql;
  */
 public class RespuestaDao {
     private static String sql4 = "INSERT INTO respuesta (titulo,contenido,fecha,idDiscusion,idusuario) VALUES(?,?,?,?,?);";
-    private static String sql3 = "SELECT * FROM respuesta WHERE idDiscusion=?;";
+    private static String sql3 = "SELECT * FROM respuesta WHERE idDiscusion=? ORDER BY fecha DESC;";
     public static void createNewResponse(RespuestaBean bean) throws SQLException{
         Connection con = ConexionSql.getConnection();
         PreparedStatement ps = con.prepareStatement(sql4);

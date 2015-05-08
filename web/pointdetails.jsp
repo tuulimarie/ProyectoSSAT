@@ -96,6 +96,10 @@
                                     <div class="col-sm-2" id="categoria"><%=punto.getCategoria().getNombre()%></div>
                                 </div>
                                 <div class="form-group">
+                                    <label class="control-label col-sm-4" for="paginaWeb">Website:</label>
+                                    <div class="col-sm-2" id="categoria"><%=punto.getPaginaWeb()%></div>
+                                </div>
+                                <div class="form-group">
                                     <label class="control-label col-sm-4" for="telefono">Phone Number:</label>
                                     <div class="col-sm-2" id="telefono"><%=punto.getTelefono()%></div>
                                 </div>

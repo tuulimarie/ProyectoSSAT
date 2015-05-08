@@ -28,6 +28,7 @@ public class UsuarioDao {
     private static String sql4 = "SELECT idUsuario,nombre FROM Usuario WHERE email=?;";
     private static String sql5 = "UPDATE Usuario SET nombre=?, apellidos=?, nacionalidad=?, password=?, degree=?, date=? WHERE idUsuario=?";
     private static String sql7 = "UPDATE Usuario SET nombre=?, apellidos=?, nacionalidad=?, password=?, degree=?, date=?, email=? WHERE idUsuario=?";
+   
     public static UsuarioBean getStudentById(int id) throws SQLException{
         Connection con = ConexionSql.getConnection();
         PreparedStatement ps = con.prepareCall(sql2);

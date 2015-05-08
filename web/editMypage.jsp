@@ -20,6 +20,8 @@
             UsuarioBean usuario = null;
             if (session.getAttribute("usuario") == null) {
                 request.getRequestDispatcher("/index.jsp").forward(request, response);
+            }else {
+                usuario = (UsuarioBean) session.getAttribute("usuario");
             }
         %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -98,13 +100,13 @@
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="firstname">Firstname: </label>
                                             <div class="col-sm-10">
-                                                <input type="text" name="firstname" class="form-control" id="firstname">
+                                                <input type="text" name="firstname" class="form-control" id="firstname" value="<%=usuario.getNombre()%>">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="lastname">Lastname: </label>
                                             <div class="col-sm-10">
-                                                <input type="text" name="lastname" class="form-control" id="lastname">
+                                                <input type="text" name="lastname" class="form-control" id="lastname" value="<%=usuario.getApellidos()%>">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -158,11 +160,11 @@
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="username">Email:</label>
                                             <div class="col-sm-10">
-                                                <input type="email" name="username" class="form-control" id="username">
+                                                <input type="email" name="username" class="form-control" id="username"value="<%=usuario.getEmail()%>">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-sm-2" for="password">Password:</label>
+                                            <label class="control-label col-sm-2" for="password">New password:</label>
                                             <div class="col-sm-10">
                                                 <input type="password" name="password" class="form-control" id="password" >
                                             </div>

@@ -91,8 +91,8 @@
                         </div>
                         <div class="col-md-4">
                             <div class="rightcol">
-                                <p class="lead"> <h3>New student</h3>Here you can find loads of good information about your new hometown and it's surroundings. Points page will show you places where you can visit and from.... Student page will show you all the students registered to this page, you can contact them by email if you have specific guestions.<br>
-                                <h3>Already studied or studying at Tec</h3>Add places you have visited or rate the ones already in the system. Help new students by taking part of discussions in Forums.
+                                <p class="lead"> <h3>New student</h3>Here you can find good information about your new hometown and it's surroundings. Points page will show you places where you can visit. Student page will show you all the students registered to this page, you can contact them by email if you have specific guestions.<br>
+                                <h3>Already studied or studying at Tec</h3>Add places you have visited or rate the ones that are already in the system. Help new students by taking part of discussions in Forums.
                                 </p>
                             </div>
                         </div>

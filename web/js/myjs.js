@@ -87,7 +87,7 @@ $(document).ready(function (){
         $.ajax({
             type: "POST",
             url: 'Controller',
-            data: "opcion=5"+"&nombre=" + $("#nombre").val()+"&descripcion=" + $("#descripcion").val()+"&categoria=" + $("#categoria").val()+"&telefono=" + $("#telefono").val()+"&puntos=" + $("#rate").val(),
+            data: "opcion=5"+"&nombre=" + $("#nombre").val()+"&descripcion=" + $("#descripcion").val()+"&categoria=" + $("#categoria").val()+"&paginaWeb=" + $("#paginaWeb").val()+"&telefono=" + $("#telefono").val()+"&puntos=" + $("#rate").val(),
             dataType: "json",
             success: function(data) {
                 if (data.toString() == "true") {

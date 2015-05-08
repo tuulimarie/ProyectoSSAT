@@ -83,7 +83,7 @@
 
             <div class="container">
                 <div class="pagecontent">
-                    <h1>Threads!</h1>
+                    <h1>Posts!</h1>
                     <%=session.getAttribute("tituloDiscusion")%>
                     <div class="form-group">
                         <div class="col-lg-12">

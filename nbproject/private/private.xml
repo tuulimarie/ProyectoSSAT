@@ -8,19 +8,22 @@
             <file>file:/Users/alejandro/Documents/ProyectoSSAT/web/META-INF/context.xml</file>
         </group>
         <group name="ProyectoSSAT">
-            <file>file:/Users/tuuli-marietiilikainen/Documents/ProyectoSSAT/web/css/myStyle.css</file>
-            <file>file:/Users/tuuli-marietiilikainen/Documents/ProyectoSSAT/web/points.jsp</file>
-            <file>file:/Users/tuuli-marietiilikainen/Documents/ProyectoSSAT/web/mypage.jsp</file>
-            <file>file:/Users/tuuli-marietiilikainen/Documents/ProyectoSSAT/web/studentcatalogue.jsp</file>
-            <file>file:/Users/tuuli-marietiilikainen/Documents/ProyectoSSAT/src/java/controlador/Controller.java</file>
-            <file>file:/Users/tuuli-marietiilikainen/Documents/ProyectoSSAT/web/registration.jsp</file>
-            <file>file:/Users/tuuli-marietiilikainen/Documents/ProyectoSSAT/web/createnewthread.jsp</file>
-            <file>file:/Users/tuuli-marietiilikainen/Documents/ProyectoSSAT/web/threads.jsp</file>
-            <file>file:/Users/tuuli-marietiilikainen/Documents/ProyectoSSAT/web/studentdetails.jsp</file>
-            <file>file:/Users/tuuli-marietiilikainen/Documents/ProyectoSSAT/web/js/myjs.js</file>
-            <file>file:/Users/tuuli-marietiilikainen/Documents/ProyectoSSAT/web/index.jsp</file>
-            <file>file:/Users/tuuli-marietiilikainen/Documents/ProyectoSSAT/web/editMypage.jsp</file>
-            <file>file:/Users/tuuli-marietiilikainen/Documents/ProyectoSSAT/web/home.jsp</file>
+            <file>file:/Users/tuuli-marietiilikainen/Desktop/ProyectoSSAT/web/points.jsp</file>
+            <file>file:/Users/tuuli-marietiilikainen/Desktop/ProyectoSSAT/web/editMypage.jsp</file>
+            <file>file:/Users/tuuli-marietiilikainen/Desktop/ProyectoSSAT/web/css/myStyle.css</file>
+            <file>file:/Users/tuuli-marietiilikainen/Desktop/ProyectoSSAT/web/pointdetails.jsp</file>
+            <file>file:/Users/tuuli-marietiilikainen/Desktop/ProyectoSSAT/web/discussiondetails.jsp</file>
+            <file>file:/Users/tuuli-marietiilikainen/Desktop/ProyectoSSAT/src/java/controlador/Controller.java</file>
+            <file>file:/Users/tuuli-marietiilikainen/Desktop/ProyectoSSAT/web/threads.jsp</file>
+            <file>file:/Users/tuuli-marietiilikainen/Desktop/ProyectoSSAT/web/studentcatalogue.jsp</file>
+            <file>file:/Users/tuuli-marietiilikainen/Desktop/ProyectoSSAT/web/registration.jsp</file>
+            <file>file:/Users/tuuli-marietiilikainen/Desktop/ProyectoSSAT/web/privacypolicy.jsp</file>
+            <file>file:/Users/tuuli-marietiilikainen/Desktop/ProyectoSSAT/web/index.jsp</file>
+            <file>file:/Users/tuuli-marietiilikainen/Desktop/ProyectoSSAT/web/createnewthread.jsp</file>
+            <file>file:/Users/tuuli-marietiilikainen/Desktop/ProyectoSSAT/web/home.jsp</file>
+            <file>file:/Users/tuuli-marietiilikainen/Desktop/ProyectoSSAT/web/createnewpoint.jsp</file>
+            <file>file:/Users/tuuli-marietiilikainen/Desktop/ProyectoSSAT/web/studentdetails.jsp</file>
+            <file>file:/Users/tuuli-marietiilikainen/Desktop/ProyectoSSAT/web/mypage.jsp</file>
         </group>
     </open-files>
 </project-private>

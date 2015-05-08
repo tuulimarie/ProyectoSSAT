@@ -117,10 +117,10 @@
                                     for (int i = 0; i < discussions.size(); i++) {
                                         DiscusionBean bean = (DiscusionBean)discussions.get(i);
                                         table+="<tr>";
-                                        table+="<td>"+bean.getTitulo()+"</td>";
-                                        table+="<td>"+bean.getUsuario().getNombre()+" "+bean.getUsuario().getApellidos()+"</td>";
-                                        table+="<td>"+bean.getCategoria().getNombre()+"</td>";
-                                        table+="<td>"+bean.getFecha()+"</td>";
+                                        table+="<td style=\"vertical-align:middle\">"+bean.getTitulo()+"</td>";
+                                        table+="<td style=\"vertical-align:middle\">"+bean.getUsuario().getNombre()+" "+bean.getUsuario().getApellidos()+"</td>";
+                                        table+="<td style=\"vertical-align:middle\">"+bean.getCategoria().getNombre()+"</td>";
+                                        table+="<td style=\"vertical-align:middle\">"+bean.getFecha()+"</td>";
                                         table+="<td><button class=\"details-button-forum btn btn-default btn-xs\" id=\""+bean.getIdDiscusion()+"\">See topic</button></td>";
                                         table+="</tr>";
                                         System.out.println("idDisucusion: "+bean.getIdDiscusion());

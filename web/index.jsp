@@ -35,7 +35,7 @@
             </nav>
             <div class="container">
                 <div class="pagecontent">
-                    <h1>Welcome newbies!</h1>
+                    <h1>Welcome Tec students!</h1>
                     <div class="row">
                         <div class="col-md-4">
                             <div class="textcontent">
@@ -77,7 +77,7 @@
                 </div>    
             </div>
             <footer class="footer">
-                <p class="text-muted" align="center">Place sticky footer content here.</center</p>
+                <p class="text-muted" align="center">Tecnológico de Monterrey 2015.<br> <a href="http://www.cva.itesm.mx/internationals ">www.cva.itesm.mx</a><a href="">Contact</a><a href="privacypolicy.jsp">Privacy Policy</a></center</p>
             </footer>
         </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

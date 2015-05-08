@@ -14,10 +14,10 @@
 <html>
     <head>
         <%
-        //This should be in every other webpage.
-        if(session.getAttribute("usuario")==null){
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
-        }
+            //This should be in every other webpage.
+            if (session.getAttribute("usuario") == null) {
+                request.getRequestDispatcher("/index.jsp").forward(request, response);
+            }
         %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!-- Bootstrap core CSS -->
@@ -25,7 +25,7 @@
         <!-- Bootstrap theme -->
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="css/myStyle.css" rel="stylesheet">
-                <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
         <title>Points of Interest</title>
     </head>
     <body>
@@ -49,7 +49,7 @@
                                 <li class="dropdown">
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="">Forums
                                         <span class="caret"></span></a>
-                                   <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu">
                                         <li><a href="threads.jsp">All Posts</a></li>
                                         <li><a href="createnewthread.jsp">Create New</a></li>    
                                     </ul>
@@ -111,6 +111,12 @@
                                                     }
                                                 %>
                                             </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2" for="telefono">Website:</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="paginaWeb" class="form-control" id="paginaWeb" >
                                         </div>
                                     </div>
                                     <div class="form-group">

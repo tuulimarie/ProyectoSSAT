@@ -17,7 +17,7 @@
         <!-- Bootstrap theme -->
         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="css/myStyle.css" rel="stylesheet">
-                <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 
         <%
             //This should be in every other webpage.
@@ -83,52 +83,58 @@
             <div class="container">
                 <div class="pagecontent">
                     <h1>Points of Interest</h1>
-                    <div class="col-md-4 pointpage">
-                        <div class="formcontent">
-                            <div class="form-horizontal form-login" role="form">
-                                <legend id="nombre"><%=punto.getNombre()%></legend>
-                                <div class="form-group">
-                                    <label class="control-label col-sm-4" for="descripcion">Description:</label>
-                                    <div class="col-sm-2" id="descripcion"><%=punto.getDescripcion()%></div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-sm-4" for="categoria">Category:</label>
-                                    <div class="col-sm-2" id="categoria"><%=punto.getCategoria().getNombre()%></div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-sm-4" for="paginaWeb">Website:</label>
-                                    <div class="col-sm-2" id="categoria"><%=punto.getPaginaWeb()%></div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-sm-4" for="telefono">Phone Number:</label>
-                                    <div class="col-sm-2" id="telefono"><%=punto.getTelefono()%></div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-sm-4" for="rate">Rate:</label>
-                                    <div class="col-sm-2">
-                                        <select class="form-control" id="rate">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="myimage">
+                                <img src="http://placehold.it/150x150&text=Image of the place" />.
+                            </div>
+                        </div>
+                        <div class="col-md-4 pointpage">
+                            <div class="formcontent">
+                                <div class="form-horizontal form-login" role="form">
+                                    <legend id="nombre"><%=punto.getNombre()%></legend>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4" for="descripcion">Description:</label>
+                                        <div class="col-sm-2" id="descripcion"><%=punto.getDescripcion()%></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4" for="categoria">Category:</label>
+                                        <div class="col-sm-2" id="categoria"><%=punto.getCategoria().getNombre()%></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4" for="paginaWeb">Website:</label>
+                                        <div class="col-sm-2" id="categoria"><%=punto.getPaginaWeb()%></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4" for="telefono">Phone Number:</label>
+                                        <div class="col-sm-2" id="telefono"><%=punto.getTelefono()%></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4" for="rate">Rate:</label>
+                                        <div class="col-sm-2">
+                                            <select class="form-control" id="rate">
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" class="btn btn-default" name="action" id="rate-submit" value="rate">Rate</button>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-default" name="action" id="rate-submit" value="rate">Rate</button>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <footer class="footer">
-                    <p class="text-muted" align="center">Place sticky footer content here.</p>
+                <p class="text-muted" align="center">Tecnológico de Monterrey 2015<br> <a href="http://www.cva.itesm.mx/internationals ">www.cva.itesm.mx</a>&nbsp;&middot;&nbsp;<a href="">Contact</a>&nbsp;&middot;&nbsp;<a href="privacypolicy.jsp">Privacy Policy</a></center</p>
             </footer>
         </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

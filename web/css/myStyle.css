@@ -45,7 +45,7 @@ label {
     width: 100%;
     position: relative;
     margin-top: 80px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
     min-height: 100%;
@@ -104,6 +104,8 @@ label {
 #myNavbar {
     padding: 30px;
 }
+
+
 /*NAVIGATION ENDS*/
 /*FOOTER*/
 .footer {
@@ -113,13 +115,14 @@ label {
     bottom: 0;
     /*bottom: -1;*/
     left: 0;
-    height: 80px;
+    height: 90px;
 }
 
 .text-muted {
     padding: 20px;
     color: whitesmoke;
 }
+
 
 /*FOOTER ENDS*/
 /*BUTTONS*/
@@ -158,6 +161,7 @@ label {
 /*FORMS*/
 .rightcol {
     width: 450px;
+    /*max-width: 100%;*/
     float: left;
     margin-left: 50px;
 }

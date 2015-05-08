@@ -14,7 +14,7 @@ $(document).ready(function (){
             dataType: "json",
             success: function(data) {
                 if (data.toString() == "true") {
-                    alert("Datos guardados");
+                    alert("Registration ready!");
                     location.replace("index.jsp");
                 } else {
                     alert("Error al insertar.");

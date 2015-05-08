@@ -29,7 +29,7 @@
             <nav class="navbar navbar-inverse navbar-fixed-top navbar-default">
                 <div class="container">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="#"><img src="logo.png" alt="logo" id="logo"></a>
+                        <a class="navbar-brand" href="index.jsp"><img src="logo.png" alt="logo" id="logo"></a>
                     </div>
                 </div>
             </nav>
@@ -66,7 +66,7 @@
                 </div>    
             </div>
             <footer class="footer">
-                <p class="text-muted" align="center">Place sticky footer content here.</center</p>
+                <p class="text-muted" align="center">Tecnológico de Monterrey 2015<br> <a href="http://www.cva.itesm.mx/internationals ">www.cva.itesm.mx</a>&nbsp;&middot;&nbsp;<a href="">Contact</a>&nbsp;&middot;&nbsp;<a href="privacypolicy.jsp">Privacy Policy</a></center</p>
             </footer>
         </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

@@ -31,6 +31,13 @@
                     <div class="navbar-header">
                         <a class="navbar-brand" href="index.jsp"><img src="logo.png" alt="logo" id="logo"></a>
                     </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav pull-right">
+                                <li><a href="Controller" class="logoutbtn">
+                                        <span class="glyphicon glyphicon-log-out"></span>Log out</a>
+                                </li>
+                            </ul>
+                        </div>
                 </div>
             </nav>
             <div class="container">
@@ -66,7 +73,7 @@
                 </div>    
             </div>
             <footer class="footer">
-                <p class="text-muted" align="center">Tecnológico de Monterrey 2015<br> <a href="http://www.cva.itesm.mx/internationals ">www.cva.itesm.mx</a>&nbsp;&middot;&nbsp;<a href="">Contact</a>&nbsp;&middot;&nbsp;<a href="privacypolicy.jsp">Privacy Policy</a></center</p>
+                <p class="text-muted" align="center">Tecnológico de Monterrey 2015<br> <a href="http://www.cva.itesm.mx/internationals ">www.cva.itesm.mx</a>&nbsp;&middot;&nbsp;<a href="adminloign.jsp">Admin</a>&nbsp;&middot;&nbsp;<a href="privacypolicy.jsp">Privacy Policy</a></center</p>
             </footer>
         </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

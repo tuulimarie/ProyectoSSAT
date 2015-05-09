@@ -17,7 +17,7 @@ $(document).ready(function (){
                     alert("Registration ready");
                     location.replace("index.jsp");
                 } else {
-                    alert("Error al insertar.");
+                    alert("Error inserting data..");
                 }
             }
         });
